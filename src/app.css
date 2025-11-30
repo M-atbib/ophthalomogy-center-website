@@ -1,3 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@theme {
+	/* Colors (yours) */
+	--color-primary: #333333;
+	--color-secondary: #666666;
+	--color-primary-background: #ffffff;
+	--color-card: #303030;
+	--color-light-grey: #dedede;
+	--color-cta: #168595;
+	--color-sections-background: #e6f2ef;
+	--color-accent-one: #ff7d45;
+	--color-accent-two: #4db8b8;
+	--color-accents-three: #5a6d7d;
+	--color-accent-four: #a0aab5;
+
+	/* Breakpoints (yours) */
+	--xs: 40rem; /* 640px */
+	--sm: 48rem; /* 768px */
+	--md: 64rem; /* 1024px */
+	--lg: 80rem; /* 1280px */
+	--xl: 90rem; /* 1440px */
+	--2xl: 96rem; /* 1536px */
+	--breakpoint-3xl: 120rem; /* 1920px */
+	--breakpoint-4xl: 160rem; /* 2560px */
+	--breakpoint-5xl: 240rem; /* 3840px */
+	--breakpoint-6xl: 320rem; /* 5120px */
+
+	/* Typography */
+	--font-primary: Inter, Arial;
+
+	/* Type scale (from TYPOGRAPHY.png) */
+	--h1: 4rem; /* 64px */
+	--leading-h1: 5rem; /* 80px */
+
+	--h2: 3.1875rem; /* 51px */
+	--leading-h2: 4rem; /* 64px */
+
+	--h3: 2.5625rem; /* 41px */
+	--leading-h3: 3.25rem; /* 52px */
+
+	--sub1: 2.0625rem; /* 33px */
+	--leading-sub1: 2.75rem; /* 44px */
+
+	--sub2: 1.625rem; /* 26px */
+	--leading-sub2: 2.25rem; /* 36px */
+
+	--sub3: 1.3125rem; /* 21px */
+	--leading-sub3: 1.875rem; /* 30px */
+
+	--body-lg: 1.25rem; /* 20px */
+	--leading-body-lg: 2rem; /* 32px */
+
+	--body: 1rem; /* 16px */
+	--leading-body: 1.5rem; /* 24px */
+
+	--body-sm: 0.8125rem; /* 13px */
+	--leading-body-sm: 1.25rem; /* 20px */
+
+	--caption: 0.75rem; /* 12px */
+	--leading-caption: 1.125rem; /* 18px */
+
+	--button: 1rem; /* 16px */
+	--leading-button: 1.5rem; /* 24px */
+
+	/* Spacing scale (from SPACING.png) */
+	--space-2: 0.125rem; /* 2px */
+	--space-4: 0.25rem; /* 4px */
+	--space-6: 0.375rem; /* 6px */
+	--space-8: 0.5rem; /* 8px */
+	--space-12: 0.75rem; /* 12px */
+	--space-16: 1rem; /* 16px */
+	--space-20: 1.25rem; /* 20px */
+	--space-24: 1.5rem; /* 24px */
+	--space-32: 2rem; /* 32px */
+	--space-40: 2.5rem; /* 40px */
+	--space-48: 3rem; /* 48px */
+
+	/* Drop shadows (from DROP SHADOW.png) */
+	--shadow-xs: 0 1px 4px rgba(0, 0, 0, 0.1);
+	--shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+	--shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+}

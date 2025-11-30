@@ -1,5 +1,5 @@
 {
-	"name": "app",
+	"name": "ophthalmology-center",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
@@ -39,5 +39,11 @@
 		"typescript": "^5.9.2",
 		"typescript-eslint": "^8.44.1",
 		"vite": "^7.1.7"
+	},
+	"dependencies": {
+		"@lucide/svelte": "^0.553.0",
+		"@portabletext/svelte": "^3.0.1",
+		"@portabletext/types": "^3.0.0",
+		"@sanity/client": "^7.13.0"
 	}
 }
