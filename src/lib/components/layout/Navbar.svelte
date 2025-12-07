@@ -10,8 +10,9 @@
 	};
 
 	type NavItem = {
+		id: string;
 		label: string;
-		href: string;
+		href?: string;
 		dropdown: boolean;
 		dropdownItems?: DropdownItem[];
 	};
@@ -23,15 +24,17 @@
 
 	const navItems: NavItem[] = [
 		{
+			id: 'home',
 			label: 'Acceuil',
 			href: '/',
 			dropdown: false
 		},
 		{
+			id: 'about',
 			label: 'A propos',
-			href: '/a-propos',
 			dropdown: true,
 			dropdownItems: [
+				{ label: 'A propos', href: '/a-propos' },
 				{ label: 'Equipement', href: '/equipement' },
 				{ label: 'Actualités', href: '/actualites' },
 				{ label: 'Urgences', href: '/urgences' },
@@ -39,16 +42,17 @@
 			]
 		},
 		{
+			id: 'eye-diseases',
 			label: "Les maladies de l'oeil",
-			href: '/maladie-oeil',
 			dropdown: true,
 			dropdownItems: diseaseDropdownItems
 		},
 		{
+			id: 'conseils',
 			label: 'Les conseils de votre ophtalmo',
-			href: '/conseils',
 			dropdown: true,
 			dropdownItems: [
+				{ label: 'Les conseils de votre ophtalmo', href: '/conseils' },
 				{ label: 'Conseils thérapeutiques', href: '/conseils/conseils-therapeutiques' },
 				{
 					label: 'Conseils lunettes et lentilles',
@@ -61,6 +65,7 @@
 			]
 		},
 		{
+			id: 'contact',
 			label: 'Contactez-nous',
 			href: '/contactez-nous',
 			dropdown: false
@@ -92,16 +97,16 @@
 		lockBodyScroll(false);
 	};
 
-	const toggleMobileDropdown = (href: string) => {
-		activeMobileDropdown = activeMobileDropdown === href ? null : href;
+	const toggleMobileDropdown = (itemId: string) => {
+		activeMobileDropdown = activeMobileDropdown === itemId ? null : itemId;
 	};
 
-	const handleDropdownEnter = (href: string) => {
+	const handleDropdownEnter = (itemId: string) => {
 		if (dropdownCloseTimer) {
 			clearTimeout(dropdownCloseTimer);
 			dropdownCloseTimer = null;
 		}
-		activeDropdown = href;
+		activeDropdown = itemId;
 	};
 
 	const handleDropdownLeave = () => {
@@ -144,43 +149,57 @@
 
 		<div class="hidden flex-1 items-center justify-end lg:flex">
 			<ul class="text-primary flex items-center gap-5 text-sm font-medium">
-				{#each navItems as item (item.href)}
+				{#each navItems as item (item.id)}
 					<li
 						class="group relative"
-						onpointerenter={() => handleDropdownEnter(item.href)}
+						onpointerenter={() => handleDropdownEnter(item.id)}
 						onpointerleave={handleDropdownLeave}
 					>
-						<a
-							href={item.href}
-							class="hover:text-cta focus-visible:ring-cta inline-flex items-center gap-1.5 rounded-full px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2"
-							onfocus={() => handleDropdownEnter(item.href)}
-							onblur={handleDropdownLeave}
-						>
-							<span class="flex items-center gap-1.5">
-								{item.label}
-								{#if item.dropdown}
+						{#if item.dropdown}
+							<button
+								type="button"
+								class="hover:text-cta focus-visible:ring-cta inline-flex items-center gap-1.5 rounded-full px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2"
+								onfocus={() => handleDropdownEnter(item.id)}
+								onclick={() => handleDropdownEnter(item.id)}
+								onblur={handleDropdownLeave}
+								aria-haspopup="true"
+								aria-expanded={activeDropdown === item.id}
+							>
+								<span class="flex items-center gap-1.5">
+									{item.label}
 									<ChevronDown
 										class={`h-3.5 w-3.5 transition-transform duration-200 ${
-											activeDropdown === item.href ? 'text-cta rotate-180' : 'text-secondary'
+											activeDropdown === item.id ? 'text-cta rotate-180' : 'text-secondary'
 										}`}
 										aria-hidden="true"
 									/>
-								{/if}
-							</span>
-						</a>
+								</span>
+							</button>
+						{:else}
+							<a
+								href={item.href!}
+								class="hover:text-cta focus-visible:ring-cta inline-flex items-center gap-1.5 rounded-full px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2"
+								onfocus={() => handleDropdownEnter(item.id)}
+								onblur={handleDropdownLeave}
+							>
+								<span class="flex items-center gap-1.5">
+									{item.label}
+								</span>
+							</a>
+						{/if}
 
 						{#if item.dropdown && item.dropdownItems}
 							<div
 								class={`border-light-grey/70 absolute left-0 top-full z-20 mt-1 min-w-[280px] rounded-2xl border bg-white/95 p-3 shadow-2xl transition-all duration-200 ease-out ${
-									activeDropdown === item.href
+									activeDropdown === item.id
 										? 'pointer-events-auto translate-y-0 opacity-100'
 										: 'pointer-events-none -translate-y-1 opacity-0'
 								}`}
-								onpointerenter={() => handleDropdownEnter(item.href)}
+								onpointerenter={() => handleDropdownEnter(item.id)}
 								onpointerleave={handleDropdownLeave}
 							>
 								<ul class="space-y-1">
-									{#each item.dropdownItems as dropdownItem, index (`${item.href}-${index}`)}
+									{#each item.dropdownItems as dropdownItem, index (`${item.id}-${index}`)}
 										<li>
 											<a
 												href={dropdownItem.href}
@@ -216,42 +235,47 @@
 >
 	<div class="flex h-full w-full flex-col items-center justify-center gap-8 px-6 py-10">
 		<ul class="text-primary w-full max-w-md space-y-4 text-center text-lg font-medium">
-			{#each navItems as item (item.href)}
-				<li class="group">
-					<a
-						href={item.href}
-						class="hover:text-cta border-light-grey/70 hover:border-cta block rounded-full border bg-white/80 px-6 py-3 transition"
-						onclick={closeMobileNav}
-					>
-						<span class="flex items-center justify-center gap-2">
-							{item.label}
-							{#if item.dropdown}
-								<ChevronDown class="text-secondary h-4 w-4" aria-hidden="true" />
-							{/if}
-						</span>
-					</a>
-
-					{#if item.dropdown && item.dropdownItems}
+			{#each navItems as item (item.id)}
+				<li>
+					{#if item.dropdown}
 						<button
 							type="button"
-							class="text-secondary hover:text-cta mt-2 text-xs uppercase tracking-wide"
-							onclick={() => toggleMobileDropdown(item.href)}
-							aria-expanded={activeMobileDropdown === item.href}
+							class="hover:text-cta border-light-grey/70 hover:border-cta flex w-full items-center justify-center gap-2 rounded-full border bg-white/80 px-6 py-3 text-center transition"
+							onclick={() => toggleMobileDropdown(item.id)}
+							aria-expanded={activeMobileDropdown === item.id}
+							aria-controls={`mobile-dropdown-${item.id}`}
 						>
-							Afficher les sous-pages
+							{item.label}
+							<ChevronDown
+								class={`h-4 w-4 transition-transform ${
+									activeMobileDropdown === item.id ? 'text-cta rotate-180' : 'text-secondary'
+								}`}
+								aria-hidden="true"
+							/>
 						</button>
+					{:else}
+						<a
+							href={item.href!}
+							class="hover:text-cta border-light-grey/70 hover:border-cta block rounded-full border bg-white/80 px-6 py-3 transition"
+							onclick={closeMobileNav}
+						>
+							<span class="flex items-center justify-center gap-2">
+								{item.label}
+							</span>
+						</a>
+					{/if}
 
+					{#if item.dropdown && item.dropdownItems}
 						<div
+							id={`mobile-dropdown-${item.id}`}
 							class={`overflow-hidden transition-all duration-200 ease-out ${
-								activeMobileDropdown === item.href
-									? 'mt-3 max-h-96 opacity-100'
-									: 'max-h-0 opacity-0'
-							} group-hover:mt-3 group-hover:max-h-96 group-hover:opacity-100`}
+								activeMobileDropdown === item.id ? 'mt-3 max-h-96 opacity-100' : 'max-h-0 opacity-0'
+							}`}
 						>
 							<ul
 								class="border-light-grey/60 space-y-2 rounded-2xl border bg-white/80 px-4 py-3 text-sm"
 							>
-								{#each item.dropdownItems as dropdownItem, index (`mobile-${item.href}-${index}`)}
+								{#each item.dropdownItems as dropdownItem, index (`mobile-${item.id}-${index}`)}
 									<li>
 										<a
 											href={dropdownItem.href}

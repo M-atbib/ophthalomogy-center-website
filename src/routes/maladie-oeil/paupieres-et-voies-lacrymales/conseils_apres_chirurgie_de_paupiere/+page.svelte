@@ -1,56 +1,53 @@
 <script lang="ts">
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
+	import { PaupieresPageThreeIlluOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable">
 	<Button variant="ghost" href="/maladie-oeil/paupieres-et-voies-lacrymales" class="w-fit">
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="space-y-4">
-		<Title level="h1">Conseils après chirurgie de paupière</Title>
-		<Text>Vous venez de bénéficier d'une chirurgie palpébrale ? Voici les bons réflexes à adopter.</Text>
-	</div>
-</Section>
+	<Title level="h1">Conseils après chirurgie de paupière</Title>
+	<Text>
+		Vous venez de bénéficier d'une chirurgie de paupière ?  <br />Alors ces quelques conseils vous
+		seront sans doute utiles.
+	</Text>
 
-<Section spacing="comfortable">
-	<div class="space-y-8">
-		<div class="space-y-4">
-			<Title level="h2">Protection et hygiène</Title>
-			<Text>
-				Protégez les cicatrices du soleil pendant 6 à 12 mois pour éviter une pigmentation inesthétique :
-				portez des lunettes solaires couvrantes et appliquez une crème adaptée.
-			</Text>
-			<Text>
-				Arrêter de fumer avant l’intervention améliore nettement la cicatrisation cutanée. Les points
-				de suture sont généralement retirés environ une semaine après l’opération.
-			</Text>
-		</div>
+	<figure class="d mx-auto w-full max-w-lg overflow-hidden">
+		<img
+			src={PaupieresPageThreeIlluOne}
+			alt="Illustration de la sélection d'implants"
+			class="h-full w-full object-cover"
+		/>
+	</figure>
 
-		<div class="space-y-4">
-			<Title level="h2">Surveillance des symptômes</Title>
-			<Text>
-				Surveillez l’apparition d’une rougeur persistante, de douleurs importantes ou d’un écoulement
-				purulent : ces signes peuvent indiquer une infection et nécessitent une consultation rapide.
-			</Text>
-			<Text>
-				En dehors des situations particulières, une chirurgie palpébrale ne provoque pas de baisse
-				d’acuité visuelle. Si votre vision diminue, contactez votre ophtalmologiste en urgence.
-			</Text>
-		</div>
-
-		<div class="space-y-4">
-			<Title level="h2">Protection mécanique</Title>
-			<Text>
-				Pour éviter les frottements nocturnes sur la cicatrice, vous pouvez porter une coque rigide de
-				protection durant la première semaine.
-			</Text>
-			<TextWithCorners>
-				En cas de question ou de symptôme inhabituel, l’équipe du [Nom de Clinique] reste à votre
-				disposition.
-			</TextWithCorners>
-		</div>
-	</div>
+	<ul class="mt-4 list-disc pl-5 [&>li+li]:mt-2">
+		<li>
+			Protégez un maximum les cicatrices du soleil, pendant les 6 à 12 mois qui suivent le geste.
+			Ainsi, vous éviterez une pigmentation potentiellement inesthétique de celles-ci. Le port de
+			verres solaires peut ainsi avantageusement couvrir les paupières, tout comme l'application de
+			crème solaire.
+		</li>
+		<li>
+			Mieux vaut arrêter de fumer avant une chirurgie de paupière. La cicatrisation de la peau est,
+			en effet, moins bonne en cas de tabagisme actif.
+		</li>
+		<li>Les points de suture sont généralement retirés une semaine après le geste chirurgical.</li>
+		<li>
+			Une rougeur persistante, des douleurs importantes ou un écoulement purulent peuvent traduire
+			une infection du site opératoire. Mieux vaut, dès lors, nous consulter en urgence.
+		</li>
+		<li>
+			Pour éviter les frottements intempestifs sur la cicatrice, en particulier dans les 7 jours qui
+			suivent le bloc opératoire, vous pouvez porter une coque de protection nocturne, en plastique
+			rigide.
+		</li>
+		<li>
+			Une chirurgie palpébrale n'occasionne, dans les conditions normales, pas de baisse de l'acuité
+			visuelle. Si ce symptôme survient, mieux vaut consulter en urgence votre ophtalmologiste.
+		</li>
+	</ul>
 </Section>

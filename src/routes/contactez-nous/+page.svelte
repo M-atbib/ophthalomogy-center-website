@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Button, Section, Text, Title } from '$lib';
+	import { Button, Card, Map, Section, Text, Title } from '$lib';
 	import { ContactHero } from '$lib/assets';
+	import { contactItems } from '$lib/content';
 
 	const contactParagraphs = [
 		"Ce formulaire permet de contacter l'équipe du [Nom de Clinique] uniquement pour les motifs suivants. Aucune réponse ne sera apportée concernant une demande sortant de ce champ.",
@@ -30,7 +31,7 @@
 		<div class="space-y-10">
 			<div class="m-b8">
 				<Text variant="eyebrow" tone="cta">contact clinique</Text>
-				<Title level="h2" class="max-w-4xl text-pretty mb-3">
+				<Title level="h2" class="mb-3 max-w-4xl text-pretty">
 					Nous traiterons votre demande avec toute l'attention nécessaire
 				</Title>
 				<Text tone="muted" class="max-w-2xl text-pretty">
@@ -54,11 +55,8 @@
 			</div>
 		</div>
 
-		<form
-			class="border-light-grey/60 rounded-xl border bg-white p-8 shadow-sm "
-			novalidate
-		>
-			<div class="flex flex-col gap-2 mb-6">
+		<form class="border-light-grey/60 rounded-xl border bg-white p-8 shadow-sm" novalidate>
+			<div class="mb-6 flex flex-col gap-2">
 				<label
 					for="contact-reason"
 					class="text-secondary text-sm font-semibold uppercase tracking-[0.2em]"
@@ -80,7 +78,7 @@
 				</div>
 			</div>
 
-			<div class="grid gap-5 sm:grid-cols-2  mb-6">
+			<div class="mb-6 grid gap-5 sm:grid-cols-2">
 				<div class="flex flex-col gap-2">
 					<label
 						for="first-name"
@@ -115,7 +113,7 @@
 				</div>
 			</div>
 
-			<div class="grid gap-5 sm:grid-cols-2  mb-6">
+			<div class="mb-6 grid gap-5 sm:grid-cols-2">
 				<div class="flex flex-col gap-2">
 					<label
 						for="birth-date"
@@ -149,7 +147,7 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col gap-2  mb-6">
+			<div class="mb-6 flex flex-col gap-2">
 				<label
 					for="message"
 					class="text-secondary text-sm font-semibold uppercase tracking-[0.2em]"
@@ -174,5 +172,36 @@
 				</Text>
 			</div>
 		</form>
+	</div>
+</Section>
+
+<Section spacing="comfortable" width="wide">
+	<div class="flex flex-col gap-10 lg:flex-row lg:items-start">
+		<div class="space-y-6 lg:w-5/12">
+			<Text variant="eyebrow" tone="cta">Visitez notre clinique</Text>
+			<Title level="h3" class="text-pretty">Nous sommes là pour vous aider à mieux voir</Title>
+
+			<Card variant="surface" class="space-y-5">
+				{#each contactItems as { icon: Icon, title, lines, link } (title)}
+					<div class="space-y-3">
+						<div class="flex gap-2">
+							<Icon class="size-5" />
+							<p class="text-primary font-semibold">{title}</p>
+						</div>
+						{#each lines as line (line)}
+							{#if link}
+								<a href={link} class="text-secondary block underline underline-offset-4">{line}</a>
+							{:else}
+								<p class="text-secondary">{line}</p>
+							{/if}
+						{/each}
+					</div>
+				{/each}
+			</Card>
+		</div>
+
+		<div class="w-full lg:flex-1">
+			<Map title="Localisation de la clinique" />
+		</div>
 	</div>
 </Section>

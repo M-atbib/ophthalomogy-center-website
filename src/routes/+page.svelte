@@ -11,7 +11,7 @@
 </script>
 
 <!-- Section 1, hero -->
-<Section spacing="relaxed" contentSpacing="none" width="wide">
+<Section spacing="relaxed"  width="wide">
 	<div class="flex flex-col gap-10 lg:flex-row">
 		<div class="flex w-full flex-col gap-8 lg:w-1/2">
 			<div class="space-y-4">
@@ -55,7 +55,7 @@
 </Section>
 
 <!-- Section 2, À propos -->
-<Section variant="muted" spacing="comfortable" contentSpacing="lg" width="wide">
+<Section variant="muted" spacing="comfortable"  width="wide">
 	<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full overflow-hidden rounded-3xl border shadow-sm"
@@ -113,7 +113,7 @@
 </Section>
 
 <!-- Section 3, contact & map -->
-<Section spacing="comfortable" contentSpacing="lg" width="wide">
+<Section spacing="comfortable"  width="wide">
 	<div class="flex flex-col gap-10 lg:flex-row lg:items-start">
 		<div class="space-y-6 lg:w-5/12">
 			<Text variant="eyebrow" tone="cta">Visitez notre clinique</Text>
@@ -145,7 +145,7 @@
 </Section>
 
 <!-- Section 4, video -->
-<Section variant="muted" spacing="comfortable" align="center" contentSpacing="lg">
+<Section variant="muted" spacing="comfortable" align="center" >
 	<div class="space-y-3 text-center">
 		<Text variant="eyebrow" tone="cta" align="center">Le [Nom de Clinique] en vidéo</Text>
 		<Title level="h2" align="center">Découvrez nos espaces et notre équipe</Title>
@@ -167,7 +167,7 @@
 </Section>
 
 <!-- Section 5, engagements -->
-<Section spacing="comfortable" contentSpacing="lg">
+<Section spacing="comfortable" >
 	<div class="space-y-3 text-center">
 		<Text variant="eyebrow" tone="cta" align="center">Nos engagements</Text>
 		<Title level="h2" align="center">Exigence médicale &amp; attention humaine</Title>
@@ -191,7 +191,7 @@
 	</div>
 </Section>
 
-<Section variant="muted" spacing="comfortable" contentSpacing="lg" width="wide">
+<Section variant="muted" spacing="comfortable"  width="wide">
 	<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
 		<figure
 			class="border-light-grey/60 bg-primary-background max-w-2xl overflow-hidden rounded-3xl border shadow-sm"
@@ -243,7 +243,7 @@
 <!-- Section 6, urgences & professionnels -->
 
 <!-- Section 7, final CTA -->
-<Section align="center" spacing="comfortable" contentSpacing="lg">
+<Section align="center" spacing="comfortable" >
 	<div class="space-y-6">
 		<Title level="h2" align="center" class="text-pretty">
 			Pour toute question, prenez rendez-vous ou appelez-nous au

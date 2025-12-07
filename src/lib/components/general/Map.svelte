@@ -9,11 +9,13 @@
 	let { title = 'Localisation de Dr. Amal Alouan' }: MapProps = $props();
 </script>
 
-<div class="relative w-full overflow-hidden rounded-[28px] border border-light-grey/60 bg-primary-background shadow-md">
-	<div class="relative aspect-[4/5] w-full sm:aspect-[4/3] lg:aspect-video">
+<div
+	class="border-light-grey/60 bg-primary-background relative w-ful h-ull overflow-hidden rounded-lg border shadow-md"
+>
+	<div class="aspect-4/5 sm:aspect-4/3 relative w-full lg:aspect-video">
 		<iframe
-			title={title}
-			src={src}
+			{title}
+			{src}
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			allowfullscreen
