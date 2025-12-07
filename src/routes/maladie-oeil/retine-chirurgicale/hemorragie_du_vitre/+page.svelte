@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
+	import { Section, Title, Text, Button } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 </script>
 
