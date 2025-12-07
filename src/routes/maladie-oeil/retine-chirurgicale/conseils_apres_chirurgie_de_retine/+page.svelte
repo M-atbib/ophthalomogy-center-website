@@ -3,99 +3,99 @@
 	import { ArrowLeft } from '@lucide/svelte';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable">
 	<Button variant="ghost" href="/maladie-oeil/retine-chirurgicale" class="w-fit">
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="[&>*+*]:mt-4">
+	<div class="my-10">
 		<Title level="h1">Conseils après chirurgie de rétine</Title>
-		<Text>
-			Vous venez d’être opéré(e) par vitrectomie ? Voici les recommandations partagées par l’équipe du
-			[Nom de Clinique].
-		</Text>
 	</div>
-</Section>
 
-<Section spacing="comfortable">
-	<div class="[&>*+*]:mt-8">
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Pansement et repos</Title>
-			<Text>
-				Le pansement posé en salle d’opération doit être conservé uniquement le jour de
-				l’intervention. Retirez-le le lendemain matin ; si celui-ci se détache pendant la nuit, ce n’est
-				pas grave. L’œil peut ensuite rester à l’air libre.
-			</Text>
-			<TextWithCorners>Reposez-vous les jours qui suivent la chirurgie.</TextWithCorners>
-			<Text>Évitez durant cette période :</Text>
-			<ul class="list-disc [&>li+li]:mt-2 pl-5">
-				<li>Les environnements sales ;</li>
-				<li>Le bricolage, le port de charges lourdes ou le jardinage ;</li>
-				<li>La piscine ou toute immersion de la tête ;</li>
-				<li>Les activités à risque de traumatisme oculaire.</li>
-			</ul>
-		</div>
+	<Title class="mt-10" level="h2">Y-a-t-il un pansement à porter ?</Title>
+	<Text>
+		Votre pansement oculaire doit être gardé uniquement le jour de l'intervention. <br />Vous sortez
+		du bloc opératoire et de l'établissement avec un pansement sur l'oeil opéré. Celui-ci a été
+		réalisé dans des conditions stériles, à la fin de l'intervention. Vous pourrez le retirer dès le
+		lendemain matin et n'aurez plus à en remettre par la suite. Votre oeil peut rester à l'air
+		libre.  D'ailleurs, si le pansement venait à se détacher quelques heures après votre retour à
+		domicile, pas de panique : vous pouvez aussi passer la première nuit sans pansement.
+	</Text>
 
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Traitements post-opératoires</Title>
-			<Text>
-				Instillez les collyres prescrits tous les jours en respectant l’ordre, les doses et les durées
-				inscrites sur l’ordonnance remise avant l’intervention.
-			</Text>
-		</div>
+	<Title class="mt-10" level="h2">Vous devez vous reposer les jours suivant l'intervention.</Title>
 
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Signes attendus</Title>
-			<Text>Les manifestations suivantes sont fréquentes et ne doivent pas vous inquiéter :</Text>
-			<ul class="list-disc [&>li+li]:mt-2 pl-5">
-				<li>Vision imparfaite ou floue ;</li>
-				<li>Sensation de grain de sable sous la paupière ;</li>
-				<li>Larmoiement inhabituel ;</li>
-				<li>Rougeur modérée ;</li>
-				<li>Légères douleurs superficielles.</li>
-			</ul>
-		</div>
+	<Text>Il faut éviter :</Text>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>De vous rendre dans des endroits sales ;</li>
+		<li>De bricoler, porter des charges lourdes, jardiner... ;</li>
+		<li>De mettre votre tête dans l'eau, aller à la piscine... ;</li>
+		<li>De pratiquer une activité physique à risque de traumatisme oculaire.</li>
+	</ul>
 
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Quand consulter en urgence ?</Title>
-			<ul class="list-disc [&>li+li]:mt-2 pl-5">
-				<li>Baisse de vision rapide ;</li>
-				<li>Éclairs lumineux ;</li>
-				<li>Voile persistant ou nouvelles mouches volantes ;</li>
-				<li>Rougeur diffuse et marquée ;</li>
-				<li>Douleurs importantes.</li>
-			</ul>
-			<TextWithCorners>
-				En cas de symptôme inquiétant, contactez notre standard (05 37 810 828) ou présentez-vous dans
-				l’un de nos cabinets. En dehors des horaires d’ouverture, appelez l’établissement où vous avez été
-				opéré(e) : une astreinte est assurée.
-			</TextWithCorners>
-		</div>
+	<Title class="mt-10" level="h2">Y-a-t-il des traitements à instiller ?</Title>
+	<Text>
+		Des collyres post-opératoires sont à instiller tous les jours. <br />
+		Une ordonnance vous a été transmise à la fin de la consultation pré-opératoire, pour vous permettre
+		d'aller chercher vos collyres à la pharmacie. Nous vous invitons à bien respecter l'ordre, les doses
+		et les durées de traitement inscrites sur l'ordonnance.
+	</Text>
 
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Si un gaz a été injecté</Title>
-			<Text>
-				Le gaz altère temporairement la transmission de la lumière : la vision reste donc très basse
-				jusqu’à sa résorption, ce qui est normal.
-			</Text>
-			<TextWithCorners>
-				Tant qu’il subsiste du gaz, ne prenez pas l’avion et évitez les séjours en altitude. Les variations
-				de pression modifieraient son volume avec des conséquences potentiellement graves.
-			</TextWithCorners>
-		</div>
+	<Title level="h2">Quels sont les signes qui ne doivent pas vous inquiéter ?</Title>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>Vision imparfaite, trouble ;</li>
+		<li>Sensation de grain de sable sous la paupière ;</li>
+		<li>Larmoiement inhabituel de l'oeil opéré;</li>
+		<li>Rougeur oculaire modérée ;</li>
+		<li>Douleurs superficielles si elles sont modérées.</li>
+	</ul>
 
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Positionnement post-opératoire</Title>
-			<Text>
-				Selon la pathologie ou la présence d’un gaz/huile de silicone, votre chirurgien peut vous
-				demander d’adopter une position spécifique : côté droit, côté gauche, assis/debout ou regard vers le
-				bas, parfois en alternance.
-			</Text>
-			<TextWithCorners>
-				Le respect strict de la position et de sa durée est essentiel pour optimiser la récupération
-				anatomique et visuelle.
-			</TextWithCorners>
-		</div>
-	</div>
+	<Title class="mt-10" level="h2"
+		>Quels sont les signes qui doivent vous amener à nous consulter en urgence ?</Title
+	>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>Baisse de vision rapide ;</li>
+		<li>Éclairs lumineux ;</li>
+		<li>Sensation de voile persistante, apparition de mouches volantes ;</li>
+		<li>Rougeur oculaire prononcée ;</li>
+		<li>Douleurs oculaires importantes.</li>
+	</ul>
+	<Text>
+		Si vous présentez un de ces symptômes, nous vous invitons à appeler notre standard (05 37 810
+		828) en journée et en semaine. Sinon, vous pouvez également vous rendre dans l'un de nos
+		cabinets, sans rendez-vous. En dehors de nos horaires d'ouverture, appelez l'établissement
+		(Clinique ou Centre Hospitalier) dans lequel vous avez été opéré(e). Les chirurgiens du [Nom de
+		Clinique] organisent des astreintes pour s'occuper de leurs patients dans ce type de situation.
+	</Text>
+	<Title class="mt-10" level="h2">En cas d'injection de gaz pendant l'intervention</Title>
+	<TextWithCorners>
+		Le gaz altère le passage de l'information lumineuse. Votre vision sera très basse tant que le
+		gaz ne s'est pas résorbé naturellement. C'est un phénomène tout à fait normal, qui ne doit pas
+		vous inquiéter.
+	</TextWithCorners>
+	<Text>
+		Tant que persiste du gaz à l'intérieur, il est formellement contre-indiqué de prendre l'avion ou
+		de séjourner en altitude. En effet, les modifications de pression atmosphérique modifient le
+		volume occupé par le gaz. Ce phénomène peut avoir des conséquences extrêmement graves pour votre
+		oeil.
+	</Text>
+
+	<Title class="mt-10" level="h2"
+		>Respectez le positionnement post-opératoire conseillé par votre chirurgien</Title
+	>
+	<Text>
+		Dans certaines indications, lorsque du gaz ou de l'huile de silicone sont injectés, ou même si
+		ce n'est pas le cas, votre chirurgien vitréo-rétinien vous demandera de respecter une position
+		post-opératoire, qui pourra être :
+	</Text>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>Sur le côté droit ;;</li>
+		<li>Sur le côté gauche ;</li>
+		<li>Assis / debout ;</li>
+		<li>Regard vers le bas ;</li>
+	</ul>
+	<TextWithCorners>
+		Le respect de la position et de sa durée est essentiel à votre récupération anatomique et
+		visuelle. Ainsi, vous mettez toutes les chances de votre côté !
+	</TextWithCorners>
 </Section>

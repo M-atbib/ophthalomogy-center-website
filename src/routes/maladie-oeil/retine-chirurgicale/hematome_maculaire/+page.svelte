@@ -1,87 +1,130 @@
 <script lang="ts">
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
-	import { RetineChirurgicalePageNineIlluOne } from '$lib/assets';
+	import { RetineChirurgicalePageEightIlluOne } from '$lib/assets';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable">
 	<Button variant="ghost" href="/maladie-oeil/retine-chirurgicale" class="w-fit">
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="flex flex-col gap-8 lg:flex-row lg:items-center">
-		<div class="[&>*+*]:mt-4 lg:w-7/12">
-			<Title level="h1">Hématome maculaire</Title>
-			<Text>
-				La macula est le centre de la rétine, zone en forme d’entonnoir où se concentrent les
-				photorecepteurs responsables de la vision fine. Un hématome maculaire correspond à une collection
-				de sang sous cette région centrale.
-			</Text>
-		</div>
-		<figure
-			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-xl overflow-hidden rounded-md border shadow-sm"
-		>
-			<img
-				src={RetineChirurgicalePageNineIlluOne}
-				alt="Illustration d'un hématome sous-maculaire"
-				class="h-full w-full object-cover"
-			/>
-		</figure>
+	<div class="my-10">
+		<Title level="h1">Hématome maculaire</Title>
 	</div>
-</Section>
 
-<Section spacing="comfortable">
-	<div class="[&>*+*]:mt-8">
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Causes principales</Title>
-			<TextWithCorners>La DMLA exsudative est la première cause d’hématome maculaire.</TextWithCorners>
-			<Text>
-				Un néo-vaisseau se développe sous la rétine et peut saigner brutalement. D’autres étiologies sont
-				possibles : traumatisme sévère, malformation vasculaire (anévrisme…).
-			</Text>
-		</div>
+	<Title class="mt-10" level="h2">La macula</Title>
+	<Text>
+		La rétine est une fine pellicule qui tapisse la partie postérieure de l'oeil. Elle est composée
+		de 10 couches permettant de recevoir, traiter et transmettre l'information visuelle au cerveau
+		via le nerf optique.  <br />
+		La rétine est en rapport :
+	</Text>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>En avant, avec le vitré (la poche de gel transparent qui remplit le globe oculaire)</li>
+		<li>
+			En arrière, elle repose sur la choroïde qui est un tissu vasculaire. Plus en arrière se situe
+			la sclére qui est le tissu fibreux permettant la rigidité du globe oculaire.
+		</li>
+	</ul>
+	<Text>
+		La rétine est, schématiquement, une structure plane et homogène sur l’ensemble de sa surface ;
+		la principale exception est la macula et, en son centre, la fovéa, qui décrit une dépression en
+		forme d’entonnoir. C'est au sein de cette zone que se situent la plupart des cellules permettant
+		d'avoir une vision nette. La vision peut être altérée, plus ou moins gravement, si cette forme
+		d'entonnoir n’est plus respectée.
+	</Text>
 
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Symptômes</Title>
-			<ul class="list-disc [&>li+li]:mt-2 pl-5">
-				<li>Baisse de vision profonde et soudaine ;</li>
-				<li>Scotome central (tache sombre) apparu brutalement, généralement sur un seul œil.</li>
-			</ul>
-			<TextWithCorners>Consultez en urgence si vous présentez ces signes.</TextWithCorners>
-		</div>
+	<Title level="h2">Qu'est ce qu'un hématome maculaire ?</Title>
+	<Text>
+		Un hématome maculaire est une collection de sang, qui se forme sous la rétine. Plus précisément,
+		c'est le centre de la rétine (la macula) qui est atteint.
+	</Text>
+	<figure class=" mx-auto w-full max-w-lg">
+		<img
+			src={RetineChirurgicalePageEightIlluOne}
+			alt="Illustration d'un hématome sous-maculaire"
+			class="h-full w-full object-cover"
+		/>
+	</figure>
 
-		<div class="[&>*+*]:mt-4">
-			<Title level="h2">Prise en charge</Title>
-			<Text>
-				La stratégie dépend de l’ampleur de l’hématome, de l’âge et de la cause. Plusieurs options peuvent
-				être combinées :
-			</Text>
-			<Title level="sub2">Traiter la cause</Title>
-			<Text>
-				En cas de DMLA, des injections intra-vitréennes d’anti-VEGF sont initiées rapidement pour faire
-				régresser le néo-vaisseau. Pour certaines lésions vasculaires, une photocoagulation laser peut être
-				discutée.
-			</Text>
-			<Title level="sub2">Surveillance simple</Title>
-			<Text>
-				Lorsque l’hématome est traumatique et susceptible de se résorber spontanément, ou lorsqu’il est
-				trop ancien/important pour espérer récupérer, une observation peut être privilégiée.
-			</Text>
-			<Title level="sub2">Injections intra-vitréennes</Title>
-			<Text>
-				Outre les anti-VEGF, le rt-PA peut être injecté au contact de l’hématome pour dissoudre le caillot.
-				L’association à un gaz expansif permet parfois de déplacer le sang.
-			</Text>
-			<Title level="sub2">Chirurgie</Title>
-			<Text>
-				Elle consiste à pratiquer une vitrectomie, injecter du rt-PA sous-rétinien puis un gaz intra-oculaire
-				pour mobiliser l’hématome. Un positionnement post-opératoire spécifique est ensuite requis.
-			</Text>
-			<Text>
-				Les indications chirurgicales répondent à des critères anatomiques précis et sont discutées au cas par
-				cas.
-			</Text>
-		</div>
-	</div>
+	<Title class="mt-10" level="h2">Causes et facteurs de risque de survenue</Title>
+
+	<TextWithCorners
+		>La première cause d'hématome maculaire est la Dégénérescence Maculaire Liée à l'Âge (DMLA).</TextWithCorners
+	>
+
+	<Text>
+		Dans le cas d'une DMLA exsudative, un néo-vaisseau se développe sous la rétine. Le plus souvent,
+		il va générer une exsudation et la formation d'un oedème dans la région maculaire. <br />
+		Mais parfois, il se manifeste brutalement par l'apparition d'un hématome. Dans de rares cas, cet hématome
+		peut être révélateur de la maladie. <br />
+		Il existe également d'autres causes d'hématome maculaire :
+	</Text>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>Les traumatismes oculaires sévères ;</li>
+		<li>Certaines malformations vasculaires, comme les anévrismes ;</li>
+	</ul>
+
+	<Title class="mt-10" level="h2">Symptômes d'un hématome maculaire</Title>
+	<Text>Deux signes cliniques dominent le tableau :</Text>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>Baisse de vision profonde et soudaine ;</li>
+		<li>Scotome central (tache sombre) apparu brutalement, généralement sur un seul œil.</li>
+	</ul>
+
+	<Text>
+		Ils apparaissent brutalement, sur l'un des deux yeux.  <br />
+		Si vous (ou l'un de vos proches) présentez ces symptômes, nous vous recommandons de consulter en
+		urgence votre ophtalmologiste.
+	</Text>
+
+	<Title level="sub2">Traitement</Title>
+	<Text>
+		Il existe plusieurs stratégies thérapeutiques différentes, selon l'importance de l'hématome,
+		l'âge de la personne atteinte ou la maladie responsable de l'hématome.
+	</Text>
+	<Title level="sub2">Traitement de la cause</Title>
+	<Text>
+		La priorité est de traiter la pathologie responsable de l'hématome. <br />
+		Dans le cas d'une DMLA, il sera nécessaire de débuter rapidement un traitement par injections intra-vitréennes d'anti-VEGF,
+		afin d'entraîner la régression du néo-vaisseau choroïdien responsable. <br />
+		Dans le cadre d'une lésion vasculaire (anévrysme), une photocoagulation au laser Argon peut être
+		discutée.
+	</Text>
+	<Title level="sub2">Surveillance simple</Title>
+	<Text>
+		Parfois, la situation clinique n'impose pas de prise en charge particulière, soit parce que
+		l'hématome va se résorber spontanément (cas des traumatismes), soit parce que l'hématome est
+		trop ancien ou trop important pour qu'une récupération visuelle soit envisageable.
+	</Text>
+	<Title level="sub2">Injections intravitréennes</Title>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>Plusieurs produits sont utiles dans une telle situation :</li>
+		<li>
+			Les anti-VEGFs, déjà mentionnés, pour leur efficacité contre les néo-vaisseaux anormaux ;
+		</li>
+		<li>
+			Le rt-PA, molécule capable de "dissoudre" un caillot de sang. Si elle est précisément injectée
+			sur le site de l'hématome, elle peut permettre de l'étaler au maximum, évitant une dégradation
+			locale potentiellement délétère pour les photorécepteurs maculaires, indispensables à une
+			bonne vision ;
+		</li>
+		<li>Un gaz expansif, qui permet de déplacer l'hématome.</li>
+	</ul>
+
+	<Title level="sub2">Chirurgie</Title>
+	<Text>La chirurgie, lorsqu'elle est réalisée, consiste à :</Text>
+	<ul class="list-disc pl-5 [&>li+li]:mt-2">
+		<li>Réaliser une vitrectomie (ablation du gel vitréen) ;</li>
+		<li>Injecter sous la rétine du rt-PA, pour "dissoudre" le caillot de sang ;</li>
+		<li>Injecter du gaz dans la cavité oculaire pour déplacer l'hématome.</li>
+	</ul>
+	<Text>
+		Après la chirurgie vous devrez maintenir une position quelques jours que vous conseillera votre
+		chirurgien. <br />
+		Les indications chirurgicales dépendent de critères anatomiques précis. Votre chirurgien vous les
+		exposera évidemment avant tout geste invasif.
+	</Text>
 </Section>
