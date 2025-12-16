@@ -3,7 +3,7 @@
 	import { AdressingPatientHero, AdressingPatientIllustration } from '$lib/assets';
 </script>
 
-<Section spacing="comfortable" contentSpacing="none" width="wide">
+<Section spacing="comfortable" width="wide">
 	<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
 		<div class="space-y-6 lg:w-6/12">
 			<Title level="h1" class="text-pretty">Nous adresser un patient</Title>
@@ -27,7 +27,7 @@
 	</div>
 </Section>
 
-<Section spacing="tight" contentSpacing="lg" width="wide">
+<Section spacing="tight" width="wide">
 	<div class="space-y-4">
 		<Title level="h3" class="text-pretty" tone="cta">A qui s'adresse ce service ?</Title>
 		<Text tone="muted" class="text-pretty">
@@ -46,8 +46,8 @@
 	<div>
 		<Title level="h3" class="text-pretty" tone="cta">Modalités d'accès</Title>
 		<Text tone="muted" class="text-pretty">
-			Les spécialistes en ophtalmologie du [Nom de Clinique] sont accessibles pour les autres
-			professionnels de santé via SOS selon 3 moyens
+			Nos spécialistes en ophtalmologie sont accessibles pour les autres professionnels de santé via
+			SOS selon 3 moyens
 		</Text>
 		<ul class="text-secondary list-disc space-y-2 pl-5">
 			<li>Numéro de téléphone unique</li>

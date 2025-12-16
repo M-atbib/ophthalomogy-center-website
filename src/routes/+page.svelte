@@ -19,7 +19,7 @@
 					Le centre de référence en OPHTALMOLOGIE proche de chez vous
 				</Title>
 				<Text variant="body-lg" tone="muted" class="max-w-2xl text-pretty">
-					[Nom de Clinique] renouvelle votre correction optique (lunettes, lentilles), prend en
+					Nous renouvellons votre correction optique (lunettes, lentilles), prend en
 					charge toutes vos pathologies médicales (DMLA, glaucome, diabète...) et chirurgicales
 					(cataracte, rétine, chirurgie des paupières et des voies lacrymales, greffes, chirurgie
 					réfractive, laser…).
@@ -72,7 +72,7 @@
 			<Text variant="eyebrow" tone="cta">À propos [Clinic Name]</Text>
 			<Title level="h3" class="text-pretty">Soins oculaires experts, personnalisés pour vous</Title>
 			<Text tone="muted" class="text-pretty">
-				Chez [Nom de Clinique], nous croyons que tout le monde mérite une vision claire et saine.
+				Nous croyons que tout le monde mérite une vision claire et saine.
 				Notre clinique rassemble une équipe d'ophtalmologistes et de spécialistes des soins
 				oculaires certifiés, dévoués à la précision, à la compassion et à l'innovation.
 			</Text>
@@ -88,7 +88,7 @@
 			<Text variant="eyebrow" tone="cta">Traitement disponible</Text>
 			<Title level="h3" class="text-pretty">Des protocoles adaptés à chaque pathologie</Title>
 			<Text tone="muted" class="text-pretty">
-				Chez [Nom de clinique], nous proposons des traitements avancés et personnalisés pour un
+				Nous proposons des traitements avancés et personnalisés pour un
 				large éventail de pathologies oculaires. Nous utilisons une technologie de pointe pour
 				diagnostiquer et prendre en charge les maladies oculaires, vous aidant ainsi à préserver et
 				à améliorer votre vision.
@@ -147,7 +147,7 @@
 <!-- Section 4, video -->
 <Section variant="muted" spacing="comfortable" align="center" >
 	<div class="space-y-3 text-center">
-		<Text variant="eyebrow" tone="cta" align="center">Le [Nom de Clinique] en vidéo</Text>
+		<Text variant="eyebrow" tone="cta" align="center">Notre cabinet en vidéo</Text>
 		<Title level="h2" align="center">Découvrez nos espaces et notre équipe</Title>
 	</div>
 
@@ -220,7 +220,7 @@
 		<div class="space-y-5">
 			<Title level="h3" class="text-pretty">Vous êtes un professionnel ?</Title>
 			<Text tone="muted" class="text-pretty">
-				Le [Nom de Clinique] reçoit des patients à la demande de tout professionnel de santé
+				Nous recevons des patients à la demande de tout professionnel de santé
 			</Text>
 			<Button variant="ghost" tone="cta" href="/addresser-patient" class="group w-fit">
 				Nous adresser un patient

@@ -3,7 +3,7 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	type SectionVariant = 'default' | 'muted' | 'contrast' | 'dark';
-	type SectionSpacing = 'tight' | 'comfortable' | 'relaxed';
+	type SectionSpacing = 'tight' | 'comfortable' | 'relaxed' | 'none';
 	type SectionWidth = 'default' | 'wide' | 'full';
 	type DividerOption = 'none' | 'top' | 'bottom' | 'both';
 	type SectionAlign = 'left' | 'center';
@@ -43,7 +43,8 @@
 	const spacingClasses: Record<SectionSpacing, string> = {
 		tight: 'py-10 sm:py-12 lg:py-14',
 		comfortable: 'py-12 sm:py-20 lg:py-24',
-		relaxed: 'py-14 sm:py-28 lg:py-32'
+		relaxed: 'py-14 sm:py-28 lg:py-32',
+		none: 'p-0'
 	};
 
 	const dividerClasses: Record<DividerOption, string> = {

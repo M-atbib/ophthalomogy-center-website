@@ -17,20 +17,22 @@
 	};
 </script>
 
-<Section spacing="relaxed" width="wide" contentSpacing="lg">
-	<Button variant="ghost" tone="cta" href="/actualites" class="group w-fit">
+<Section spacing="none" width="wide">
+	<Button variant="ghost" tone="cta" href="/actualites" class="group w-fit p-0">
 		<MoveLeft class="size-4 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
 		Retour aux actualités
 	</Button>
+</Section>
 
-	<div class="space-y-4">
+<Section spacing="tight" width="wide">
+	<div>
 		<Text variant="eyebrow" tone="cta">Actualité</Text>
 		<Title level="h1" class="text-pretty">{article.title}</Title>
 		{#if article.subtitle}
-			<Text weight="medium" class="text-pretty">{article.subtitle}</Text>
+			<Title level="sub1" weight="medium" class="text-pretty">{article.subtitle}</Title>
 		{/if}
 
-		<Card variant="muted" class="flex flex-wrap gap-4 text-sm sm:text-base">
+		<Card variant="muted" class="my-6 flex flex-wrap gap-4 text-sm sm:text-base">
 			{#if formatDate(article.publishedAt)}
 				<Text variant="body-sm" tone="muted">
 					Publié le {formatDate(article.publishedAt)}
@@ -41,24 +43,29 @@
 	</div>
 
 	{#if article.imageUrl}
-		<figure class="border-light-grey/60 overflow-hidden rounded-3xl border bg-primary-background">
+		<figure class="border-light-grey/60 bg-primary-background overflow-hidden rounded-3xl border mb-8">
 			<img
 				src={article.imageUrl}
 				alt={article.imageAlt ?? article.title}
-				class="h-full w-full object-cover"
+				class="h-96 w-full object-cover"
 				loading="lazy"
 			/>
 		</figure>
 	{/if}
 
-	<div class="prose prose-lg prose-headings:text-primary prose-p:text-primary prose-strong:text-primary prose-a:text-cta text-primary max-w-none">
+	<div
+		class="prose prose-lg prose-p:m-0 prose-h1:m-0 prose-h2:m-0 prose-h3:m-0 prose-h4:m-0 prose-h5:m-0 prose-h6:m-0 prose-headings:text-primary prose-p:text-primary prose-strong:text-primary prose-a:text-cta text-primary max-w-none"
+	>
 		<PortableText value={article.article} />
 	</div>
 
-	<Card variant="surface" class="items-start gap-4 sm:flex-row sm:items-center">
+
+	<Card variant="surface" class="items-start gap-4 sm:flex-row sm:items-center mt-8">
 		<div class="space-y-1">
 			<Text variant="eyebrow" tone="cta">Besoin d'un avis ?</Text>
-			<Title level="sub3" class="text-pretty">Notre équipe est disponible pour répondre à vos questions.</Title>
+			<Title level="sub3" class="text-pretty">
+				Notre équipe est disponible pour répondre à vos questions.
+			</Title>
 		</div>
 		<Button tone="cta" variant="solid" href="/contactez-nous" class="ml-auto">
 			Prendre rendez-vous

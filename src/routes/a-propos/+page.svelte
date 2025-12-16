@@ -3,34 +3,34 @@
 	import { AboutHero, AboutPicOne, AboutPicTwo } from '$lib/assets';
 </script>
 
-<Section spacing="comfortable" contentSpacing="none" width="wide">
+<Section spacing="comfortable" width="wide">
 	<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
 		<div class="space-y-6 lg:w-5/12">
-			<Title level="h1" class="text-pretty">
-				À Propos de [Nom de Clinique] : Excellence en Ophtalmologie
-			</Title>
+			<Title level="h1" class="text-pretty">À Propos de nous : Excellence en Ophtalmologie</Title>
 			<Text variant="body-lg" tone="muted" class="text-pretty">
 				Au bloc opératoire ou dans nos cabinets, nous mettons quotidiennement tout en œuvre pour
 				vous offrir une prise en charge performante et de haut niveau.
 			</Text>
 		</div>
 		<figure
-			class="border-light-grey/60 bg-primary-background mx-auto w-full overflow-hidden rounded-4xl border shadow-sm lg:w-7/12"
+			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-7/12"
 		>
 			<img src={AboutHero} alt="" class="h-full w-full object-cover" loading="lazy" />
 		</figure>
 	</div>
 </Section>
 
-<Section variant="muted" spacing="comfortable" contentSpacing="lg" width="wide">
+<Section variant="muted" spacing="comfortable" width="wide">
 	<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
 		<div class="space-y-6">
 			<Text variant="eyebrow" tone="cta">Nos missions sont claires</Text>
 			<div class="space-y-5">
-				<Title level="sub1" class="text-pretty">Prendre en charge toutes les maladies oculaires</Title>
+				<Title level="sub1" class="text-pretty">
+					Prendre en charge toutes les maladies oculaires
+				</Title>
 				<Text tone="muted" class="text-pretty">
-					Sur le plan médical, [Nom de Clinique] possède du matériel de dernière génération. Ceci
-					permet aux médecins de réaliser un ensemble très diversifié d’examens et de soins, alliant
+					Sur le plan médical, nous possèdons du matériel de dernière génération. Ceci permet aux
+					médecins de réaliser un ensemble très diversifié d’examens et de soins, alliant
 					compétences et modernité
 				</Text>
 			</div>
@@ -43,14 +43,16 @@
 				</Text>
 			</div>
 		</div>
-		<figure class="border-light-grey/60 bg-primary-background mx-auto w-full overflow-hidden rounded-4xl border shadow-sm">
+		<figure
+			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm"
+		>
 			<img src={AboutPicOne} alt="" class="h-full w-full object-cover" loading="lazy" />
 		</figure>
 	</div>
 
 	<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
 		<figure
-			class="border-light-grey/60 bg-primary-background mx-auto w-full overflow-hidden rounded-4xl border shadow-sm"
+			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm"
 		>
 			<img src={AboutPicTwo} alt="" class="h-full w-full object-cover" loading="lazy" />
 		</figure>
@@ -66,7 +68,7 @@
 	</div>
 </Section>
 
-<Section align="center" spacing="comfortable" contentSpacing="lg">
+<Section align="center" spacing="comfortable">
 	<div class="mx-auto max-w-2xl space-y-6 text-center">
 		<Title level="h2" align="center" class="text-pretty">Venez nous rencontrer !</Title>
 		<Button

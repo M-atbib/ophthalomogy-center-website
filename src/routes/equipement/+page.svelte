@@ -55,16 +55,15 @@
 	}));
 </script>
 
-<Section spacing="comfortable" contentSpacing="none" width="wide">
+<Section spacing="comfortable" width="wide">
 	<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
 		<div class="space-y-6 lg:w-5/12">
 			<Title level="h1" class="text-pretty">Nos équipements</Title>
 			<Text variant="body-lg" tone="muted" class="text-pretty">
-				L'Ophtalmologie est une spécialité extrêmement pointue et exigeante. Au [Nom de Clinique],
-				nos spécialistes sont rompus aux technologies ophtalmologiques de pointe et nous
-				investissons en permanence dans l'acquisition des équipements les plus récents, dans tous
-				les domaines de notre spécialité. Avec, toujours, un seul objectif : vous proposer des soins
-				de qualité.
+				L'Ophtalmologie est une spécialité extrêmement pointue et exigeante. Nous sommes rompus aux
+				technologies ophtalmologiques de pointe et nous investissons en permanence dans
+				l'acquisition des équipements les plus récents, dans tous les domaines de notre spécialité.
+				Avec, toujours, un seul objectif : vous proposer des soins de qualité.
 			</Text>
 		</div>
 		<figure
@@ -75,7 +74,7 @@
 	</div>
 </Section>
 
-<Section variant="muted" spacing="comfortable" contentSpacing="lg" width="wide">
+<Section variant="muted" spacing="comfortable" width="wide">
 	<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
 		<div class="space-y-8">
 			<div class="space-y-4">
@@ -136,7 +135,7 @@
 	</div>
 </Section>
 
-<Section spacing="comfortable" contentSpacing="lg" width="wide">
+<Section spacing="comfortable" width="wide">
 	<Title level="h2" class="text-pretty" align="center">{secondSection.title}</Title>
 
 	<div class="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
