@@ -17,52 +17,59 @@
 	};
 </script>
 
-<Section spacing="relaxed" width="wide" contentSpacing="lg">
-	<Button variant="ghost" tone="cta" href="/actualites" class="group w-fit">
-		<MoveLeft class="size-4 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
-		Retour aux actualités
-	</Button>
+<Section spacing="tight">
+	<div class="mx-auto max-w-7xl">
+		<Button variant="ghost" tone="cta" href="/actualites" class="group mb-8 w-fit p-0">
+			<MoveLeft class="size-4 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
+			Retour aux actualités
+		</Button>
 
-	<div class="space-y-4">
 		<Text variant="eyebrow" tone="cta">Actualité</Text>
 		<Title level="h1" class="text-pretty">{article.title}</Title>
 		{#if article.subtitle}
-			<Text weight="medium" class="text-pretty">{article.subtitle}</Text>
+			<Title level="sub1" weight="medium" class="text-pretty">{article.subtitle}</Title>
 		{/if}
 
-		<Card variant="muted" class="flex flex-wrap gap-4 text-sm sm:text-base">
+		<div class="my-6 flex flex-wrap items-center gap-4">
 			{#if formatDate(article.publishedAt)}
 				<Text variant="body-sm" tone="muted">
 					Publié le {formatDate(article.publishedAt)}
 				</Text>
+				<span class="text-light-grey/60" aria-hidden="true">&bull;</span>
 			{/if}
 			<Text variant="body-sm" tone="muted">Durée de lecture : 3 min</Text>
+		</div>
+
+		{#if article.imageUrl}
+			<figure
+				class="bg-primary-background border-light-grey/60 mb-10 overflow-hidden rounded-3xl border"
+			>
+				<img
+					src={article.imageUrl}
+					alt={article.imageAlt ?? article.title}
+					class="aspect-video w-full object-cover"
+					loading="lazy"
+				/>
+			</figure>
+		{/if}
+
+		<div
+			class="prose prose-lg prose-headings:text-primary prose-p:text-primary prose-strong:text-primary prose-a:text-cta text-primary max-w-7xl"
+		>
+			<PortableText value={article.article} />
+		</div>
+
+		<Card variant="surface" class="mt-12 items-start gap-4 sm:flex-row sm:items-center">
+			<div class="space-y-1">
+				<Text variant="eyebrow" tone="cta">Besoin d'un avis ?</Text>
+				<Title level="sub3" class="text-pretty">
+					Notre équipe est disponible pour répondre à vos questions.
+				</Title>
+			</div>
+			<Button tone="cta" variant="solid" href="/contactez-nous" class="ml-auto">
+				Prendre rendez-vous
+				<MoveRight class="size-4" aria-hidden="true" />
+			</Button>
 		</Card>
 	</div>
-
-	{#if article.imageUrl}
-		<figure class="border-light-grey/60 overflow-hidden rounded-3xl border bg-primary-background">
-			<img
-				src={article.imageUrl}
-				alt={article.imageAlt ?? article.title}
-				class="h-full w-full object-cover"
-				loading="lazy"
-			/>
-		</figure>
-	{/if}
-
-	<div class="prose prose-lg prose-headings:text-primary prose-p:text-primary prose-strong:text-primary prose-a:text-cta text-primary max-w-none">
-		<PortableText value={article.article} />
-	</div>
-
-	<Card variant="surface" class="items-start gap-4 sm:flex-row sm:items-center">
-		<div class="space-y-1">
-			<Text variant="eyebrow" tone="cta">Besoin d'un avis ?</Text>
-			<Title level="sub3" class="text-pretty">Notre équipe est disponible pour répondre à vos questions.</Title>
-		</div>
-		<Button tone="cta" variant="solid" href="/contactez-nous" class="ml-auto">
-			Prendre rendez-vous
-			<MoveRight class="size-4" aria-hidden="true" />
-		</Button>
-	</Card>
 </Section>

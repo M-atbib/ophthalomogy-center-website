@@ -3,7 +3,7 @@
 	import { UrgenceHero } from '$lib/assets';
 </script>
 
-<Section spacing="comfortable" contentSpacing="none" width="wide">
+<Section spacing="comfortable" width="wide">
 	<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
 		<div class="space-y-6 lg:w-5/12">
 			<Title level="h1" class="text-pretty">Urgences</Title>
@@ -11,7 +11,7 @@
 				Vous présentez un problème ophtalmologique urgent ?<br />
 				dr vous reçoivent tous les jours et mettent tout en œuvre pour vous garantir une prise en charge
 				dans les meilleures conditions, organisationnelles et matérielles. <br />
-				Le [Nom de Clinique] s'engage pour une meilleure santé oculaire.
+				Nous s'engageons pour une meilleure santé oculaire.
 			</Text>
 		</div>
 		<figure
@@ -27,13 +27,13 @@
 	</div>
 </Section>
 
-<Section spacing="comfortable" contentSpacing="lg" width="wide">
+<Section spacing="comfortable" width="wide">
 	<div class="space-y-4">
 		<Title level="h3" class="text-pretty" tone="cta">
-			Le [Nom de Clinique] : un centre d'urgences ophtalmologiques
+			Notre centre d'urgences ophtalmologiques
 		</Title>
 		<Text tone="muted" class="text-pretty">
-			Le [Nom de Clinique] accueille depuis plus de 10 ans les patients présentant des urgences
+			Nous accueillons depuis plus de 10 ans les patients présentant des urgences
 			ophtalmologiques. Que vous ayez un problème grave ou non, une pathologie médicale ou
 			chirurgicale, nos médecins sauront vous prendre en charge, quel que soit votre âge, grâce à
 			une organisation performante et à du matériel dédié.

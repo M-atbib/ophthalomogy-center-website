@@ -16,11 +16,11 @@
 
 	<div>
 		<Title level="h1">Les différents implants</Title>
-		<Text class="mt-4">
+		<Text >
 			Lors de la chirurgie de la cataracte, le cristallin opacifié est toujours remplacé par un
 			implant intra-oculaire adapté à vos besoins visuels.
 		</Text>
-		<Text class="mt-4">
+		<Text >
 			Plusieurs familles d'implants existent : votre ophtalmologiste choisit celui qui convient à
 			votre œil, à votre amétropie et à vos attentes après l'intervention.
 		</Text>
@@ -39,7 +39,7 @@
 	</TextWithCorners>
 
 	<Title level="h2">Les différents types d'implants</Title>
-	<Text class="mt-4">
+	<Text >
 		Chaque famille d'implants répond à un besoin optique précis : correction de la myopie, de
 		l'astigmatisme, de la presbytie ou conservation d'une vision intermédiaire. Les paragraphes
 		ci-dessous détaillent les caractéristiques principales.
@@ -96,7 +96,7 @@
 		<li>Formes et systèmes de fixation multiples ;</li>
 		<li>Matériaux spécifiques à chaque fabricant.</li>
 	</ul>
-	<Text class="mt-4">
+	<Text >
 		Le choix de l'implant repose sur vos habitudes de vie, votre amétropie, d'éventuelles maladies
 		opulaires ainsi que vos attentes. Tous les modèles ne conviennent pas à tous les patients.
 	</Text>
@@ -106,7 +106,7 @@
 	</TextWithCorners>
 
 	<Title class="mt-10" level="h2">Port de lunettes après la chirurgie</Title>
-	<Title class="mt-4" level="sub2">Vision de loin</Title>
+	<Title  level="sub2">Vision de loin</Title>
 	<Text class="mt-3">
 		Dans la majorité des cas, la puissance résiduelle des lunettes est minimale après la chirurgie.
 		Cependant, des imprécisions de biométrie peuvent imposer une correction légère dans certains
@@ -120,7 +120,7 @@
 	</Text>
 
 	<Title class="mt-10" level="h2">Durée de vie et matériau</Title>
-	<Text class="mt-4">
+	<Text >
 		L'implant reste stable dans le sac cristallinien : vous ne le sentirez pas et il n'a pas à être
 		replacé.
 	</Text>
@@ -137,7 +137,7 @@
 		/>
 	</figure>
 
-	<Text class="mt-4">
+	<Text >
 		Les implants sont fabriqués à partir de matériaux plastiques spécifiquement formulés par chaque
 		constructeur pour garantir longévité, souplesse et excellente tolérance aux milieux
 		intra-oculaires.

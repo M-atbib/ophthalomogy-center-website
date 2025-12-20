@@ -11,7 +11,7 @@
 </script>
 
 <!-- Section 1, hero -->
-<Section spacing="relaxed" contentSpacing="none" width="wide">
+<Section spacing="relaxed"  width="wide">
 	<div class="flex flex-col gap-10 lg:flex-row">
 		<div class="flex w-full flex-col gap-8 lg:w-1/2">
 			<div class="space-y-4">
@@ -19,7 +19,7 @@
 					Le centre de référence en OPHTALMOLOGIE proche de chez vous
 				</Title>
 				<Text variant="body-lg" tone="muted" class="max-w-2xl text-pretty">
-					[Nom de Clinique] renouvelle votre correction optique (lunettes, lentilles), prend en
+					On renouvelle votre correction optique (lunettes, lentilles), prend en
 					charge toutes vos pathologies médicales (DMLA, glaucome, diabète...) et chirurgicales
 					(cataracte, rétine, chirurgie des paupières et des voies lacrymales, greffes, chirurgie
 					réfractive, laser…).
@@ -55,7 +55,7 @@
 </Section>
 
 <!-- Section 2, À propos -->
-<Section variant="muted" spacing="comfortable" contentSpacing="lg" width="wide">
+<Section variant="muted" spacing="comfortable"  width="wide">
 	<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full overflow-hidden rounded-3xl border shadow-sm"
@@ -72,8 +72,8 @@
 			<Text variant="eyebrow" tone="cta">À propos [Clinic Name]</Text>
 			<Title level="h3" class="text-pretty">Soins oculaires experts, personnalisés pour vous</Title>
 			<Text tone="muted" class="text-pretty">
-				Chez [Nom de Clinique], nous croyons que tout le monde mérite une vision claire et saine.
-				Notre clinique rassemble une équipe d'ophtalmologistes et de spécialistes des soins
+				Nous croyons que tout le monde mérite une vision claire et saine.
+				Notre centre rassemble une équipe de spécialistes des soins
 				oculaires certifiés, dévoués à la précision, à la compassion et à l'innovation.
 			</Text>
 			<Button variant="ghost" tone="cta" href="/a-propos" class="group w-fit">
@@ -88,7 +88,7 @@
 			<Text variant="eyebrow" tone="cta">Traitement disponible</Text>
 			<Title level="h3" class="text-pretty">Des protocoles adaptés à chaque pathologie</Title>
 			<Text tone="muted" class="text-pretty">
-				Chez [Nom de clinique], nous proposons des traitements avancés et personnalisés pour un
+				Nous proposons des traitements avancés et personnalisés pour un
 				large éventail de pathologies oculaires. Nous utilisons une technologie de pointe pour
 				diagnostiquer et prendre en charge les maladies oculaires, vous aidant ainsi à préserver et
 				à améliorer votre vision.
@@ -113,7 +113,7 @@
 </Section>
 
 <!-- Section 3, contact & map -->
-<Section spacing="comfortable" contentSpacing="lg" width="wide">
+<Section spacing="comfortable"  width="wide">
 	<div class="flex flex-col gap-10 lg:flex-row lg:items-start">
 		<div class="space-y-6 lg:w-5/12">
 			<Text variant="eyebrow" tone="cta">Visitez notre clinique</Text>
@@ -145,9 +145,9 @@
 </Section>
 
 <!-- Section 4, video -->
-<Section variant="muted" spacing="comfortable" align="center" contentSpacing="lg">
+<Section variant="muted" spacing="comfortable" align="center" >
 	<div class="space-y-3 text-center">
-		<Text variant="eyebrow" tone="cta" align="center">Le [Nom de Clinique] en vidéo</Text>
+		<Text variant="eyebrow" tone="cta" align="center">Notre cabinet en vidéo</Text>
 		<Title level="h2" align="center">Découvrez nos espaces et notre équipe</Title>
 	</div>
 
@@ -167,7 +167,7 @@
 </Section>
 
 <!-- Section 5, engagements -->
-<Section spacing="comfortable" contentSpacing="lg">
+<Section spacing="comfortable" >
 	<div class="space-y-3 text-center">
 		<Text variant="eyebrow" tone="cta" align="center">Nos engagements</Text>
 		<Title level="h2" align="center">Exigence médicale &amp; attention humaine</Title>
@@ -191,7 +191,7 @@
 	</div>
 </Section>
 
-<Section variant="muted" spacing="comfortable" contentSpacing="lg" width="wide">
+<Section variant="muted" spacing="comfortable"  width="wide">
 	<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
 		<figure
 			class="border-light-grey/60 bg-primary-background max-w-2xl overflow-hidden rounded-3xl border shadow-sm"
@@ -220,7 +220,7 @@
 		<div class="space-y-5">
 			<Title level="h3" class="text-pretty">Vous êtes un professionnel ?</Title>
 			<Text tone="muted" class="text-pretty">
-				Le [Nom de Clinique] reçoit des patients à la demande de tout professionnel de santé
+				Nous recevons des patients à la demande de tout professionnel de santé
 			</Text>
 			<Button variant="ghost" tone="cta" href="/addresser-patient" class="group w-fit">
 				Nous adresser un patient
@@ -243,7 +243,7 @@
 <!-- Section 6, urgences & professionnels -->
 
 <!-- Section 7, final CTA -->
-<Section align="center" spacing="comfortable" contentSpacing="lg">
+<Section align="center" spacing="comfortable" >
 	<div class="space-y-6">
 		<Title level="h2" align="center" class="text-pretty">
 			Pour toute question, prenez rendez-vous ou appelez-nous au
