@@ -16,13 +16,13 @@
 	};
 </script>
 
-<Section spacing="relaxed" width="wide" contentSpacing="lg">
-	<div class="mx-auto max-w-4xl space-y-5 text-center">
+<Section spacing="tight" width="wide">
+	<div class="mx-auto mb-12 max-w-4xl space-y-5 text-center">
 		<Text variant="eyebrow" tone="cta" align="center">Actualités</Text>
-		<Title level="h1" align="center">Les dernières nouvelles du centre</Title>
+		<Title level="h1" align="center">Les dernières nouvelles en monde de l'ophtalmologie</Title>
 		<Text tone="muted" align="center" class="text-pretty">
-			Restez informé sur nos prises en charge, les nouveautés technologiques et les conseils de
-			nos spécialistes.
+			Restez informé sur nos prises en charge, les nouveautés technologiques et les conseils de nos
+			spécialistes.
 		</Text>
 	</div>
 
@@ -36,7 +36,7 @@
 			<Button variant="solid" tone="cta" href="/contactez-nous">Nous contacter</Button>
 		</Card>
 	{:else}
-		<div class="grid gap-8 md:grid-cols-2">
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 			{#each articles as article (article.id)}
 				<a href={`/actualites/${article.slug}`} class="block h-full">
 					<Card
@@ -46,40 +46,36 @@
 						interactive
 						class="h-full overflow-hidden"
 					>
-					{#if article.imageUrl}
-						<figure class="bg-primary-background">
-							<img
-								src={article.imageUrl}
-								alt={article.imageAlt ?? article.title}
-								class="h-60 w-full object-cover"
-								loading="lazy"
-							/>
-						</figure>
-					{/if}
+						{#if article.imageUrl}
+							<figure class="bg-primary-background">
+								<img
+									src={article.imageUrl}
+									alt={article.imageAlt ?? article.title}
+									class="h-60 w-full object-cover"
+									loading="lazy"
+								/>
+							</figure>
+						{/if}
 
-					<div class="flex h-full flex-col gap-4 p-6">
-						<div class="space-y-2">
-							{#if formatDate(article.publishedAt)}
-								<Text variant="caption" tone="muted">
-									{formatDate(article.publishedAt)}
-								</Text>
-							{/if}
-							<Text variant="eyebrow" tone="cta">Blog</Text>
-							<Title level="sub1" class="text-pretty">{article.title}</Title>
-							{#if article.subtitle}
+						<div class="flex h-full flex-col gap-4 p-6">
+							<div>
+								{#if formatDate(article.publishedAt)}
+									<Text variant="caption" tone="muted" class="mb-2 block">
+										{formatDate(article.publishedAt)}
+									</Text>
+								{/if}
+								<Text variant="eyebrow" tone="cta">Blog</Text>
+								<Title level="sub1" class="text-pretty">{article.title}</Title>
 								<Text weight="medium" class="text-pretty">{article.subtitle}</Text>
-							{/if}
-						</div>
+							</div>
 
-						<Text tone="muted" class="text-pretty">{article.briefing}</Text>
+							<!-- <Text tone="muted" class="text-pretty">{article.briefing}</Text> -->
 
-						<div class="mt-auto flex items-center justify-between gap-3 pt-4">
-							<Text variant="body-sm" tone="cta" weight="semibold">
-								Lire l'article
-							</Text>
-							<MoveRight class="size-5 text-cta" aria-hidden="true" />
+							<div class="mt-auto flex items-center justify-between gap-3 pt-4">
+								<Text variant="body-sm" tone="cta" weight="semibold">Lire l'article</Text>
+								<MoveRight class="text-cta size-5" aria-hidden="true" />
+							</div>
 						</div>
-					</div>
 					</Card>
 				</a>
 			{/each}

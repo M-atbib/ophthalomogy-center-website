@@ -3,46 +3,61 @@
 	import { ArrowLeft } from '@lucide/svelte';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
-	<Button variant="ghost" href="/maladie-oeil/chirurgie-et-medecine-esthetique-du-regard" class="w-fit">
+<Section width="wide" spacing="comfortable">
+	<Button
+		variant="ghost"
+		href="/maladie-oeil/chirurgie-et-medecine-esthetique-du-regard"
+		class="w-fit"
+	>
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="space-y-4">
-		<Title level="h1">Pourquoi choisir votre ophtalmologiste pour les soins esthétiques de votre visage ?</Title>
-		<Text>
-			Grâce à leur expertise chirurgicale, les ophtalmologistes sont des interlocuteurs privilégiés pour les
-			soins esthétiques péri-orbitaires. Ils peuvent concevoir un plan de traitement global, médical et chirurgical.
-		</Text>
-	</div>
-</Section>
+	<Title class="my-10" level="h1">
+		Pourquoi choisir votre ophtalmologiste pour les soins esthétiques de votre visage ?
+	</Title>
+	<Text>
+		L'ophtalmologiste, par son approche chirurgicale, est un interlocuteur de choix pour les soins
+		esthétiques du visage. Même si cette compétence est peu connue du grand public, n'hésitez pas à
+		venir rencontrer notre équipe de spécialistes. Ils répondront à toutes vos questions et sauront
+		vous guider pour faire les meilleurs choix.
+	</Text>
 
-<Section spacing="comfortable">
-	<div class="space-y-8">
-		<TextWithCorners>Ils maîtrisent l’anatomie fine de la région orbitaire et savent gérer les complications oculaires.</TextWithCorners>
-		<div class="space-y-4">
-			<Title level="h2">Prise en charge des complications</Title>
-			<Text>
-				Les traitements péri-oculaires (comblement, toxine, blépharoplastie…) peuvent exceptionnellement toucher l’œil.
-				L’ophtalmologue anticipe ces risques et dispose des compétences pour les traiter.
-			</Text>
-		</div>
+	<Title class="mt-10" level="h2">L'ophtalmologiste : un spécialiste de la région orbitaire.</Title>
+	<Text>
+		Grâce à ses compétences chirurgicales, il est  le spécialiste de la région péri-orbitaire, de
+		son anatomie et de ses subtilités. Il peut donc vous apporter son expertise fine, pour votre
+		visage dans sa globalité et vous proposer un plan de traitement esthétique complet, à la fois
+		médical et chirurgical.
+	</Text>
 
-		<div class="space-y-4">
-			<Title level="h2">Compétence microchirurgicale</Title>
-			<Text>
-				L’Ophtalmologie est la spécialité microchirurgicale par excellence : rigueur et minutie acquises au bloc
-				cataracte se transposent aux gestes esthétiques.
-			</Text>
-		</div>
+	<Title class="mt-10" level="h2"
+		>Il sera le seul capable de prendre en charge d'éventuelles complications ou troubles oculaires
+		associés.</Title
+	>
+	<Text>
+		Les traitements péri-oculaires (acide hyaluronique, toxine
+		botulique, blépharoplastie...) peuvent s'accompagner, dans de très rares cas, de complications
+		touchant les yeux à proprement parler. L'ophtalmologue sera très attentif à cette éventualité et
+		mettra tout en oeuvre pour éviter que ces incidents ne surviennent.
+	</Text>
+	<Text>Le cas échéant, vous êtes entre de bonnes mains pour leur prise en charge.</Text>
 
-		<div class="space-y-4">
-			<Title level="h2">Toxine botulique : une longue expérience</Title>
-			<Text>
-				Les ophtalmologistes utilisent la toxine botulique depuis les années 1970 et font partie des spécialités
-				autorisées à l’injecter à visée esthétique.
-			</Text>
-		</div>
-	</div>
+	<Title class="mt-10" level="h2"
+		>L'Ophtalmologie est la spécialité micro-chirurgicale par excellence.</Title
+	>
+	<Text>
+		L'ophtalmologiste est formé aux techniques de chirurgie micro-invasives, au premier desquelles
+		figure la chirurgie de cataracte. Rigueur et minutie sont les maîtres-mots pour la pratique de
+		la chirurgie oculaire.
+	</Text>
+
+	<Title class="mt-10" level="h2"
+		>Les ophtalmologistes utilisent la toxine botulique depuis très longtemps.</Title
+	>
+	<Text>
+		Le premier médecin à avoir injecté de la toxine botulique au niveau du visage était d'ailleurs
+		un ophtalmologiste.  L'Ophtalmologie fait partie des spécialités ayant obtenu l’autorisation
+		d’injecter de la toxine botulique à visée esthétique (Autorisation de Mise sur le Marché).
+	</Text>
 </Section>
