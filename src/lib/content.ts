@@ -171,7 +171,7 @@ export const listEyeDiseases = [
 		content: [
 			"Les actes opératoires concernant la partie postérieure de l'oeil sont assurés par des chirurgiens vitréo-rétiniens.",
 			'Les maladies traitées et les interventions peuvent toucher le vitré (hémorragie intra-vitréenne, corps flottants...), la rétine périphérique (décollement de rétine, déchirures...) ou la macula (trou maculaire, membrane épi-rétinienne...). La plupart de ces maladies peuvent entraîner une baisse de vision sévère. Certaines nécessitent une prise en charge en urgence.',
-			"Les interventions plus complexes (luxation d'implant ou de cristallin, traumatismes lourds, corps étranger intra-oculaire...) font l'objet d'un véritable savoir-faire de l'équipe des rétinologues du [Nom de Clinique]."
+			"Les interventions plus complexes (luxation d'implant ou de cristallin, traumatismes lourds, corps étranger intra-oculaire...) font l'objet d'un véritable savoir-faire de l'équipe des rétinologues."
 		],
 		questions: [
 			{
@@ -492,7 +492,7 @@ export const listEyeDiseases = [
 		href: '/maladie-oeil/urgences-et-infections',
 		content: [
 			'Les urgences ophtalmologiques concernent de nombreuses maladies oculaires. Souvent bénignes et gênantes, mais parfois graves, voire cécitantes, il est important de ne pas les minimiser ou les méconnaître.',
-			"En cas de douleur, de rougeur oculaire, de baisse de vue brutale, de vision double, ou si vous suspectez la présence d'un corps étranger oculaire, [Nom de Clinique] vous recevra dans les meilleurs délais et mettra tout en œuvre pour préserver votre bonne santé visuelle.",
+			"En cas de douleur, de rougeur oculaire, de baisse de vue brutale, de vision double, ou si vous suspectez la présence d'un corps étranger oculaire, on vous recevra dans les meilleurs délais et mettra tout en œuvre pour préserver votre bonne santé visuelle.",
 			"Pour savoir comment rencontrer nos ophtalmologues en urgence, rendez-vous sur notre page dédiée aux modalités de consultations d'urgences ophtalmologiques."
 		],
 		questions: [
@@ -677,7 +677,7 @@ export const ourEngagements = [
 export const equipement = {
 	firstSection: {
 		title: 'Équipements dédiés à la chirurgie',
-		text: "Le [Nom de Clinique] est une équipe ophtalmologique orientée vers la chirurgie de l'oeil. Pour permettre les actes chirurgicaux les plus complexes, nous avon équipé nos blocs opératoires des dernières technologies.",
+		text: "On est une équipe ophtalmologique orientée vers la chirurgie de l'oeil. Pour permettre les actes chirurgicaux les plus complexes, nous avon équipé nos blocs opératoires des dernières technologies.",
 		subTitle: 'Phacoémulsificateur, vitréotome',
 		subText:
 			"La plupart des interventions ophtalmologiques sont des chirurgies dites 'endoculaires'. Elles nécessitent l'utilisation d'instruments de micro-chirurgie, dont la précision est extrême.",
@@ -842,7 +842,7 @@ export const equipement = {
 			{
 				image: EquipementEighteen,
 				title: 'Instruments de microchirurgie',
-				text: 'L’équipe du [Nom de Clinique] dispose des meilleurs équipements pour réaliser vos interventions. Le matériel au bloc opératoire est très diversifié et adapté à chaque situation chirurgicale.'
+				text: 'On dispose des meilleurs équipements pour réaliser vos interventions. Le matériel au bloc opératoire est très diversifié et adapté à chaque situation chirurgicale.'
 			},
 			{
 				image: EquipementNineteen,

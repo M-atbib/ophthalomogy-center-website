@@ -35,7 +35,7 @@
 		/>
 	</figure>
 	<TextWithCorners class="mt-6">
-		Au [Nom de Clinique], le choix de l'implant est toujours personnalisé.
+		Le choix de l'implant est toujours personnalisé.
 	</TextWithCorners>
 
 	<Title level="h2">Les différents types d'implants</Title>
