@@ -69,7 +69,7 @@
 		</figure>
 
 		<div class="space-y-5">
-			<Text variant="eyebrow" tone="cta">À propos [Clinic Name]</Text>
+			<Text variant="eyebrow" tone="cta">À propos de nous</Text>
 			<Title level="h3" class="text-pretty">Soins oculaires experts, personnalisés pour vous</Title>
 			<Text tone="muted" class="text-pretty">
 				Nous croyons que tout le monde mérite une vision claire et saine.
@@ -119,9 +119,9 @@
 			<Text variant="eyebrow" tone="cta">Visitez notre clinique</Text>
 			<Title level="h3" class="text-pretty">Nous sommes là pour vous aider à mieux voir</Title>
 
-			<Card variant="surface" class="space-y-5">
+			<Card variant="surface" >
 				{#each contactItems as { icon: Icon, title, lines, link } (title)}
-					<div class="space-y-3">
+					<div class="space-y-2.5">
 						<div class="flex gap-2">
 							<Icon class="size-5" />
 							<p class="text-primary font-semibold">{title}</p>
