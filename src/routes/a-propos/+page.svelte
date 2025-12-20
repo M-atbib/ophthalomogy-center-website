@@ -57,8 +57,7 @@
 			<Title level="sub1" class="text-pretty">Une seule ambition : le bien de nos patients</Title>
 			<Text tone="muted" class="text-pretty">
 				On assiste ces dernières années à une augmentation des besoins en soins ophtalmologiques
-				(vieillissement de la population, DMLA, diabète, épidémie de myopie…). C’est pourquoi [Nom
-				de la Clinique] se renouvelle sans cesse : modes de consultations innovant , compétences
+				(vieillissement de la population, DMLA, diabète, épidémie de myopie…). C’est pourquoi on se renouvelle sans cesse : modes de consultations innovant , compétences
 				techniques à la pointe du progrès médical avec un souci profond d'humanité.
 			</Text>
 		</div>

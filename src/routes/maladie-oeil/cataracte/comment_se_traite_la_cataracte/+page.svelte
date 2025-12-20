@@ -4,7 +4,7 @@
 	import { ArrowLeft } from '@lucide/svelte';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable" >
 	<Button variant="ghost" href="/maladie-oeil/cataracte" class="w-fit">
 		<ArrowLeft />
 		Retour
@@ -24,7 +24,7 @@
 			</Text>
 		</div>
 		<figure
-			class="mx-auto w-full max-w-2xl overflow-hidden rounded-md border border-light-grey/60 bg-primary-background shadow-sm"
+			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-2xl overflow-hidden rounded-md border shadow-sm"
 		>
 			<img
 				src={CataractePageTwoHero}
@@ -35,7 +35,7 @@
 	</div>
 </Section>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable" >
 	<Title level="h2">Qu'appelle-t-on « cristallin » ?</Title>
 	<Text class="mt-4">
 		Le cristallin a la forme d’une lentille. Son enveloppe externe, très fine, est appelée sac
@@ -107,14 +107,14 @@
 		les douleurs post-opératoires ainsi que les risques infectieux.
 	</Text>
 	<TextWithCorners class="mt-6">
-		Les chirurgiens du [Nom de Clinique] sont des experts de la cataracte : tout est mis en œuvre
-		pour garantir une procédure rapide, indolore et sécurisée.
+		Les chirurgiens sont des experts de la cataracte : tout est mis en œuvre pour garantir une
+		procédure rapide, indolore et sécurisée.
 	</TextWithCorners>
 
 	<Title class="mt-10" level="h2">La chirurgie de cataracte peut-elle se faire au laser ?</Title>
 	<Text class="mt-4">
-		Le [Nom de Clinique] dispose de la technologie « femto-cataracte », permettant de réaliser
-		certaines étapes (incisions, découpe de la capsule antérieure) au laser.
+		On dispose de la technologie « femto-cataracte », permettant de réaliser certaines étapes
+		(incisions, découpe de la capsule antérieure) au laser.
 	</Text>
 	<Text class="mt-4">
 		Cette technique reste moins courante en raison du surcoût du matériel, et ses résultats sont
