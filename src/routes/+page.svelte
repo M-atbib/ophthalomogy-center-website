@@ -145,7 +145,7 @@
 </Section>
 
 <!-- Section 4, video -->
-<Section variant="muted" spacing="comfortable" align="center" >
+<!-- <Section variant="muted" spacing="comfortable" align="center" >
 	<div class="space-y-3 text-center">
 		<Text variant="eyebrow" tone="cta" align="center">Notre cabinet en vidéo</Text>
 		<Title level="h2" align="center">Découvrez nos espaces et notre équipe</Title>
@@ -164,7 +164,7 @@
 			</video>
 		</div>
 	</div>
-</Section>
+</Section> -->
 
 <!-- Section 5, engagements -->
 <Section spacing="comfortable" >
