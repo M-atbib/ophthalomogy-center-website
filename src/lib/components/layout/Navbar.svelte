@@ -36,34 +36,34 @@
 			dropdownItems: [
 				{ label: 'A propos', href: '/a-propos' },
 				{ label: 'Equipement', href: '/equipement' },
-				{ label: 'Actualités', href: '/actualites' },
 				{ label: 'Urgences', href: '/urgences' },
 				{ label: 'Nous adresser un patient', href: '/adresser-patient' }
 			]
 		},
-		{
-			id: 'eye-diseases',
-			label: "Les maladies de l'oeil",
-			dropdown: true,
-			dropdownItems: diseaseDropdownItems
-		},
-		{
-			id: 'conseils',
-			label: 'Les conseils de votre ophtalmo',
-			dropdown: true,
-			dropdownItems: [
-				{ label: 'Les conseils de votre ophtalmo', href: '/conseils' },
-				{ label: 'Conseils thérapeutiques', href: '/conseils/conseils-therapeutiques' },
-				{
-					label: 'Conseils lunettes et lentilles',
-					href: '/conseils/conseils-lunettes-et-lentilles'
-				},
-				{
-					label: 'Conseils après soins et chirurgie oculaire',
-					href: '/conseils/conseils-apres-soins-et-chirurgie-oculaire'
-				}
-			]
-		},
+		{ id: 'news', label: 'Actualités', href: '/actualites', dropdown: false },
+		// {
+		// 	id: 'eye-diseases',
+		// 	label: "Les maladies de l'oeil",
+		// 	dropdown: true,
+		// 	dropdownItems: diseaseDropdownItems
+		// },
+		// {
+		// 	id: 'conseils',
+		// 	label: 'Les conseils de votre ophtalmo',
+		// 	dropdown: true,
+		// 	dropdownItems: [
+		// 		{ label: 'Les conseils de votre ophtalmo', href: '/conseils' },
+		// 		{ label: 'Conseils thérapeutiques', href: '/conseils/conseils-therapeutiques' },
+		// 		{
+		// 			label: 'Conseils lunettes et lentilles',
+		// 			href: '/conseils/conseils-lunettes-et-lentilles'
+		// 		},
+		// 		{
+		// 			label: 'Conseils après soins et chirurgie oculaire',
+		// 			href: '/conseils/conseils-apres-soins-et-chirurgie-oculaire'
+		// 		}
+		// 	]
+		// },
 		{
 			id: 'contact',
 			label: 'Contactez-nous',
@@ -127,7 +127,7 @@
 </script>
 
 <nav
-	class="border-light-grey bg-primary-background mx-auto my-8 w-[85%] rounded-xl border shadow-sm"
+	class="border-light-grey bg-primary-background sticky top-8 z-30 mx-auto my-8 w-[85%] rounded-xl border shadow-sm"
 >
 	<div class="mx-auto flex items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
 		<a class="inline-flex items-center gap-3" href="/" aria-label="Aller à l'accueil">

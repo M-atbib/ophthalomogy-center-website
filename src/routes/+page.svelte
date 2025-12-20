@@ -19,7 +19,7 @@
 					Le centre de référence en OPHTALMOLOGIE proche de chez vous
 				</Title>
 				<Text variant="body-lg" tone="muted" class="max-w-2xl text-pretty">
-					Nous renouvellons votre correction optique (lunettes, lentilles), prend en
+					On renouvelle votre correction optique (lunettes, lentilles), prend en
 					charge toutes vos pathologies médicales (DMLA, glaucome, diabète...) et chirurgicales
 					(cataracte, rétine, chirurgie des paupières et des voies lacrymales, greffes, chirurgie
 					réfractive, laser…).
@@ -73,7 +73,7 @@
 			<Title level="h3" class="text-pretty">Soins oculaires experts, personnalisés pour vous</Title>
 			<Text tone="muted" class="text-pretty">
 				Nous croyons que tout le monde mérite une vision claire et saine.
-				Notre clinique rassemble une équipe d'ophtalmologistes et de spécialistes des soins
+				Notre centre rassemble une équipe de spécialistes des soins
 				oculaires certifiés, dévoués à la précision, à la compassion et à l'innovation.
 			</Text>
 			<Button variant="ghost" tone="cta" href="/a-propos" class="group w-fit">

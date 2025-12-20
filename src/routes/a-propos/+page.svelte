@@ -7,13 +7,10 @@
 	<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
 		<div class="space-y-6 lg:w-5/12">
 			<Title level="h1" class="text-pretty">À Propos de nous : Excellence en Ophtalmologie</Title>
-			<Text variant="body-lg" tone="muted" class="text-pretty">
-				Au bloc opératoire ou dans nos cabinets, nous mettons quotidiennement tout en œuvre pour
-				vous offrir une prise en charge performante et de haut niveau.
-			</Text>
 		</div>
 		<figure
-			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-7/12"
+			class="border-light-grey/60 bg-primary-background rounded-2xl mx-auto w-full overflow-hidden border shadow-sm lg:w-7/12
+			"
 		>
 			<img src={AboutHero} alt="" class="h-full w-full object-cover" loading="lazy" />
 		</figure>
@@ -29,7 +26,7 @@
 					Prendre en charge toutes les maladies oculaires
 				</Title>
 				<Text tone="muted" class="text-pretty">
-					Sur le plan médical, nous possèdons du matériel de dernière génération. Ceci permet aux
+					Sur le plan médical, on possède du matériel de dernière génération. Ceci permet aux
 					médecins de réaliser un ensemble très diversifié d’examens et de soins, alliant
 					compétences et modernité
 				</Text>
@@ -37,9 +34,9 @@
 			<div class="space-y-5">
 				<Title level="sub1" class="text-pretty">Vous opérer dans les meilleures conditions</Title>
 				<Text tone="muted" class="text-pretty">
-					Sur le plan chirurgical, nos praticiens, au vu de leur niveau de spécialisation, sont en
-					capacité de réaliser des chirurgies complexes et variées (cataracte, chirurgie
-					palpébrale, greffe de cornée, strabisme, glaucome, chirurgie rétinenne…).
+					Sur le plan chirurgical, on propose des chirurgies complexes et variées
+					(cataracte, chirurgie palpébrale, greffe de cornée, strabisme, glaucome, chirurgie
+					rétinenne…).
 				</Text>
 			</div>
 		</div>

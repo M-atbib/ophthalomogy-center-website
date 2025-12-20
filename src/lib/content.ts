@@ -683,15 +683,15 @@ export const equipement = {
 			"La plupart des interventions ophtalmologiques sont des chirurgies dites 'endoculaires'. Elles nécessitent l'utilisation d'instruments de micro-chirurgie, dont la précision est extrême.",
 		machineOne: 'Phacoémulsificateur',
 		machineOneText: [
-			"C'est l'appareil qui est utilisé pour la chirurgie de cataracte. Il permet d'aller délivrer, à l'intérieur du sac cristallinien, de l'énergie, sous la forme d'ultrasons, pour fragmenter les protéines du cristallin à aspirer. Par ailleurs, il injecte, en continu, de l'eau stérile à l'intérieur du globe oculaire, afin de maintenir sa forme et une pression suffisante tout au long de l'intervention.",
-			'Service utilisant le plus cet équipement :',
-			'Cataracte'
+			"C'est l'appareil qui est utilisé pour la chirurgie de cataracte. Il permet d'aller délivrer, à l'intérieur du sac cristallinien, de l'énergie, sous la forme d'ultrasons, pour fragmenter les protéines du cristallin à aspirer. Par ailleurs, il injecte, en continu, de l'eau stérile à l'intérieur du globe oculaire, afin de maintenir sa forme et une pression suffisante tout au long de l'intervention."
+			// 'Service utilisant le plus cet équipement :',
+			// 'Cataracte'
 		],
 		machineTwo: 'Vitréotome',
 		machineTwoText: [
-			"Cette machine est utilisée par les chirurgiens vitréo-rétiniens, par exemple pour la réalisation d'une vitrectomie ou d'une chirurgie de décollement de rétine. Comme le phacoémulsificateur, le vitréotome maintient le volume oculaire en y injectant de l'eau  stérile, à pression constante. Sa spécificité réside dans la découpe et l'aspiration du gel vitréen, dont la texture particulière nécessite une technologie de pointe.",
-			'Service utilisant le plus cet équipement :',
-			'Rétine chirurgicale'
+			"Cette machine est utilisée par les chirurgiens vitréo-rétiniens, par exemple pour la réalisation d'une vitrectomie ou d'une chirurgie de décollement de rétine. Comme le phacoémulsificateur, le vitréotome maintient le volume oculaire en y injectant de l'eau  stérile, à pression constante. Sa spécificité réside dans la découpe et l'aspiration du gel vitréen, dont la texture particulière nécessite une technologie de pointe."
+			// 'Service utilisant le plus cet équipement :',
+			// 'Rétine chirurgicale'
 		],
 		sectionImage: EquipementOne
 	},
@@ -733,49 +733,49 @@ export const equipement = {
 				image: EquipementSeven,
 				title: 'Topographe cornéen',
 				text: [
-					"Le topographe permet de mesurer de manière très précise l’épaisseur et les courbures de la cornée. Il permet de dépister des maladies comme le kératocône et recherche d'éventuelles contre-indications à la réalisation d'une chirurgie réfractive.",
-					'Services utilisant le plus cet équipement :',
-					'Kératocône',
-					'Lentilles - Contactologie',
-					'Chirurgie réfractive'
+					"Le topographe permet de mesurer de manière très précise l’épaisseur et les courbures de la cornée. Il permet de dépister des maladies comme le kératocône et recherche d'éventuelles contre-indications à la réalisation d'une chirurgie réfractive."
+					// 'Services utilisant le plus cet équipement :',
+					// 'Kératocône',
+					// 'Lentilles - Contactologie',
+					// 'Chirurgie réfractive'
 				]
 			},
 			{
 				image: EquipementEight,
 				title: 'OCT - Tomographie à Cohérence Optique',
 				text: [
-					"Cet appareil, apparu en 2005 dans les cabinets d'Ophtalmologie, constitue une avancée technologique majeure dans l'exploration de nombreuses pathologies oculaires, au premier desquelles la DMLA, les complications rétiniennes du diabète ou encore le glaucome. L'OCT est un examen d'imagerie réalisé dans le cadre d'une consultation. Il permet d'obtenir des clichés en coupe et d'explorer la rétine comme si elle était vue au microscope, dans toute son épaisseur. Des innovations constantes repoussent son champ d'utilisation, aussi bien pour l'analyse géométrique des régions antérieures de l'oeil (cornée, angle irido-cornéen, iris...) que pour la surveillance post-opératoire de nombreux patients.",
-					'Services utilisant le plus cet équipement :',
-					'Rétine médicale',
-					'Rétine chirurgicale',
-					'Glaucome'
+					"Cet appareil, apparu en 2005 dans les cabinets d'Ophtalmologie, constitue une avancée technologique majeure dans l'exploration de nombreuses pathologies oculaires, au premier desquelles la DMLA, les complications rétiniennes du diabète ou encore le glaucome. L'OCT est un examen d'imagerie réalisé dans le cadre d'une consultation. Il permet d'obtenir des clichés en coupe et d'explorer la rétine comme si elle était vue au microscope, dans toute son épaisseur. Des innovations constantes repoussent son champ d'utilisation, aussi bien pour l'analyse géométrique des régions antérieures de l'oeil (cornée, angle irido-cornéen, iris...) que pour la surveillance post-opératoire de nombreux patients."
+					// 'Services utilisant le plus cet équipement :',
+					// 'Rétine médicale',
+					// 'Rétine chirurgicale',
+					// 'Glaucome'
 				]
 			},
 			{
 				image: EquipementNine,
 				title: "Angiographie rétinienne (fluorescéinique, vert d'indocyanine)",
 				text: [
-					"Il s'agit, là encore, d'un examen d'imagerie de la rétine et, donc du fond d'oeil. Pour diagnostiquer certains troubles de la vascularisation, la présence d'une pathologie inflammatoire ou des complications oculaires du diabète, il est parfois nécessaire d'injecter un produit colorant dans votre circulation sanguine, via une perfusion intra-veineuse. Ce colorant va circuler jusqu'aux vaisseaux sanguins rétiniens et être observé grâce à l'angiographe. On peut alors détecter un défaut de perfusion sanguine (ischémie rétininenne, occlusion artérielle ou veineuse...), la présence de vaisseaux anormaux (néo-vaisseaux, membrane néo-vasculaire...) ou d'une inflammation (vascularite, choroïdite, rétinite...) et instaurer le traitement le plus adapté.",
-					'Service utilisant le plus cet équipement :',
-					'Rétine médicale'
+					"Il s'agit, là encore, d'un examen d'imagerie de la rétine et, donc du fond d'oeil. Pour diagnostiquer certains troubles de la vascularisation, la présence d'une pathologie inflammatoire ou des complications oculaires du diabète, il est parfois nécessaire d'injecter un produit colorant dans votre circulation sanguine, via une perfusion intra-veineuse. Ce colorant va circuler jusqu'aux vaisseaux sanguins rétiniens et être observé grâce à l'angiographe. On peut alors détecter un défaut de perfusion sanguine (ischémie rétininenne, occlusion artérielle ou veineuse...), la présence de vaisseaux anormaux (néo-vaisseaux, membrane néo-vasculaire...) ou d'une inflammation (vascularite, choroïdite, rétinite...) et instaurer le traitement le plus adapté."
+					// 'Service utilisant le plus cet équipement :',
+					// 'Rétine médicale'
 				]
 			},
 			{
 				image: EquipementTen,
 				title: 'Biométrie oculaire',
 				text: [
-					"Au cours d'une chirurgie de cataracte, le cristallin opacifié est remplacé par une lentille correctrice, placé à l'intérieur de votre oeil. La biométrie permet de calculer, avant l'intervention, la puissance optique de cette lentille. Ainsi, la lumière prendra la direction la plus précise jusqu'à votre rétine.",
-					'Service utilisant le plus cet équipement :',
-					'Cataracte'
+					"Au cours d'une chirurgie de cataracte, le cristallin opacifié est remplacé par une lentille correctrice, placé à l'intérieur de votre oeil. La biométrie permet de calculer, avant l'intervention, la puissance optique de cette lentille. Ainsi, la lumière prendra la direction la plus précise jusqu'à votre rétine."
+					// 'Service utilisant le plus cet équipement :',
+					// 'Cataracte'
 				]
 			},
 			{
 				image: EquipementEleven,
 				title: 'Champ visuel - Périmétrie oculaire',
 				text: [
-					"La réalisation d’une périmétrie sert à évaluer votre champ de vision. Cet examen permet de diagnostiquer et de suivre l'évolution de pathologies comme le glaucome. Son utilisation permet également un bilan de certaines affection neurologiques, comme c'est le cas après certaines formes d'AVC ou de sclérose en plaques. ",
-					'Service utilisant le plus cet équipement :',
-					'Glaucome'
+					"La réalisation d’une périmétrie sert à évaluer votre champ de vision. Cet examen permet de diagnostiquer et de suivre l'évolution de pathologies comme le glaucome. Son utilisation permet également un bilan de certaines affection neurologiques, comme c'est le cas après certaines formes d'AVC ou de sclérose en plaques. "
+					// 'Service utilisant le plus cet équipement :',
+					// 'Glaucome'
 				]
 			},
 			{
@@ -787,10 +787,10 @@ export const equipement = {
 				image: EquipementThirteen,
 				title: 'Rétinographe',
 				text: [
-					"C’est un équipement qui réalise des photographies de votre rétine, au fond de l'oeil. C'est outil indispensable au diagnostic des maladies rétiniennes. La surveillance d'une rétinopathie diabétique est l'exemple typique de son utilisation quotidienne, puisque la réalisation de clichés réguliers permet de suivre, dans la durée, l'apparition de nouvelles lésions et l'évolution des troubles.",
-					'Services utilisant le plus cet équipement :',
-					'Rétine médicale',
-					'Rétine  chirurgicale'
+					"C’est un équipement qui réalise des photographies de votre rétine, au fond de l'oeil. C'est outil indispensable au diagnostic des maladies rétiniennes. La surveillance d'une rétinopathie diabétique est l'exemple typique de son utilisation quotidienne, puisque la réalisation de clichés réguliers permet de suivre, dans la durée, l'apparition de nouvelles lésions et l'évolution des troubles."
+					// 'Services utilisant le plus cet équipement :',
+					// 'Rétine médicale',
+					// 'Rétine  chirurgicale'
 				]
 			},
 			{
@@ -801,42 +801,42 @@ export const equipement = {
 					"Lorsque la rétine n'est pas accessible à l'examen du fond d'oeil (en cas d'hémorragie intra-vitréenne ou de cataracte très dense), elle permet de s'assurer de l'absence de décollement de rétine.",
 					'Elle permet de réaliser une biométrie oculaire, lorsque le biomètre “classique“ est pris à défaut.',
 					"L'échographie est l'un des outils les plus performants pour le diagnostic des tumeurs oculaires",
-					"L'UBM (échographie très haute fréquence) permet d'explorer les structures antérieures de l'oeil, comme l'iris, l'angle irido-cornéen et les corps ciliaires. C'est un outil particulièrement apprécié des glaucomatologues.",
-					'Services utilisant le plus cet équipement :',
-					'Cataracte',
-					'Glaucome',
-					'Rétine chirurgicale'
+					"L'UBM (échographie très haute fréquence) permet d'explorer les structures antérieures de l'oeil, comme l'iris, l'angle irido-cornéen et les corps ciliaires. C'est un outil particulièrement apprécié des glaucomatologues."
+					// 'Services utilisant le plus cet équipement :',
+					// 'Cataracte',
+					// 'Glaucome',
+					// 'Rétine chirurgicale'
 				]
 			},
 			{
 				image: EquipementFifteen,
 				title: 'Laser YAG',
 				text: [
-					"Le laser YAG permet de découper la capsule à l’arrière de votre implant lorsque cette dernière s’est opacifiée, à la suite d’une chirurgie de cataracte. Il est également utilisé pour réaliser une iridotomie périphérique (trou dans l'iris), essentiellement sur les yeux à risque de glaucome aigü ou présentant un angle irido-cornéen fermable. Son utilisation se fait dans le cadre d'une consultation dédiée, mais ne nécessite ni hospitalisation, ni passage au bloc opératoire. Les procédures sont très courtes et parfaitement indolores.",
-					'Services utilisant le plus cet équipement :',
-					'Cataracte',
-					'Glaucome'
+					"Le laser YAG permet de découper la capsule à l’arrière de votre implant lorsque cette dernière s’est opacifiée, à la suite d’une chirurgie de cataracte. Il est également utilisé pour réaliser une iridotomie périphérique (trou dans l'iris), essentiellement sur les yeux à risque de glaucome aigü ou présentant un angle irido-cornéen fermable. Son utilisation se fait dans le cadre d'une consultation dédiée, mais ne nécessite ni hospitalisation, ni passage au bloc opératoire. Les procédures sont très courtes et parfaitement indolores."
+					// 'Services utilisant le plus cet équipement :',
+					// 'Cataracte',
+					// 'Glaucome'
 				]
 			},
 			{
 				image: EquipementSixteen,
 				title: "Laser photocoagulateur à l'Argon",
 				text: [
-					'Le laser photocoagulateur permet de « brûler », en un point précis, la structure oculaire visée, afin de la traiter. Il peut servir à rouvrir l’angle entre l’iris et la cornée en faisant un trou dans votre iris, il peut traiter les rétinopathies diabétiques sévères avant qu’elles ne se compliquent, il peut éviter qu’un décollement de rétine ne survienne en traitant une déchirure de la rétine…',
-					'Services utilisant le plus cet équipement :',
-					'Glaucome',
-					'Rétine médicale',
-					'Rétine chirurgicale'
+					'Le laser photocoagulateur permet de « brûler », en un point précis, la structure oculaire visée, afin de la traiter. Il peut servir à rouvrir l’angle entre l’iris et la cornée en faisant un trou dans votre iris, il peut traiter les rétinopathies diabétiques sévères avant qu’elles ne se compliquent, il peut éviter qu’un décollement de rétine ne survienne en traitant une déchirure de la rétine…'
+					// 'Services utilisant le plus cet équipement :',
+					// 'Glaucome',
+					// 'Rétine médicale',
+					// 'Rétine chirurgicale'
 				]
 			},
 			{
 				image: EquipementSeventeen,
 				title: 'Microscope spéculaire',
 				text: [
-					"Cet appareil mesure la densité de cellules endothéliales cornéennes et peut analyser leur forme. Cela permet, dans des cas précis, d'évaluer le risque, pour votre cornée, d’une chirurgie de cataracte.",
-					'Services utilisant le plus cet équipement :',
-					'Greffe de cornée',
-					'Cataracte'
+					"Cet appareil mesure la densité de cellules endothéliales cornéennes et peut analyser leur forme. Cela permet, dans des cas précis, d'évaluer le risque, pour votre cornée, d’une chirurgie de cataracte."
+					// 'Services utilisant le plus cet équipement :',
+					// 'Greffe de cornée',
+					// 'Cataracte'
 				]
 			},
 			{
