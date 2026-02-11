@@ -5,7 +5,6 @@
 	import { Hero, PicOne, PicTwo, PicThree, PicFour } from '$lib/assets';
 	import GalleryImgOne from '$lib/assets/images/home-gallery-img1.png';
 	import GalleryImgTwo from '$lib/assets/images/home-gallery-img2.png';
-	import GalleryImgThree from '$lib/assets/images/home-gallery-img3.png';
 	import GalleryImgFour from '$lib/assets/images/home-gallery-img4.png';
 	import GalleryImgFive from '$lib/assets/images/home-gallery-img5.png';
 	import GalleryImgSix from '$lib/assets/images/home-gallery-img6.png';
@@ -19,82 +18,12 @@
 	const galleryImages = [
 		{ src: GalleryImgOne, alt: 'Vue du hall d’accueil de la clinique' },
 		{ src: GalleryImgTwo, alt: 'Salle d’examen ophtalmologique lumineuse' },
-		{ src: GalleryImgThree, alt: 'Espace d’attente confortable du centre' },
 		{ src: GalleryImgFour, alt: 'Matériel de diagnostic de haute précision' },
 		{ src: GalleryImgFive, alt: 'Équipe médicale en consultation' },
 		{ src: GalleryImgSix, alt: 'Couloir principal du cabinet ophtalmologique' },
 		{ src: GalleryImgSeven, alt: 'Espace de soins moderne' }
 	];
 
-	let rotation = $state(0);
-	let isDragging = $state(false);
-	let lastPointerX = $state(0);
-	let velocity = $state(0);
-	let autoSpeed = $state(0.02);
-
-	const dragFactor = 0.32;
-	const inertia = 0.94;
-
-	const normalizeAngle = (value: number) => {
-		const normalized = value % 360;
-		return normalized < 0 ? normalized + 360 : normalized;
-	};
-
-	const angle = $derived(360 / galleryImages.length);
-
-	const handlePointerDown = (event: PointerEvent) => {
-		isDragging = true;
-		lastPointerX = event.clientX;
-		velocity = 0;
-		(event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
-	};
-
-	const handlePointerMove = (event: PointerEvent) => {
-		if (!isDragging) return;
-		const delta = event.clientX - lastPointerX;
-		lastPointerX = event.clientX;
-		rotation = normalizeAngle(rotation + delta * dragFactor);
-		velocity = delta * 0.08;
-	};
-
-	const handlePointerUp = () => {
-		isDragging = false;
-	};
-
-	$effect(() => {
-		if (typeof window === 'undefined') return;
-		const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-		const updateSpeed = () => {
-			autoSpeed = media.matches ? 0 : 0.02;
-		};
-		updateSpeed();
-		const mediaListener = () => updateSpeed();
-		if (media.addEventListener) {
-			media.addEventListener('change', mediaListener);
-		} else {
-			media.addListener(mediaListener);
-		}
-
-		let animationFrame = 0;
-		const animate = () => {
-			if (!isDragging) {
-				rotation = normalizeAngle(rotation + autoSpeed + velocity);
-				velocity *= inertia;
-				if (Math.abs(velocity) < 0.001) velocity = 0;
-			}
-			animationFrame = requestAnimationFrame(animate);
-		};
-
-		animationFrame = requestAnimationFrame(animate);
-		return () => {
-			cancelAnimationFrame(animationFrame);
-			if (media.removeEventListener) {
-				media.removeEventListener('change', mediaListener);
-			} else {
-				media.removeListener(mediaListener);
-			}
-		};
-	});
 </script>
 
 <!-- Section 1, hero -->
@@ -246,30 +175,22 @@
 <Section variant="muted" spacing="comfortable" align="center" width="full">
 	<div class="space-y-3 text-center">
 		<Text variant="eyebrow" tone="cta" align="center">Notre cabinet en images</Text>
-		<Title level="h2" align="center">Découvrez nos espaces et notre équipe</Title>
+		<Title level="h2" align="center">Découvrez nos espaces</Title>
 	</div>
 
-	<div class="cylinder-wrap">
-		<div class="cylinder-viewport">
-			<div
-				class:dragging={isDragging}
-				class="cylinder-stage"
-				style={`--rotation: ${rotation}deg; --angle: ${angle}deg;`}
-				role="group"
-				aria-roledescription="carousel"
-				aria-label="Galerie du centre ophtalmologique"
-				onpointerdown={handlePointerDown}
-				onpointermove={handlePointerMove}
-				onpointerup={handlePointerUp}
-				onpointercancel={handlePointerUp}
-			>
-				{#each galleryImages as image, index (image.src)}
-					<figure class="cylinder-panel" style={`--i: ${index};`}>
-						<img src={image.src} alt={image.alt} loading="lazy" draggable="false" />
-					</figure>
-				{/each}
-			</div>
-		</div>
+	<div class="gallery-grid" role="list" aria-label="Galerie du centre ophtalmologique">
+		{#each galleryImages as image, index (image.src)}
+			<figure class="gallery-card" role="listitem">
+				<img
+					src={image.src}
+					alt={image.alt}
+					loading={index < 2 ? 'eager' : 'lazy'}
+					decoding="async"
+					fetchpriority={index < 2 ? 'high' : 'auto'}
+					sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
+				/>
+			</figure>
+		{/each}
 	</div>
 </Section>
 
@@ -363,102 +284,42 @@
 </Section>
 
 <style>
-	.cylinder-wrap {
-		position: relative;
-		width: 80%;
-		max-width: 1200px;
-		margin: 0 auto;
-		margin-top: 28px;
+	.gallery-grid {
+		width: min(1280px, 100%);
+		margin: 28px auto 0;
+		display: grid;
+		gap: 14px;
+		grid-template-columns: 1fr;
 	}
 
-	.cylinder-viewport {
-			--panel-width: clamp(240px, 34vw, 420px);
-		--panel-height: calc(var(--panel-width) * 0.75);
-		--radius: calc(var(--panel-width) * 1.15);
-		position: relative;
-		height: calc(var(--panel-height) + 160px);
-		perspective: 1200px;
-		overflow: visible;
-	}
-
-	.cylinder-stage {
-		position: absolute;
-		top: 20px;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		transform-style: preserve-3d;
-		transform: rotateY(var(--rotation));
-		cursor: grab;
-		touch-action: pan-y;
-		user-select: none;
-	}
-
-	.cylinder-stage.dragging {
-		cursor: grabbing;
-	}
-
-	.cylinder-panel {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: var(--panel-width);
-		height: var(--panel-height);
-		transform: translate(-50%, -50%) rotateY(calc(var(--i) * var(--angle)))
-			translateZ(var(--radius));
-		border-radius: 999px / 56px;
+	.gallery-card {
 		overflow: hidden;
-		backface-visibility: hidden;
-		box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+		border-radius: 20px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		background: #fff;
+		box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 	}
 
-	.cylinder-panel::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: radial-gradient(
-			110% 100% at 50% 50%,
-			rgba(255, 255, 255, 0.12) 0%,
-			rgba(255, 255, 255, 0) 48%,
-			rgba(8, 15, 30, 0.18) 75%,
-			rgba(8, 15, 30, 0.28) 100%
-		);
-		mix-blend-mode: soft-light;
-		pointer-events: none;
-	}
-
-	.cylinder-panel::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			100deg,
-			rgba(8, 15, 30, 0.28),
-			rgba(8, 15, 30, 0) 35%,
-			rgba(255, 255, 255, 0.12) 55%,
-			rgba(8, 15, 30, 0.22) 78%
-		);
-		opacity: 0.7;
-		pointer-events: none;
-	}
-
-	.cylinder-panel img {
+	.gallery-card img {
 		width: 100%;
-		height: 100%;
+		aspect-ratio: 4 / 3;
+		display: block;
 		object-fit: cover;
-		transform: scaleX(1.03);
 	}
 
-	@media (max-width: 768px) {
-		.cylinder-wrap {
-			width: 100%;
+	@media (min-width: 700px) {
+		.gallery-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (min-width: 1100px) {
+		.gallery-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 
-		.cylinder-viewport {
-			--panel-width: clamp(180px, 60vw, 300px);
-			--panel-height: calc(var(--panel-width) * 0.7);
-			--radius: calc(var(--panel-width) * 1.05);
-			height: calc(var(--panel-height) + 120px);
+		.gallery-card {
+			min-height: 240px;
 		}
 	}
 </style>
