@@ -184,9 +184,6 @@
 				<img
 					src={image.src}
 					alt={image.alt}
-					loading={index < 2 ? 'eager' : 'lazy'}
-					decoding="async"
-					fetchpriority={index < 2 ? 'high' : 'auto'}
 					sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
 				/>
 			</figure>
