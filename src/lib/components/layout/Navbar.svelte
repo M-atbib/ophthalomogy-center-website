@@ -41,12 +41,12 @@
 			]
 		},
 		{ id: 'news', label: 'Actualités', href: '/actualites', dropdown: false },
-		// {
-		// 	id: 'eye-diseases',
-		// 	label: "Les maladies de l'oeil",
-		// 	dropdown: true,
-		// 	dropdownItems: diseaseDropdownItems
-		// },
+		{
+			id: 'eye-diseases',
+			label: "Les maladies de l'oeil",
+			dropdown: true,
+			dropdownItems: diseaseDropdownItems
+		},
 		// {
 		// 	id: 'conseils',
 		// 	label: 'Les conseils de votre ophtalmo',
