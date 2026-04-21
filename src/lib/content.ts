@@ -283,344 +283,344 @@ export const listEyeDiseases = [
 				href: '/maladie-oeil/chirurgie-et-medecine-esthetique-du-regard/pourquoi_choisir_votre_ophtalmologiste_pour_les_soins_esthetiques_de_votre_visage'
 			}
 		]
-	},
-	{
-		img: GlaucomeHero,
-		diseases: 'Glaucome',
-		href: '/maladie-oeil/glaucome',
-		content: [
-			'Le glaucome se caractérise souvent par une augmentation de la pression oculaire, qui altère le nerf optique et entraîne une diminution du champ visuel.',
-			'Pathologie fréquente (4% de la population française) mais souvent silencieuse et asymptomatique, un dépistage est réalisé par votre ophtalmologiste. ',
-			'Une fois le diagnostic posé, de nombreux traitements existent (collyres, laser ou chirurgie). Une prise en charge des facteurs de risque indirects sera également envisagée (apnée du sommeil, hypotension artérielle…). Une surveillance régulière est indispensable.'
-		],
-		questions: [
-			{
-				question: "Glaucome chronique : qu'est-ce que c'est ?",
-				href: '/maladie-oeil/glaucome/glaucome_chronique_qu_est_ce_que_c_est'
-			},
-			{
-				question: 'Glaucome aigu',
-				href: '/maladie-oeil/glaucome/glaucome_aigu'
-			},
-			{
-				question: 'Collyres anti-glaucomateux',
-				href: '/maladie-oeil/glaucome/collyres_anti_glaucomateux'
-			},
-			{
-				question: 'Laser et glaucome',
-				href: '/maladie-oeil/glaucome/laser_et_glaucome'
-			},
-			{
-				question: 'Chirurgie du glaucome',
-				href: '/maladie-oeil/glaucome/chirurgie_du_glaucome'
-			}
-		]
-	},
-
-	{
-		img: ExplorationsHero,
-		diseases: 'Explorations et aptitudes',
-		href: '/maladie-oeil/explorations-et-aptitudes',
-		content: [
-			"Il existe de nombreuses maladies rares en Ophtalmologie. Ces maladies peuvent toucher la macula ou la rétine et être responsables d'une baisse de vision progressive, souvent sévère.",
-			"Parfois, l'oeil est intact, mais le nerf optique est touché : on parle alors de neuropathie optique. Elle peut être liée à une inflammation, une ischémie, une tumeur, une consommation excessive d'alcool...",
-			"Il est important de réaliser les examens de dépistage et de suivi adéquats (dossier MDPH, aptitude à la conduite automobile...) afin de suivre l'évolution de ces maladies et de bénéficier des aides possibles."
-		],
-		questions: [
-			{
-				question: 'Handicap visuel',
-				href: '/maladie-oeil/explorations-et-aptitudes/handicap_visuel'
-			},
-			{
-				question: 'Neuropathies optiques',
-				href: '/maladie-oeil/explorations-et-aptitudes/neuropathies_optiques'
-			},
-			{
-				question: 'Rétinopathies héréditaires',
-				href: '/maladie-oeil/explorations-et-aptitudes/retinopathies_hereditaires'
-			},
-			{
-				question: 'Dossier MDPH',
-				href: '/maladie-oeil/explorations-et-aptitudes/dossier_mdph'
-			},
-			{
-				question: 'Conduite automobile et aptitude visuelle',
-				href: '/maladie-oeil/explorations-et-aptitudes/conduite_automobile_et_aptitude_visuelle'
-			},
-			{
-				question: 'Basse vision : nos conseils',
-				href: '/maladie-oeil/explorations-et-aptitudes/basse_vision_nos_conseils'
-			}
-		]
-	},
-	{
-		img: PediatrieHero,
-		diseases: 'Ophtalmo-pédiatrie',
-		href: '/maladie-oeil/ophtalmo-pediatrie',
-		content: [
-			'À la naissance, le système visuel est immature et son développement se poursuit durant les premières années de la vie. Tout obstacle à sa maturation (strabisme, hypermétropie, astigmatisme…) peut compromettre la bonne vision de l’enfant pour le reste de sa vie. ',
-			'Un dépistage systématique par un ophtalmologiste est primordial, même si l’enfant ne se plaint de rien.',
-			'Le traitement comprend le port de lunettes, ou encore la rééducation d’amblyopie avec un cache. '
-		],
-		questions: [
-			{
-				question: "Amblyopie : le syndrome de l'œil “paresseux“",
-				href: '/maladie-oeil/ophtalmo-pediatrie/amblyopie_le_syndrome_de_l_oeil_paresseux'
-			},
-			{
-				question: "Doit-on s'inquiéter devant un strabisme chez l'enfant ?",
-				href: '/maladie-oeil/ophtalmo-pediatrie/doit_on_s_inquieter_devant_un_strabisme_chez_l_enfant'
-			},
-			{
-				question: "Faut-il emmener son enfant chez l'ophtamologiste ?",
-				href: '/maladie-oeil/ophtalmo-pediatrie/faut_il_emmener_son_enfant_chez_l_ophtamologiste'
-			},
-			{
-				question: "Occlusion par application de caches sur l'oeil - Rééducation de l'amblyopie",
-				href: '/maladie-oeil/ophtalmo-pediatrie/occlusion_par_application_de_caches_sur_l_oeil_reeducation_de_l_amblyopie'
-			},
-			{
-				question: 'Cycloplégie : atropine et cyclopentolate',
-				href: '/maladie-oeil/ophtalmo-pediatrie/cycloplegie_atropine_et_cyclopentolate'
-			},
-			{
-				question: 'Comment bien choisir les lunettes de votre enfant ?',
-				href: '/maladie-oeil/ophtalmo-pediatrie/comment_bien_choisir_les_lunettes_de_votre_enfant'
-			}
-		]
-	},
-	{
-		img: StrabologieHero,
-		diseases: 'Strabologie - chirurgie du strabisme',
-		href: '/maladie-oeil/strabologie-chirurgie-du-strabisme',
-		content: [
-			'Le strabisme est un défaut de parallélisme du regard : les yeux “louchent“. Chez l’enfant, il est souvent le témoin d’une mauvaise vision.',
-			"Certains signes doivent vous alerter et il est important de consulter rapidement afin qu'une solution médicale ou chirurgicale vous soit proposée."
-		],
-		questions: [
-			{
-				question: "Doit-on s'inquiéter devant un strabisme chez l'enfant ?",
-				href: '/maladie-oeil/strabologie-chirurgie-du-strabisme/doit_on_s_inquieter_devant_un_strabisme_chez_l_enfant'
-			},
-			{
-				question: 'Principes de la chirurgie du strabisme',
-				href: '/maladie-oeil/strabologie-chirurgie-du-strabisme/principes_de_la_chirurgie_du_strabisme'
-			},
-			{
-				question: 'Chirurgie du strabisme : comment ça se passe ?',
-				href: '/maladie-oeil/strabologie-chirurgie-du-strabisme/chirurgie_du_strabisme_comment_ca_se_passe'
-			}
-		]
-	},
-	{
-		img: KératocôneHero,
-		diseases: 'Kératocône',
-		href: '/maladie-oeil/keratocone',
-		content: [
-			'Le kératocône est une déformation de la cornée , qui peut survenir dès l’adolescence. D’évolution lente, il entraîne une baisse progressive de la vision, liée à un astigmatisme évolutif, une déformation de la perception des objets et une sensibilité accrue à la lumière ainsi qu’un éblouissement.',
-			'Le traitement comprend le recours aux lentilles rigides, le crosslinking, les anneaux cornéens, voire la greffe de cornée. Un suivi régulier est évidemment indispensable.'
-		],
-		questions: [
-			{
-				question: "Qu'est-ce qu'un kératocône ?",
-				href: '/maladie-oeil/keratocone/qu_est_ce_qu_un_keratocone'
-			},
-			{
-				question: 'Comment se traite un kératocône ?',
-				href: '/maladie-oeil/keratocone/comment_se_traite_un_keratocone'
-			}
-		]
-	},
-	{
-		img: CorneeHero,
-		diseases: 'Cornée et greffes',
-		href: '/maladie-oeil/cornee-et-greffes',
-		content: [
-			"La cornée est un tissu transparent laissant pénétrer la lumière à l’intérieur de l’œil. C'est sa transparence qui permet la vision. Toute déformation, œdème ou opacité de la cornée est responsable d’une baisse de vue.",
-			'De nombreux traitements sont disponibles pour traiter les pathologies cornéennes, dont la greffe, ou kératoplastie.'
-		],
-		questions: [
-			{
-				question: 'Cornéa guttata et dystrophie de Fuchs',
-				href: '/maladie-oeil/cornee-et-greffes/cornea_guttata_et_dystrophie_de_fuchs'
-			},
-			{
-				question: 'Différents types de greffes de cornée',
-				href: '/maladie-oeil/cornee-et-greffes/differents_types_de_greffes_de_cornee'
-			}
-		]
-	},
-	{
-		img: BlephariteHero,
-		diseases: 'Blépharite, sécheresse, surface oculaire',
-		href: '/maladie-oeil/blepharite-secheresse-surface-oculaire',
-		content: [
-			'La blépharite est une inflammation chronique du bord libre des paupières, responsable d’une sécheresse oculaire par hyperévaporation des larmes.',
-			'Elle entraîne une sensation de grain de sable sous la paupière, de corps étranger, de brûlure oculaire ou un larmoiement, qui survient surtout dehors, en extérieur. Elle peut aussi se compliquer de chalazions.',
-			"Le traitement repose sur les soins des paupières, réalisés régulièrement. Ils sont nécessaires à long terme et souvent associés à l'instillation de larmes artificielles."
-		],
-		questions: [
-			{
-				question: 'Blépharite',
-				href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/blepharite'
-			},
-			{
-				question: 'Sécheresse oculaire',
-				href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/secheresse_oculaire'
-			},
-			{
-				question: 'Chalazion, Orgelet',
-				href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/chalazion_orgelet'
-			},
-			{
-				question: 'Ptérygion, pingecula',
-				href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/pterygion_pingecula'
-			},
-			{
-				question: 'Comment réaliser les soins et massages des paupières ?',
-				href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/comment_realiser_les_soins_et_massages_des_paupieres'
-			},
-			{
-				question: 'Que faire en cas de sécheresse oculaire ?',
-				href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/que_faire_en_cas_de_secheresse_oculaire'
-			}
-		]
-	},
-	{
-		img: InfectionHero,
-		diseases: 'Urgences et Infections',
-		href: '/maladie-oeil/urgences-et-infections',
-		content: [
-			'Les urgences ophtalmologiques concernent de nombreuses maladies oculaires. Souvent bénignes et gênantes, mais parfois graves, voire cécitantes, il est important de ne pas les minimiser ou les méconnaître.',
-			"En cas de douleur, de rougeur oculaire, de baisse de vue brutale, de vision double, ou si vous suspectez la présence d'un corps étranger oculaire, on vous recevra dans les meilleurs délais et mettra tout en œuvre pour préserver votre bonne santé visuelle.",
-			"Pour savoir comment rencontrer nos ophtalmologues en urgence, rendez-vous sur notre page dédiée aux modalités de consultations d'urgences ophtalmologiques."
-		],
-		questions: [
-			{
-				question: "Conjonctivite infectieuse : qu'est-ce que c'est ?",
-				href: '/maladie-oeil/urgences-et-infections/conjonctivite_infectieuse_qu_est_ce_que_c_est'
-			},
-			{
-				question: 'Conjonctivite allergique',
-				href: '/maladie-oeil/urgences-et-infections/conjonctivite_allergique'
-			},
-			{
-				question: 'Hémorragie sous-conjonctivale',
-				href: '/maladie-oeil/urgences-et-infections/hemorragie_sous_conjonctivale'
-			},
-			{
-				question: 'Hémorragies intra-oculaires',
-				href: '/maladie-oeil/urgences-et-infections/hemorragies_intra_oculaires'
-			},
-			{
-				question: 'Infections sous lentilles',
-				href: '/maladie-oeil/urgences-et-infections/infections_sous_lentilles'
-			},
-			{
-				question: 'Uvéite',
-				href: '/maladie-oeil/urgences-et-infections/uveite'
-			},
-			{
-				question: 'Chalazion, Orgelet',
-				href: '/maladie-oeil/urgences-et-infections/chalazion_orgelet'
-			},
-			{
-				question: 'Corps étrangers oculaires',
-				href: '/maladie-oeil/urgences-et-infections/corps_etrangers_oculaires'
-			},
-			{
-				question: 'Traumatismes oculaires',
-				href: '/maladie-oeil/urgences-et-infections/traumatismes_oculaires'
-			},
-			{
-				question: 'Herpès oculaire',
-				href: '/maladie-oeil/urgences-et-infections/herpes_oculaire'
-			},
-			{
-				question: 'Glaucome aigu',
-				href: '/maladie-oeil/urgences-et-infections/glaucome_aigu'
-			},
-			{
-				question: 'Baisse de vision : que faire ?',
-				href: '/maladie-oeil/urgences-et-infections/baisse_de_vision_que_faire'
-			},
-			{
-				question: 'Oeil rouge et douloureux : que faire ?',
-				href: '/maladie-oeil/urgences-et-infections/oeil_rouge_et_douloureux_que_faire'
-			},
-			{
-				question: 'Corps flottants, éclairs lumineux : que faire ?',
-				href: '/maladie-oeil/urgences-et-infections/corps_flottants_eclairs_lumineux_que_faire'
-			},
-			{
-				question: 'Que faire en cas de conjonctivite infectieuse et contagieuse ?',
-				href: '/maladie-oeil/urgences-et-infections/que_faire_en_cas_de_conjonctivite_infectieuse_et_contagieuse'
-			}
-		]
-	},
-	{
-		img: LentillesHero,
-		diseases: 'Lentilles - Contactologie',
-		href: '/maladie-oeil/lentilles-contactologie',
-		content: [
-			'Qu’elles soient rigides ou souples, les lentilles de contact sont une alternative au port de lunettes. La quasi totalité des défauts visuels (myopie, hypermétropie, astigmatisme et presbytie) sont corrigeables en lentilles.',
-			'En l’absence de contre-indication (sécheresse oculaire) une adaptation est possible. Il sera indispensable de respecter les règles d’utilisation et d’hygiène lors de l’utilisation de vos lentilles.'
-		],
-		questions: [
-			{
-				question: 'Infections sous lentilles',
-				href: '/maladie-oeil/lentilles-contactologie/infections_sous_lentilles'
-			},
-			{
-				question: 'Orthokératologie',
-				href: '/maladie-oeil/lentilles-contactologie/orthokeratologie'
-			},
-			{
-				question: 'Les différents types de lentilles',
-				href: '/maladie-oeil/lentilles-contactologie/les_differents_types_de_lentilles'
-			},
-			{
-				question: 'Comment mettre et entretenir vos lentilles ?',
-				href: '/maladie-oeil/lentilles-contactologie/comment_mettre_et_entretenir_vos_lentilles'
-			}
-		]
-	},
-	{
-		img: LunetteHero,
-		diseases: 'Lunettes',
-		href: '/maladie-oeil/lunettes',
-		content: [
-			"Le choix et la prescription de la meilleure correction optique est la base du métier d'ophtalmologiste. Les lunettes permettent de corriger les défauts géométriques de l'oeil : myopie, hypermétropie et astigmatisme. Passé 40 ans, la vision de près baisse, c'est la presbytie.",
-			"Votre médecin est le seul professionnel en mesure de dépister d'éventuelles maladies oculaires lors de cette prescription. ",
-			'Nous mettons tout en oeuvre sur la plan pratique et technologique pour vous apporter le plus grand confort visuel.'
-		],
-		questions: [
-			{
-				question: 'Myopie, Hypermétropie, Astigmatisme',
-				href: '/maladie-oeil/lunettes/myopie_hypermetropie_astigmatisme'
-			},
-			{
-				question: "Presbytie : qu'est-ce que c'est ?",
-				href: '/maladie-oeil/lunettes/presbytie_qu_est_ce_que_c_est'
-			},
-			{
-				question: "Emmétropie : l'oeil parfait",
-				href: '/maladie-oeil/lunettes/emmetropie_l_oeil_parfait'
-			},
-			{
-				question: 'Comment lire votre ordonnance de lunettes ?',
-				href: '/maladie-oeil/lunettes/comment_lire_votre_ordonnance_de_lunettes'
-			},
-			{
-				question: 'Comment bien choisir vos lunettes ?',
-				href: '/maladie-oeil/lunettes/comment_bien_choisir_vos_lunettes'
-			},
-			{
-				question: 'Comment bien entretenir vos lunettes ?',
-				href: '/maladie-oeil/lunettes/comment_bien_entretenir_vos_lunettes'
-			}
-		]
 	}
+	// {
+	// 	img: GlaucomeHero,
+	// 	diseases: 'Glaucome',
+	// 	href: '/maladie-oeil/glaucome',
+	// 	content: [
+	// 		'Le glaucome se caractérise souvent par une augmentation de la pression oculaire, qui altère le nerf optique et entraîne une diminution du champ visuel.',
+	// 		'Pathologie fréquente (4% de la population française) mais souvent silencieuse et asymptomatique, un dépistage est réalisé par votre ophtalmologiste. ',
+	// 		'Une fois le diagnostic posé, de nombreux traitements existent (collyres, laser ou chirurgie). Une prise en charge des facteurs de risque indirects sera également envisagée (apnée du sommeil, hypotension artérielle…). Une surveillance régulière est indispensable.'
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: "Glaucome chronique : qu'est-ce que c'est ?",
+	// 			href: '/maladie-oeil/glaucome/glaucome_chronique_qu_est_ce_que_c_est'
+	// 		},
+	// 		{
+	// 			question: 'Glaucome aigu',
+	// 			href: '/maladie-oeil/glaucome/glaucome_aigu'
+	// 		},
+	// 		{
+	// 			question: 'Collyres anti-glaucomateux',
+	// 			href: '/maladie-oeil/glaucome/collyres_anti_glaucomateux'
+	// 		},
+	// 		{
+	// 			question: 'Laser et glaucome',
+	// 			href: '/maladie-oeil/glaucome/laser_et_glaucome'
+	// 		},
+	// 		{
+	// 			question: 'Chirurgie du glaucome',
+	// 			href: '/maladie-oeil/glaucome/chirurgie_du_glaucome'
+	// 		}
+	// 	]
+	// },
+
+	// {
+	// 	img: ExplorationsHero,
+	// 	diseases: 'Explorations et aptitudes',
+	// 	href: '/maladie-oeil/explorations-et-aptitudes',
+	// 	content: [
+	// 		"Il existe de nombreuses maladies rares en Ophtalmologie. Ces maladies peuvent toucher la macula ou la rétine et être responsables d'une baisse de vision progressive, souvent sévère.",
+	// 		"Parfois, l'oeil est intact, mais le nerf optique est touché : on parle alors de neuropathie optique. Elle peut être liée à une inflammation, une ischémie, une tumeur, une consommation excessive d'alcool...",
+	// 		"Il est important de réaliser les examens de dépistage et de suivi adéquats (dossier MDPH, aptitude à la conduite automobile...) afin de suivre l'évolution de ces maladies et de bénéficier des aides possibles."
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: 'Handicap visuel',
+	// 			href: '/maladie-oeil/explorations-et-aptitudes/handicap_visuel'
+	// 		},
+	// 		{
+	// 			question: 'Neuropathies optiques',
+	// 			href: '/maladie-oeil/explorations-et-aptitudes/neuropathies_optiques'
+	// 		},
+	// 		{
+	// 			question: 'Rétinopathies héréditaires',
+	// 			href: '/maladie-oeil/explorations-et-aptitudes/retinopathies_hereditaires'
+	// 		},
+	// 		{
+	// 			question: 'Dossier MDPH',
+	// 			href: '/maladie-oeil/explorations-et-aptitudes/dossier_mdph'
+	// 		},
+	// 		{
+	// 			question: 'Conduite automobile et aptitude visuelle',
+	// 			href: '/maladie-oeil/explorations-et-aptitudes/conduite_automobile_et_aptitude_visuelle'
+	// 		},
+	// 		{
+	// 			question: 'Basse vision : nos conseils',
+	// 			href: '/maladie-oeil/explorations-et-aptitudes/basse_vision_nos_conseils'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	img: PediatrieHero,
+	// 	diseases: 'Ophtalmo-pédiatrie',
+	// 	href: '/maladie-oeil/ophtalmo-pediatrie',
+	// 	content: [
+	// 		'À la naissance, le système visuel est immature et son développement se poursuit durant les premières années de la vie. Tout obstacle à sa maturation (strabisme, hypermétropie, astigmatisme…) peut compromettre la bonne vision de l’enfant pour le reste de sa vie. ',
+	// 		'Un dépistage systématique par un ophtalmologiste est primordial, même si l’enfant ne se plaint de rien.',
+	// 		'Le traitement comprend le port de lunettes, ou encore la rééducation d’amblyopie avec un cache. '
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: "Amblyopie : le syndrome de l'œil “paresseux“",
+	// 			href: '/maladie-oeil/ophtalmo-pediatrie/amblyopie_le_syndrome_de_l_oeil_paresseux'
+	// 		},
+	// 		{
+	// 			question: "Doit-on s'inquiéter devant un strabisme chez l'enfant ?",
+	// 			href: '/maladie-oeil/ophtalmo-pediatrie/doit_on_s_inquieter_devant_un_strabisme_chez_l_enfant'
+	// 		},
+	// 		{
+	// 			question: "Faut-il emmener son enfant chez l'ophtamologiste ?",
+	// 			href: '/maladie-oeil/ophtalmo-pediatrie/faut_il_emmener_son_enfant_chez_l_ophtamologiste'
+	// 		},
+	// 		{
+	// 			question: "Occlusion par application de caches sur l'oeil - Rééducation de l'amblyopie",
+	// 			href: '/maladie-oeil/ophtalmo-pediatrie/occlusion_par_application_de_caches_sur_l_oeil_reeducation_de_l_amblyopie'
+	// 		},
+	// 		{
+	// 			question: 'Cycloplégie : atropine et cyclopentolate',
+	// 			href: '/maladie-oeil/ophtalmo-pediatrie/cycloplegie_atropine_et_cyclopentolate'
+	// 		},
+	// 		{
+	// 			question: 'Comment bien choisir les lunettes de votre enfant ?',
+	// 			href: '/maladie-oeil/ophtalmo-pediatrie/comment_bien_choisir_les_lunettes_de_votre_enfant'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	img: StrabologieHero,
+	// 	diseases: 'Strabologie - chirurgie du strabisme',
+	// 	href: '/maladie-oeil/strabologie-chirurgie-du-strabisme',
+	// 	content: [
+	// 		'Le strabisme est un défaut de parallélisme du regard : les yeux “louchent“. Chez l’enfant, il est souvent le témoin d’une mauvaise vision.',
+	// 		"Certains signes doivent vous alerter et il est important de consulter rapidement afin qu'une solution médicale ou chirurgicale vous soit proposée."
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: "Doit-on s'inquiéter devant un strabisme chez l'enfant ?",
+	// 			href: '/maladie-oeil/strabologie-chirurgie-du-strabisme/doit_on_s_inquieter_devant_un_strabisme_chez_l_enfant'
+	// 		},
+	// 		{
+	// 			question: 'Principes de la chirurgie du strabisme',
+	// 			href: '/maladie-oeil/strabologie-chirurgie-du-strabisme/principes_de_la_chirurgie_du_strabisme'
+	// 		},
+	// 		{
+	// 			question: 'Chirurgie du strabisme : comment ça se passe ?',
+	// 			href: '/maladie-oeil/strabologie-chirurgie-du-strabisme/chirurgie_du_strabisme_comment_ca_se_passe'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	img: KératocôneHero,
+	// 	diseases: 'Kératocône',
+	// 	href: '/maladie-oeil/keratocone',
+	// 	content: [
+	// 		'Le kératocône est une déformation de la cornée , qui peut survenir dès l’adolescence. D’évolution lente, il entraîne une baisse progressive de la vision, liée à un astigmatisme évolutif, une déformation de la perception des objets et une sensibilité accrue à la lumière ainsi qu’un éblouissement.',
+	// 		'Le traitement comprend le recours aux lentilles rigides, le crosslinking, les anneaux cornéens, voire la greffe de cornée. Un suivi régulier est évidemment indispensable.'
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: "Qu'est-ce qu'un kératocône ?",
+	// 			href: '/maladie-oeil/keratocone/qu_est_ce_qu_un_keratocone'
+	// 		},
+	// 		{
+	// 			question: 'Comment se traite un kératocône ?',
+	// 			href: '/maladie-oeil/keratocone/comment_se_traite_un_keratocone'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	img: CorneeHero,
+	// 	diseases: 'Cornée et greffes',
+	// 	href: '/maladie-oeil/cornee-et-greffes',
+	// 	content: [
+	// 		"La cornée est un tissu transparent laissant pénétrer la lumière à l’intérieur de l’œil. C'est sa transparence qui permet la vision. Toute déformation, œdème ou opacité de la cornée est responsable d’une baisse de vue.",
+	// 		'De nombreux traitements sont disponibles pour traiter les pathologies cornéennes, dont la greffe, ou kératoplastie.'
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: 'Cornéa guttata et dystrophie de Fuchs',
+	// 			href: '/maladie-oeil/cornee-et-greffes/cornea_guttata_et_dystrophie_de_fuchs'
+	// 		},
+	// 		{
+	// 			question: 'Différents types de greffes de cornée',
+	// 			href: '/maladie-oeil/cornee-et-greffes/differents_types_de_greffes_de_cornee'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	img: BlephariteHero,
+	// 	diseases: 'Blépharite, sécheresse, surface oculaire',
+	// 	href: '/maladie-oeil/blepharite-secheresse-surface-oculaire',
+	// 	content: [
+	// 		'La blépharite est une inflammation chronique du bord libre des paupières, responsable d’une sécheresse oculaire par hyperévaporation des larmes.',
+	// 		'Elle entraîne une sensation de grain de sable sous la paupière, de corps étranger, de brûlure oculaire ou un larmoiement, qui survient surtout dehors, en extérieur. Elle peut aussi se compliquer de chalazions.',
+	// 		"Le traitement repose sur les soins des paupières, réalisés régulièrement. Ils sont nécessaires à long terme et souvent associés à l'instillation de larmes artificielles."
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: 'Blépharite',
+	// 			href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/blepharite'
+	// 		},
+	// 		{
+	// 			question: 'Sécheresse oculaire',
+	// 			href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/secheresse_oculaire'
+	// 		},
+	// 		{
+	// 			question: 'Chalazion, Orgelet',
+	// 			href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/chalazion_orgelet'
+	// 		},
+	// 		{
+	// 			question: 'Ptérygion, pingecula',
+	// 			href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/pterygion_pingecula'
+	// 		},
+	// 		{
+	// 			question: 'Comment réaliser les soins et massages des paupières ?',
+	// 			href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/comment_realiser_les_soins_et_massages_des_paupieres'
+	// 		},
+	// 		{
+	// 			question: 'Que faire en cas de sécheresse oculaire ?',
+	// 			href: '/maladie-oeil/blepharite-secheresse-surface-oculaire/que_faire_en_cas_de_secheresse_oculaire'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	img: InfectionHero,
+	// 	diseases: 'Urgences et Infections',
+	// 	href: '/maladie-oeil/urgences-et-infections',
+	// 	content: [
+	// 		'Les urgences ophtalmologiques concernent de nombreuses maladies oculaires. Souvent bénignes et gênantes, mais parfois graves, voire cécitantes, il est important de ne pas les minimiser ou les méconnaître.',
+	// 		"En cas de douleur, de rougeur oculaire, de baisse de vue brutale, de vision double, ou si vous suspectez la présence d'un corps étranger oculaire, on vous recevra dans les meilleurs délais et mettra tout en œuvre pour préserver votre bonne santé visuelle.",
+	// 		"Pour savoir comment rencontrer nos ophtalmologues en urgence, rendez-vous sur notre page dédiée aux modalités de consultations d'urgences ophtalmologiques."
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: "Conjonctivite infectieuse : qu'est-ce que c'est ?",
+	// 			href: '/maladie-oeil/urgences-et-infections/conjonctivite_infectieuse_qu_est_ce_que_c_est'
+	// 		},
+	// 		{
+	// 			question: 'Conjonctivite allergique',
+	// 			href: '/maladie-oeil/urgences-et-infections/conjonctivite_allergique'
+	// 		},
+	// 		{
+	// 			question: 'Hémorragie sous-conjonctivale',
+	// 			href: '/maladie-oeil/urgences-et-infections/hemorragie_sous_conjonctivale'
+	// 		},
+	// 		{
+	// 			question: 'Hémorragies intra-oculaires',
+	// 			href: '/maladie-oeil/urgences-et-infections/hemorragies_intra_oculaires'
+	// 		},
+	// 		{
+	// 			question: 'Infections sous lentilles',
+	// 			href: '/maladie-oeil/urgences-et-infections/infections_sous_lentilles'
+	// 		},
+	// 		{
+	// 			question: 'Uvéite',
+	// 			href: '/maladie-oeil/urgences-et-infections/uveite'
+	// 		},
+	// 		{
+	// 			question: 'Chalazion, Orgelet',
+	// 			href: '/maladie-oeil/urgences-et-infections/chalazion_orgelet'
+	// 		},
+	// 		{
+	// 			question: 'Corps étrangers oculaires',
+	// 			href: '/maladie-oeil/urgences-et-infections/corps_etrangers_oculaires'
+	// 		},
+	// 		{
+	// 			question: 'Traumatismes oculaires',
+	// 			href: '/maladie-oeil/urgences-et-infections/traumatismes_oculaires'
+	// 		},
+	// 		{
+	// 			question: 'Herpès oculaire',
+	// 			href: '/maladie-oeil/urgences-et-infections/herpes_oculaire'
+	// 		},
+	// 		{
+	// 			question: 'Glaucome aigu',
+	// 			href: '/maladie-oeil/urgences-et-infections/glaucome_aigu'
+	// 		},
+	// 		{
+	// 			question: 'Baisse de vision : que faire ?',
+	// 			href: '/maladie-oeil/urgences-et-infections/baisse_de_vision_que_faire'
+	// 		},
+	// 		{
+	// 			question: 'Oeil rouge et douloureux : que faire ?',
+	// 			href: '/maladie-oeil/urgences-et-infections/oeil_rouge_et_douloureux_que_faire'
+	// 		},
+	// 		{
+	// 			question: 'Corps flottants, éclairs lumineux : que faire ?',
+	// 			href: '/maladie-oeil/urgences-et-infections/corps_flottants_eclairs_lumineux_que_faire'
+	// 		},
+	// 		{
+	// 			question: 'Que faire en cas de conjonctivite infectieuse et contagieuse ?',
+	// 			href: '/maladie-oeil/urgences-et-infections/que_faire_en_cas_de_conjonctivite_infectieuse_et_contagieuse'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	img: LentillesHero,
+	// 	diseases: 'Lentilles - Contactologie',
+	// 	href: '/maladie-oeil/lentilles-contactologie',
+	// 	content: [
+	// 		'Qu’elles soient rigides ou souples, les lentilles de contact sont une alternative au port de lunettes. La quasi totalité des défauts visuels (myopie, hypermétropie, astigmatisme et presbytie) sont corrigeables en lentilles.',
+	// 		'En l’absence de contre-indication (sécheresse oculaire) une adaptation est possible. Il sera indispensable de respecter les règles d’utilisation et d’hygiène lors de l’utilisation de vos lentilles.'
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: 'Infections sous lentilles',
+	// 			href: '/maladie-oeil/lentilles-contactologie/infections_sous_lentilles'
+	// 		},
+	// 		{
+	// 			question: 'Orthokératologie',
+	// 			href: '/maladie-oeil/lentilles-contactologie/orthokeratologie'
+	// 		},
+	// 		{
+	// 			question: 'Les différents types de lentilles',
+	// 			href: '/maladie-oeil/lentilles-contactologie/les_differents_types_de_lentilles'
+	// 		},
+	// 		{
+	// 			question: 'Comment mettre et entretenir vos lentilles ?',
+	// 			href: '/maladie-oeil/lentilles-contactologie/comment_mettre_et_entretenir_vos_lentilles'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	img: LunetteHero,
+	// 	diseases: 'Lunettes',
+	// 	href: '/maladie-oeil/lunettes',
+	// 	content: [
+	// 		"Le choix et la prescription de la meilleure correction optique est la base du métier d'ophtalmologiste. Les lunettes permettent de corriger les défauts géométriques de l'oeil : myopie, hypermétropie et astigmatisme. Passé 40 ans, la vision de près baisse, c'est la presbytie.",
+	// 		"Votre médecin est le seul professionnel en mesure de dépister d'éventuelles maladies oculaires lors de cette prescription. ",
+	// 		'Nous mettons tout en oeuvre sur la plan pratique et technologique pour vous apporter le plus grand confort visuel.'
+	// 	],
+	// 	questions: [
+	// 		{
+	// 			question: 'Myopie, Hypermétropie, Astigmatisme',
+	// 			href: '/maladie-oeil/lunettes/myopie_hypermetropie_astigmatisme'
+	// 		},
+	// 		{
+	// 			question: "Presbytie : qu'est-ce que c'est ?",
+	// 			href: '/maladie-oeil/lunettes/presbytie_qu_est_ce_que_c_est'
+	// 		},
+	// 		{
+	// 			question: "Emmétropie : l'oeil parfait",
+	// 			href: '/maladie-oeil/lunettes/emmetropie_l_oeil_parfait'
+	// 		},
+	// 		{
+	// 			question: 'Comment lire votre ordonnance de lunettes ?',
+	// 			href: '/maladie-oeil/lunettes/comment_lire_votre_ordonnance_de_lunettes'
+	// 		},
+	// 		{
+	// 			question: 'Comment bien choisir vos lunettes ?',
+	// 			href: '/maladie-oeil/lunettes/comment_bien_choisir_vos_lunettes'
+	// 		},
+	// 		{
+	// 			question: 'Comment bien entretenir vos lunettes ?',
+	// 			href: '/maladie-oeil/lunettes/comment_bien_entretenir_vos_lunettes'
+	// 		}
+	// 	]
+	// }
 ];
 
 export type EyeDisease = (typeof listEyeDiseases)[number];
