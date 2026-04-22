@@ -283,39 +283,39 @@ export const listEyeDiseases = [
 				href: '/maladie-oeil/chirurgie-et-medecine-esthetique-du-regard/pourquoi_choisir_votre_ophtalmologiste_pour_les_soins_esthetiques_de_votre_visage'
 			}
 		]
-	}
-	// {
-	// 	img: GlaucomeHero,
-	// 	diseases: 'Glaucome',
-	// 	href: '/maladie-oeil/glaucome',
-	// 	content: [
-	// 		'Le glaucome se caractérise souvent par une augmentation de la pression oculaire, qui altère le nerf optique et entraîne une diminution du champ visuel.',
-	// 		'Pathologie fréquente (4% de la population française) mais souvent silencieuse et asymptomatique, un dépistage est réalisé par votre ophtalmologiste. ',
-	// 		'Une fois le diagnostic posé, de nombreux traitements existent (collyres, laser ou chirurgie). Une prise en charge des facteurs de risque indirects sera également envisagée (apnée du sommeil, hypotension artérielle…). Une surveillance régulière est indispensable.'
-	// 	],
-	// 	questions: [
-	// 		{
-	// 			question: "Glaucome chronique : qu'est-ce que c'est ?",
-	// 			href: '/maladie-oeil/glaucome/glaucome_chronique_qu_est_ce_que_c_est'
-	// 		},
-	// 		{
-	// 			question: 'Glaucome aigu',
-	// 			href: '/maladie-oeil/glaucome/glaucome_aigu'
-	// 		},
-	// 		{
-	// 			question: 'Collyres anti-glaucomateux',
-	// 			href: '/maladie-oeil/glaucome/collyres_anti_glaucomateux'
-	// 		},
-	// 		{
-	// 			question: 'Laser et glaucome',
-	// 			href: '/maladie-oeil/glaucome/laser_et_glaucome'
-	// 		},
-	// 		{
-	// 			question: 'Chirurgie du glaucome',
-	// 			href: '/maladie-oeil/glaucome/chirurgie_du_glaucome'
-	// 		}
-	// 	]
-	// },
+	},
+	{
+		img: GlaucomeHero,
+		diseases: 'Glaucome',
+		href: '/maladie-oeil/glaucome',
+		content: [
+			'Le glaucome se caractérise souvent par une augmentation de la pression oculaire, qui altère le nerf optique et entraîne une diminution du champ visuel.',
+			'Pathologie fréquente (4% de la population française) mais souvent silencieuse et asymptomatique, un dépistage est réalisé par votre ophtalmologiste. ',
+			'Une fois le diagnostic posé, de nombreux traitements existent (collyres, laser ou chirurgie). Une prise en charge des facteurs de risque indirects sera également envisagée (apnée du sommeil, hypotension artérielle…). Une surveillance régulière est indispensable.'
+		],
+		questions: [
+			{
+				question: "Glaucome chronique : qu'est-ce que c'est ?",
+				href: '/maladie-oeil/glaucome/glaucome_chronique_qu_est_ce_que_c_est'
+			},
+			{
+				question: 'Glaucome aigu',
+				href: '/maladie-oeil/glaucome/glaucome_aigu'
+			},
+			{
+				question: 'Collyres anti-glaucomateux',
+				href: '/maladie-oeil/glaucome/collyres_anti_glaucomateux'
+			},
+			{
+				question: 'Laser et glaucome',
+				href: '/maladie-oeil/glaucome/laser_et_glaucome'
+			},
+			{
+				question: 'Chirurgie du glaucome',
+				href: '/maladie-oeil/glaucome/chirurgie_du_glaucome'
+			}
+		]
+	},
 
 	// {
 	// 	img: ExplorationsHero,
@@ -412,44 +412,44 @@ export const listEyeDiseases = [
 	// 		}
 	// 	]
 	// },
-	// {
-	// 	img: KératocôneHero,
-	// 	diseases: 'Kératocône',
-	// 	href: '/maladie-oeil/keratocone',
-	// 	content: [
-	// 		'Le kératocône est une déformation de la cornée , qui peut survenir dès l’adolescence. D’évolution lente, il entraîne une baisse progressive de la vision, liée à un astigmatisme évolutif, une déformation de la perception des objets et une sensibilité accrue à la lumière ainsi qu’un éblouissement.',
-	// 		'Le traitement comprend le recours aux lentilles rigides, le crosslinking, les anneaux cornéens, voire la greffe de cornée. Un suivi régulier est évidemment indispensable.'
-	// 	],
-	// 	questions: [
-	// 		{
-	// 			question: "Qu'est-ce qu'un kératocône ?",
-	// 			href: '/maladie-oeil/keratocone/qu_est_ce_qu_un_keratocone'
-	// 		},
-	// 		{
-	// 			question: 'Comment se traite un kératocône ?',
-	// 			href: '/maladie-oeil/keratocone/comment_se_traite_un_keratocone'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	img: CorneeHero,
-	// 	diseases: 'Cornée et greffes',
-	// 	href: '/maladie-oeil/cornee-et-greffes',
-	// 	content: [
-	// 		"La cornée est un tissu transparent laissant pénétrer la lumière à l’intérieur de l’œil. C'est sa transparence qui permet la vision. Toute déformation, œdème ou opacité de la cornée est responsable d’une baisse de vue.",
-	// 		'De nombreux traitements sont disponibles pour traiter les pathologies cornéennes, dont la greffe, ou kératoplastie.'
-	// 	],
-	// 	questions: [
-	// 		{
-	// 			question: 'Cornéa guttata et dystrophie de Fuchs',
-	// 			href: '/maladie-oeil/cornee-et-greffes/cornea_guttata_et_dystrophie_de_fuchs'
-	// 		},
-	// 		{
-	// 			question: 'Différents types de greffes de cornée',
-	// 			href: '/maladie-oeil/cornee-et-greffes/differents_types_de_greffes_de_cornee'
-	// 		}
-	// 	]
-	// },
+	{
+		img: KératocôneHero,
+		diseases: 'Kératocône',
+		href: '/maladie-oeil/keratocone',
+		content: [
+			'Le kératocône est une déformation de la cornée , qui peut survenir dès l’adolescence. D’évolution lente, il entraîne une baisse progressive de la vision, liée à un astigmatisme évolutif, une déformation de la perception des objets et une sensibilité accrue à la lumière ainsi qu’un éblouissement.',
+			'Le traitement comprend le recours aux lentilles rigides, le crosslinking, les anneaux cornéens, voire la greffe de cornée. Un suivi régulier est évidemment indispensable.'
+		],
+		questions: [
+			{
+				question: "Qu'est-ce qu'un kératocône ?",
+				href: '/maladie-oeil/keratocone/qu_est_ce_qu_un_keratocone'
+			},
+			{
+				question: 'Comment se traite un kératocône ?',
+				href: '/maladie-oeil/keratocone/comment_se_traite_un_keratocone'
+			}
+		]
+	},
+	{
+		img: CorneeHero,
+		diseases: 'Cornée et greffes',
+		href: '/maladie-oeil/cornee-et-greffes',
+		content: [
+			"La cornée est un tissu transparent laissant pénétrer la lumière à l’intérieur de l’œil. C'est sa transparence qui permet la vision. Toute déformation, œdème ou opacité de la cornée est responsable d’une baisse de vue.",
+			'De nombreux traitements sont disponibles pour traiter les pathologies cornéennes, dont la greffe, ou kératoplastie.'
+		],
+		questions: [
+			{
+				question: 'Cornéa guttata et dystrophie de Fuchs',
+				href: '/maladie-oeil/cornee-et-greffes/cornea_guttata_et_dystrophie_de_fuchs'
+			},
+			{
+				question: 'Différents types de greffes de cornée',
+				href: '/maladie-oeil/cornee-et-greffes/differents_types_de_greffes_de_cornee'
+			}
+		]
+	}
 	// {
 	// 	img: BlephariteHero,
 	// 	diseases: 'Blépharite, sécheresse, surface oculaire',
