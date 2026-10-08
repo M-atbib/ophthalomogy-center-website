@@ -1,0 +1,49 @@
+Épidémiologie
+Il faut imaginer l’Herpès comme un ensemble de maladies, plutôt que comme une infection simple.
+Ce terme désigne en effet toute une famille de virus : les Herpesviridae.
+Ces virus sont très répandus dans le monde et vont infecter la majorité des espèces animales. L’Homme n’est évidemment pas épargné. 
+Parmi les virus de cette famille, certains nous intéressent plus spécifiquement en Ophtalmologie :
+HSV1 (Herpes Simplex Virus 1) 
+HSV2 (Herpes Simplex Virus 2)
+VZV (Virus Zona-Varicelle)
+CMV (CytoMegaloVirus)
+Infection herpétique
+Primo-infection
+La majorité de la population a déjà été en contact avec l’Herpes.
+La primo-infection (c’est-à-dire la première contamination) par le virus HSV1 est, dans l’immense majorité des cas, complètement asymptomatique. Dans d’autres cas, elle peut occasionner des éruptions cutanées et labiales (le classique « bouton de fièvre ») ou des épisodes de gingivites. Dans le cas d’une infection à HSV2, qui est une infection sexuellement transmissible, les lésions peuvent atteindre les muqueuses génitales.
+La primo-infection au virus VZV est plus connue : il s’agit de la varicelle, que la plupart d'entre nous contractent dans l’enfance.
+Une fois infecté, un individu ne se débarasse jamais complètement du virus herpétique. On parle d’infection latente. C’est-à-dire que le virus est encore présent dans le corps humain, de façon silencieuse. 
+Récurrences
+Ce qui caractérise l’infection herpétique, c’est son caractère récurrent. Différentes situations peuvent déclencher un « réveil » de l’infection et donc une nouvelle poussée, comme :
+une fatigue importante
+une immuno-dépression
+le stress
+l’exposition aux UVs
+un traumatisme oculaire, dans le cas des atteintes ophtalmologiques
+Herpès oculaire
+Les virus du groupe Herpes peuvent atteindre, théoriquement, tous les tissus de l’organisme, dont l’œil. Toutes les structures oculaires peuvent être touchées par ce type d'infection.
+Conjonctivite herpétique
+Les conjonctivites d’origine herpétique prennent des formes souvent très proches des autres conjonctivites virales. La difficulté est d’en poser le diagnostic précis, puisque le traitement peut être différent. En particulier, l’utilisation de collyres cortisonés est formellement contre-indiquée en cas de conjonctivite herpétique, sous peine de voir l’infection s’aggraver.
+Kératite herpétique
+Toutes les couches de la cornée peuvent être atteintes.  Il s’agit d’une infection sévère, puisque des cicatrices indélébiles peuvent apparaître et entraîner une baisse de l’acuité visuelle, parfois profonde et irréversible. La présence de l’herpès au sein des couches de la cornée va entraîner une réaction inflammatoire locale très importante, aboutissant parfois à une nécrose du stroma cornéen. Il s’agit d’une urgence diagnostique et thérapeutique.
+Uvéite et kérato-uvéite herpétiques
+Cette situation allie très souvent des lésions de la cornée et de l’uvée, à l’intérieur de l’œil. Les uvéites herpétiques génèrent très souvent une hypertonie oculaire, parfois majeure, et des lésions de l’iris. Le tableau clinique est douloureux, l'oeil très rouge et la vision très souvent abaissée.
+Syndrome de Nécrose Rétinienne Aigüe (ARN syndrome)
+Il s’agit de l’une des affections ophtalmologiques les plus graves.
+Ce diagnostic doit être éliminé devant tout tableau d’inflammation intra-oculaire.
+C’est une urgence thérapeutique, dont la prise en charge est extrêmement complexe et le pronostic malheureusement plutôt sombre pour la fonction visuelle. L’infection se développe au sein du tissu rétinien, qui tapisse le fond de l’œil et entraîne sa destruction. La cicatrisation est souvent fragile et ce tableau se complique, dans 50% des cas, d’un décollement de rétine.
+Traitements
+Le traitement va dépendre du type d’infection et, éventuellement, du diagnostic virologique précis, si des analyses complémentaires ont pu être effectuées.
+Traitement de l’infection
+Traitements anti-herpétiques locaux 
+Des collyres et pommades sont disponibles pour traiter les formes strictement oculaires d’infections herpétiques. L’ARN syndrome peut nécessiter des injections intra-vitréennes de molécules anti-virales.
+Traitements généraux 
+Les traitements anti-herpétiques sont aussi disponibles en sirop, en comprimés ou en perfusion. Ces traitements peuvent être suffisants, utilisés seuls, pour traiter une infection pourtant oculaire.
+Traitement préventif
+Le caractère récidivant des infections herpétiques conduira peut-être votre médecin à vous proposer un traitement préventif. Les indications de ces traitements sont précises et concernent surtout les épisodes fréquentes, sévères ou les patients fragiles, notamment les patients ayant bénéficié d’une greffe de cornée.
+Traitement des complications
+Une fois l’épisode aigü résolu, des séquelles peuvent persister, notamment des cicatrices cornéennes. Lorsqu’elles sont très étendues et atteignent l’axe visuel, la récupération visuelle n’est pas toujours possible. Une greffe de cornée peut être envisagée, dans certains cas.
+Mesures associées
+Le port de lentilles est vivement déconseillé chez les patients atteints d’herpes oculaire. En effet, la pose et la dépose des lentilles occasionnent des micro-traumatismes de la cornée, qui peuvent déclencher une récidive locale.
+Il faut absolument éviter l’instillation oculaire de collyres ou pommades présentant de la cortisone sans examen ophtalmologique préalable. Méconnaître la présence de l’herpès entraîne un risque d’aggravation sévère de l’infection.
+Pour les mêmes raisons, mieux vaut éviter l’auto-médication. En cas de doute sur une récidive, mieux vaut consulter votre ophtalmologiste au plus vite.

@@ -1,115 +1,146 @@
-<script lang="ts">
+<script>
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
+	import {
+		ExplorationsPageTwoIlluOne,
+		PediatriePageTwoIlluOne,
+		PediatriePageTwoIlluThree,
+		PediatriePageTwoIlluTwo
+	} from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable">
 	<Button variant="ghost" href="/maladie-oeil/strabologie-chirurgie-du-strabisme" class="w-fit">
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="space-y-4 lg:w-7/12">
-		<Title level="h1">Doit-on s'inquiéter devant un strabisme chez l'enfant ?</Title>
-		<Text>
-			Le strabisme correspond à une perte d’alignement entre les deux yeux : l’un regarde droit devant quand l’autre
-			se dévie. Ce déséquilibre peut apparaître dès la naissance, pendant l’enfance ou plus tard chez l’adulte.
-		</Text>
-		<Text>
-			On distingue des formes convergentes (vers le nez), divergentes (vers la tempe) et des strabismes verticaux
-			avec un œil orienté vers le haut ou le bas.
-		</Text>
-	</div>
-</Section>
+	<Title level="h1">Doit-on s'inquiéter devant un strabisme chez l'enfant ?</Title>
+	<Text>
+		Le terme "strabisme" signifie que les deux yeux ne regardent pas dans la même direction : un
+		œil regarde droit devant, l'autre œil est dévié.
+	</Text>
+	<Text>Schématiquement, 3 situations sont possibles:</Text>
+	<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
+		<li>L'oeil dévié est orienté vers le nez : le strabisme est convergent ;</li>
+		<figure class="mx-auto w-full max-w-md overflow-hidden">
+			<img
+				src={PediatriePageTwoIlluOne}
+				alt="Illustration de la cataracte"
+				class="h-full w-full object-cover"
+			/>
+		</figure>
+		<li>
+			L'oeil dévié est orienté vers l'extérieur (vers la tempe) : le strabisme est divergent ;
+		</li>
+		<figure class="mx-auto w-full max-w-md overflow-hidden">
+			<img
+				src={PediatriePageTwoIlluTwo}
+				alt="Illustration de la cataracte"
+				class="h-full w-full object-cover"
+			/>
+		</figure>
+		<li>L'oeil dévié est orienté vers le haut ou vers le bas : le strabisme est vertical.</li>
+		<figure class="mx-auto w-full max-w-md overflow-hidden">
+			<img
+				src={PediatriePageTwoIlluThree}
+				alt="Illustration de la cataracte"
+				class="h-full w-full object-cover"
+			/>
+		</figure>
+	</ul>
+	<Text>
+		Un strabisme peut apparaître dès la naissance ou dans les premières années de vie. Dans ce cas,
+		un désordre ophtalmologique ou neurologique est à l'origine de la déviation d'un œil. Mais
+		un strabisme peut aussi se développer chez l'adulte, en particulier au décours d'un problème
+		neuro-vasculaire ou sur un oeil non voyant.
+	</Text>
+	<TextWithCorners>Le strabisme touche environ 3% de la population.</TextWithCorners>
 
-<Section spacing="comfortable">
-	<div class="space-y-8">
-		<div class="space-y-4">
-			<Title level="h2">Qu'appelle-t-on « strabisme » ?</Title>
-			<Text>
-				La déviation peut être permanente ou intermittente et concerner un seul œil ou les deux. Chez l’enfant, un
-				désordre ophtalmologique ou neurologique est souvent en cause ; chez l’adulte, un problème neuro-vasculaire
-				ou la perte de vision d’un œil peut entraîner la déviation.
-			</Text>
-			<ul class="list-disc space-y-2 pl-5">
-				<li>Déviation vers le nez : strabisme convergent ;</li>
-				<li>Déviation vers la tempe : strabisme divergent ;</li>
-				<li>Déviation vers le haut ou le bas : strabisme vertical.</li>
-			</ul>
-			<TextWithCorners>Le strabisme touche environ 3 % de la population.</TextWithCorners>
-		</div>
+	<Title level="h3">Qu'appelle-t-on "strabisme" ?</Title>
+	<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
+		<li>
+			Un défaut visuel d’un œil ou des deux yeux : en particulier l’hypermétropie forte ou une
+			asymétrie de vision entre les deux yeux. Un strabisme convergent peut être lié au fait de trop
+			accommoder (forcer sur les yeux pour voir net).
+		</li>
+		<li>
+			Il existe une part d'hérédité, si l'un des parents est atteint. Un ou des cas de strabisme
+			dans la famille sont à signaler à l'ophtalmologiste.
+		</li>
+		<li>La prématurité et/ou un petit poids de naissance.</li>
+		<li>
+			Un œil non-voyant peut être à l'origine d'un strabisme divergent, surtout chez l'adulte
+			(anomalie morphologique d'un œil ou dans les suites d'un traumatisme oculaire).
+		</li>
+	</ul>
 
-		<div class="space-y-4">
-			<Title level="h2">Quels sont les facteurs de risque ?</Title>
-			<ul class="list-disc space-y-2 pl-5">
-				<li>
-					Défaut visuel d’un œil ou des deux (forte hypermétropie, asymétrie importante) pouvant induire une
-					surenchère d’accommodation ;
-				</li>
-				<li>Antécédents familiaux de strabisme ;</li>
-				<li>Prématurité et/ou faible poids de naissance ;</li>
-				<li>Œil non voyant provoquant un strabisme divergent, surtout à l’âge adulte.</li>
-			</ul>
-		</div>
+	<Title level="h3">Quels sont les facteurs de risque de survenue d'un strabisme ?</Title>
 
-		<div class="space-y-4">
-			<Title level="h2">Quelles sont les conséquences possibles ?</Title>
-			<div class="space-y-3">
-				<Title level="sub2">Impact sur l'acuité visuelle</Title>
-				<Text>
-					Le cerveau neutralise souvent l’image de l’œil dévié pour éviter la vision double. Chez l’enfant, cette
-					compensation peut conduire à une amblyopie (malvoyance) si rien n’est fait avant 8 ans. Chez l’adulte, la
-					vision double (diplopie) est plus fréquente.
-				</Text>
-			</div>
-			<div class="space-y-3">
-				<Title level="sub2">Impact sur la vision binoculaire</Title>
-				<Text>
-					La coordination imparfaite des yeux altère la vision du relief, voire empêche toute perception
-					stéréoscopique.
-				</Text>
-			</div>
-			<div class="space-y-3">
-				<Title level="sub2">Impact esthétique</Title>
-				<Text>
-					Le retentissement psychologique peut être majeur, à l’école comme à l’âge adulte, et justifie à lui seul
-					une prise en charge chirurgicale lorsque cela est possible.
-				</Text>
-			</div>
-			<div class="space-y-3">
-				<Title level="sub2">Strabisme précoce</Title>
-				<Text>
-					Présent dès la naissance ou dans les 6 premiers mois, il est le plus souvent convergent. Il impose un
-					examen ophtalmologique précoce, le port constant de lunettes et une surveillance rapprochée.
-				</Text>
-			</div>
-			<TextWithCorners>La présence d'un strabisme permanent ou intermittent chez un enfant de plus de 3 mois doit alerter.</TextWithCorners>
-		</div>
+	<Title level="h3">Quelles sont les conséquences possibles du strabisme ?</Title>
+	<Title level="sub2">Impact sur l'acuité visuelle</Title>
+	<Text>
+		L'image de l'œil dévié est souvent neutralisée par le cerveau. L'œil dévié fonctionne, mais le
+		cerveau "annule" son image, ce qui empêche le patient de voir double.
+	</Text>
+	<Text>
+		Ce phénomène est extrêmement problématique chez un enfant en bas âge. En effet, si cette
+		situation dure dans le temps et que rien n'est fait, le cerveau n'utilise plus l'oeil dévié et
+		une malvoyance peut s'installer sur cet oeil. C'est ce qu'on appelle "l'amblyopie".
+	</Text>
+	<Text>
+		L'amblyopie se développe si le strabisme survient avant l'âge de 8 ans. Chez un adulte,
+		l'apparition d'un strabisme déclenche fréquemment une diplopie, ou "vision double".
+	</Text>
+	<Title level="sub2">Impact sur la vision binoculaire et la vision des reliefs</Title>
+	<Text>
+		L'anomalie de coordination des yeux est à l'origine d'une mauvaise, voire d'une absence de la
+		vision du relief (vision 3D).
+	</Text>
+	<Title level="sub2">Impact esthétique</Title>
+	<Text>
+		Cette plainte est fréquente et peut pleinement justifier une intervention chirurgicale. Dans
+		l'enfance, en milieu scolaire, à l'adolescence ou même chez les adultes, le strabisme représente
+		souvent un fardeau pour les patients qui en souffrent. N'hésitez pas à en parler avec votre
+		ophtalmologiste.
+	</Text>
+	<Title level="sub2">Strabisme précoce</Title>
+	<Text>
+		Ce terme désigne un strabisme présent dès la naissance ou qui apparaît dans les 6 premiers mois
+		de vie. Il s'agit d'un strabisme convergent, dans la plupart des cas, mais un strabisme
+		divergent peut également se voir. Il nécessite un examen ophtalmologique précoce, le port de
+		lunettes en permanence et une surveillance médicale ophtalmologique rapprochée.
+	</Text>
+	<TextWithCorners>
+		La présence d'un strabisme permanent ou d'un strabisme intermittent chez un enfant de plus de 3
+		mois doit vous alerter.
+	</TextWithCorners>
 
-		<div class="space-y-4">
-			<Title level="h2">Comment se traite un strabisme ?</Title>
-			<div class="space-y-3">
-				<Title level="sub2">Les lunettes</Title>
-				<Text>
-					La correction optique peut réduire, voire faire disparaître la déviation. Chez l’enfant, elle est
-					prescrite après cycloplégie pour mesurer la réfraction sans accommodation.
-				</Text>
-			</div>
-			<div class="space-y-3">
-				<Title level="sub2">La toxine botulique</Title>
-				<Text>
-					Utilisée dans certains strabismes précoces, elle est injectée dans les muscles oculomoteurs pour les
-					relâcher et différer une chirurgie plus invasive.
-				</Text>
-			</div>
-			<div class="space-y-3">
-				<Title level="sub2">La chirurgie</Title>
-				<Text>
-					Elle peut être réalisée à tout âge. Chez l’enfant, l’opération est souvent proposée avant l’entrée au CP
-					(après 4-5 ans) et peut être répétée en cas de récidive.
-				</Text>
-			</div>
-			<TextWithCorners>Vous êtes gêné par votre strabisme ? Il existe probablement une solution chirurgicale : parlez-en avec votre ophtalmologiste.</TextWithCorners>
-		</div>
-	</div>
+	<Title level="h3">Comment se traite un strabisme ?</Title>
+	<Title level="sub2">Les lunettes</Title>
+	<Text>
+		Le port de lunettes peut permettre de diminuer ou de faire disparaître complètement le strabisme
+		(dans ce dernier cas, l'opération n'est pas indiquée). Chez l'enfant, la correction est
+		prescrite après une cycloplégie, qui permet de s'affranchir du phénomène d'accomodation pour la
+		réalisation des mesures.
+	</Text>
+	<Title level="sub2">La toxine botulique</Title>
+	<Text>
+		Dans le cas des strabismes précoces, la toxine botulique peut être utilisée. Elle s’injecte
+		directement dans les muscles oculomoteurs, au bloc opératoire. Cela permet le relâchement des
+		muscles et de reporter une éventuelle intervention chirurgicale plus invasive.
+	</Text>
+	<Title level="sub2">La chirurgie</Title>
+	<Text>
+		Elle peut être réalisée à tout âge. Chez l’enfant il est conseillé d’attendre l’âge de 4-5 ans.
+		Le plus souvent, l’opération est proposée avant l’entrée au CP.
+	</Text>
+	<Text>
+		Elle peut être réalisée à plusieurs reprises si une récidive du strabisme apparaît au cours de
+		la vie.
+	</Text>
+	<Text>
+		Vous êtes gêné par votre strabisme ? Il peut probablement être opéré. Venez en parler avec votre
+		ophtalmologiste !
+	</Text>
 </Section>

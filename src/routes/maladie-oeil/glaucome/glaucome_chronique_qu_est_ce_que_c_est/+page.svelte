@@ -14,7 +14,7 @@
 
 	<div class="flex flex-col gap-8 lg:flex-row lg:items-center">
 		<div class="space-y-4 lg:w-4/12">
-			<Title level="h1">Qu'appelle-t-on "glaucome" ?</Title>
+			<Title level="h2">Qu'appelle-t-on "glaucome" ?</Title>
 			<Text>Le glaucome est une pathologie fréquente et potentiellement cécitante.</Text>
 			<Text>
 				En France, en 2019, on estime que 4% de la population est atteinte de glaucome, soit près de
@@ -28,7 +28,7 @@
 		>
 			<img
 				src={GlaucomePageOneImgOne}
-				alt="Illustration de la cataracte"
+				alt="Illustration du glaucome chronique"
 				class="h-full w-full object-cover"
 			/>
 		</figure>
@@ -46,7 +46,7 @@
 	<figure class="mx-auto w-full max-w-sm overflow-hidden rounded-md">
 		<img
 			src={GlaucomePageOneIlluOne}
-			alt="Courbe illustrant l'augmentation des chirurgies de la cataracte"
+			alt="Illustration des effets du glaucome sur la vision"
 			class="h-full w-full object-cover"
 			loading="lazy"
 		/>

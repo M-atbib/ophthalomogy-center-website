@@ -24,20 +24,12 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Contactez-nous | Formulaire</title>
-	<meta
-		name="description"
-		content="Contactez notre équipe via notre formulaire dédié : raison du contact, identité du patient, cabinet sollicité."
-	/>
-</svelte:head>
-
 <Section spacing="tight" width="wide" class="bg-primary-background">
 	<div class="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-stretch lg:gap-12">
 		<div class="space-y-8 sm:space-y-10 lg:flex-[1.05]">
 			<div class="mb-8">
 				<Text variant="eyebrow" tone="cta">contact clinique</Text>
-				<Title level="h2" class="mb-3 max-w-4xl text-pretty">
+				<Title level="h1" class="mb-3 max-w-4xl text-pretty">
 					Nous traiterons votre demande avec toute l'attention nécessaire
 				</Title>
 				<Text tone="muted" class="max-w-2xl text-pretty">
@@ -47,7 +39,7 @@
 			</div>
 
 			<Card variant="muted" class="gap-6">
-				<div class="bg-light-grey/50 relative overflow-hidden rounded-xl" aria-hidden="true">
+				<div class="relative overflow-hidden rounded-xl bg-light-grey/50" aria-hidden="true">
 					<img
 						src={ContactHero}
 						alt=""
@@ -119,7 +111,7 @@
 					</Button>
 				</div>
 
-				<div class="border-light-grey/60 bg-sections-background/60 rounded-2xl border p-4">
+				<div class="rounded-2xl border border-light-grey/60 bg-sections-background/60 p-4">
 					<Text variant="eyebrow" tone="cta">professionnels</Text>
 					<Text variant="body-sm" tone="muted" class="m-0">
 						Vous êtes médecin et souhaitez nous adresser un patient ?
@@ -148,19 +140,19 @@
 						<div class="space-y-3">
 							<div class="flex items-center gap-2">
 								<Icon class="size-5" />
-								<p class="text-primary font-semibold">{title}</p>
+								<p class="font-semibold text-primary">{title}</p>
 							</div>
 							<div class="space-y-2">
 								{#each lines as line (line)}
 									{#if title === 'Appelez-nous'}
 										<a
 											href={line === phoneMain.label ? phoneMain.href : phoneAlt.href}
-											class="text-secondary block underline underline-offset-4"
+											class="block text-secondary underline underline-offset-4"
 										>
 											{line}
 										</a>
 									{:else if link}
-										<a href={link} class="text-secondary block underline underline-offset-4"
+										<a href={link} class="block text-secondary underline underline-offset-4"
 											>{line}</a
 										>
 									{:else if title === 'Visitez-nous'}
@@ -168,7 +160,7 @@
 											href={mapsHref}
 											target="_blank"
 											rel="noreferrer"
-											class="text-secondary block underline underline-offset-4"
+											class="block text-secondary underline underline-offset-4"
 										>
 											{line}
 										</a>

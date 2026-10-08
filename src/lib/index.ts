@@ -8,5 +8,9 @@ export { default as Text } from './components/general/Text.svelte';
 export { default as TextWithCorners } from './components/general/TextWithCorners.svelte';
 export { default as Title } from './components/general/Title.svelte';
 
+export { default as ArticleImage } from './components/disease/ArticleImage.svelte';
+export { default as DiseaseArticleLayout } from './components/disease/DiseaseArticleLayout.svelte';
+export { default as OpeningImageSection } from './components/disease/OpeningImageSection.svelte';
+
 export { default as Navbar } from './components/layout/Navbar.svelte';
 export { default as Footer } from './components/layout/Footer.svelte';
