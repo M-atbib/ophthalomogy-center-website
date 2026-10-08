@@ -1,67 +1,73 @@
-<script lang="ts">
+<script>
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
+	import { PediatriePageTwoIlluOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable">
 	<Button variant="ghost" href="/maladie-oeil/strabologie-chirurgie-du-strabisme" class="w-fit">
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="space-y-4 lg:w-7/12">
-		<Title level="h1">Principes de la chirurgie du strabisme</Title>
-		<Text>
-			La chirurgie du strabisme vise à réduire ou faire disparaître une déviation oculaire persistante malgré le port
-			de lunettes en agissant directement sur les muscles responsables de l’alignement des yeux.
-		</Text>
-		<Text>
-			Chaque œil possède six muscles oculomoteurs qui assurent les mouvements dans toutes les directions du regard.
-		</Text>
-	</div>
-</Section>
+	<Title level="h1">Principes de la chirurgie du strabisme</Title>
 
-<Section spacing="comfortable">
-	<div class="space-y-8">
-		<div class="space-y-4">
-			<Title level="h2">Anatomie et principes chirurgicaux</Title>
-			<ul class="list-disc space-y-2 pl-5">
-				<li>Muscle droit supérieur</li>
-				<li>Muscle droit inférieur</li>
-				<li>Muscle droit médial</li>
-				<li>Muscle droit latéral</li>
-				<li>Grand oblique</li>
-				<li>Petit oblique</li>
-			</ul>
-			<Text>
-				L’intervention concerne le plus souvent les muscles horizontaux (droit médial et droit latéral). Elle peut
-				porter sur un ou deux muscles, sur un seul œil ou sur les deux, selon le type et l’ampleur du strabisme.
-			</Text>
-			<TextWithCorners>
-				Le chirurgien renforce certains muscles et en affaiblit d’autres afin de corriger l’axe visuel et compenser la
-				déviation.
-			</TextWithCorners>
-			<TextWithCorners>
-				La chirurgie du strabisme répond avant tout à une indication esthétique : elle ne corrige ni l’acuité visuelle
-				ni la dépendance aux lunettes.
-			</TextWithCorners>
-		</div>
+	<Title level="h3">Anatomie et principes chirurgicaux</Title>
+	<Text>
+		La chirurgie du strabisme a pour but de faire disparaître ou de réduire une déviation oculaire,
+		qui persiste malgré le port de lunettes.
+	</Text>
+	<figure class="mx-auto w-full max-w-md overflow-hidden">
+		<img
+			src={PediatriePageTwoIlluOne}
+			alt="Illustration de la cataracte"
+			class="h-full w-full object-cover"
+		/>
+	</figure>
+	<Text>Les muscles oculomoteurs sont au nombre de 6 par œil :</Text>
+	<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
+		<li>Le muscle droit supérieur,</li>
+		<li>Le muscle droit inférieur,</li>
+		<li>Le muscle droit médial,</li>
+		<li>Le muscle droit latéral,</li>
+		<li>Le muscle grand oblique,</li>
+		<li>Le muscle petit oblique.</li>
+	</ul>
+	<Text>
+		Dans la majorité des cas, l’intervention concerne les muscles horizontaux (muscles droit latéral
+		et droit médial). Le chirurgien intervient sur un ou deux muscle(s) au cours de l’intervention
+		et sur un seul œil ou sur les deux yeux, en fonction du type de strabisme et de son importance.
+	</Text>
+	<Text>
+		La technique chirurgicale consiste à renforcer certains muscles et à en affaiblir certains
+		autres. Ceci permet de corriger l'axe visuel et de lutter contre la déviation.
+	</Text>
+	<TextWithCorners>
+		La chirurgie du strabisme est une intervention à visée essentiellement esthétique.
+	</TextWithCorners>
+	<Text>Elle ne permet pas d'améliorer la vision ni de diminuer le port de lunettes.</Text>
 
-		<div class="space-y-4">
-			<Title level="h2">Complications possibles</Title>
-			<Text>
-				Les complications restent rares mais peuvent inclure une vision double passagère (surtout chez l’adulte), un
-				traitement incomplet nécessitant une ré-intervention, ainsi que des risques exceptionnels d’infection,
-				d’hémorragie, de rupture musculaire ou de perforation de la paroi oculaire.
-			</Text>
-			<Text>
-				Le strabisme pouvant évoluer au cours de la vie, une récidive est possible même plusieurs années après la
-				chirurgie. Une nouvelle opération peut alors être proposée.
-			</Text>
-			<TextWithCorners>
-				La chirurgie du strabisme est réalisée sous anesthésie générale, en ambulatoire, avec des suites généralement
-				simples.
-			</TextWithCorners>
-		</div>
-	</div>
+	<Title level="h3">Complications de la chirurgie</Title>
+	<Text>
+		Comme pour toute intervention, des complications sont possibles. Elles sont, toutefois, très
+		rares.
+	</Text>
+	<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
+		<li>Vision double passagère (plus fréquente chez l’adulte) ;</li>
+		<li>Traitement incomplet nécessitant un traitement chirurgical complémentaire à distance ;</li>
+		<li>Infection et hémorragie sont rares ;</li>
+		<li>
+			La rupture d’un muscle anormal ou la perforation de la paroi de l’œil sont possible, mais
+			exceptionnelles.
+		</li>
+	</ul>
+	<Text>
+		La récidive du strabisme peut se produire après la chirurgie, même après plusieurs années. En
+		effet, le strabisme évolue tout au long de la vie. Une nouvelle opération pourra alors être
+		proposée.
+	</Text>
+	<Text>
+		La chirurgie du strabisme est réalisée sous anesthésie générale, en ambulatoire. Les suites sont
+		simples dans la majorité des cas.
+	</Text>
 </Section>

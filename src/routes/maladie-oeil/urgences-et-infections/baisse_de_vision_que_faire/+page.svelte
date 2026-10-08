@@ -1,67 +1,85 @@
 <script lang="ts">
-	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
-	import { ArrowLeft } from '@lucide/svelte';
+	import { DiseaseArticleLayout, Text, TextWithCorners, Title } from '$lib';
+
+	const backHref = '/maladie-oeil/urgences-et-infections';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
-	<Button variant="ghost" href="/maladie-oeil/urgences-et-infections" class="w-fit">
-		<ArrowLeft />
-		Retour
-	</Button>
+<DiseaseArticleLayout title="Baisse de vision : que faire ?" {backHref}>
+	<Text
+		>Une baisse de l’acuité visuelle est un événement souvent très anxiogène pour la personne
+		atteinte. Il est essentiel de bien caractériser un tel épisode pour pouvoir orienter le
+		diagnostic et la prise en charge de manière efficace.</Text
+	>
+	<TextWithCorners
+		>Il est nécessaire de consulter votre ophtalmologiste sans délai (moins de 48 heures) si la
+		baisse de vision est :</TextWithCorners
+	>
 
-	<div class="space-y-4 lg:w-7/12">
-		<Title level="h1">Baisse de vision : que faire ?</Title>
-		<Text>
-			Une baisse brutale de l’acuité visuelle est anxiogène. Mieux la caractériser permet d’orienter rapidement le
-			diagnostic et la prise en charge.
-		</Text>
-	</div>
-</Section>
+	<section>
+		<Title level="sub2" as="h2">Profonde :</Title>
+		<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
+			<li>
+				si vous ne parvenez plus à lire des caractères normalement aisément déchiffrables, avec
+				votre correction optique habituelle ;
+			</li>
+			<li>
+				si vous percevez une tache sombre, fixe, qui empiète sur le point de fixation centrale ;
+			</li>
+			<li>
+				si la baisse de vision consiste en une amputation, plus ou moins nette, de votre champ de
+				vision.
+			</li>
+		</ul>
+		<Title level="sub2" as="h2">Brutale :</Title>
+		<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
+			<li>
+				La rapidité d’installation de la baisse de vision est un élément fondamental d’orientation
+				vers certains diagnostiques.
+			</li>
+			<li>
+				Si, à l’inverse, la vision s’est détériorée en plusieurs mois, le degré d’urgence est
+				probablement moindre.
+			</li>
+		</ul>
+		<Title level="sub2" as="h2">Consécutive à une chirurgie oculaire :</Title>
+		<Text
+			>Une chirurgie oculaire récente est toujours un argument fort en faveur d’un examen
+			ophtalmologique précoce.</Text
+		>
+		<Text
+			>Une baisse d’acuité visuelle profonde dans les jours qui suivent une chirurgie de la
+			cataracte peuvent signifier la présence d’une infection post-opératoire, à prendre en charge
+			sans délai.</Text
+		>
+		<Title level="sub2" as="h2">Non spontanément résolutive</Title>
+		<Title level="sub2" as="h2">Survenue dans un contexte ophtalmologique particulier :</Title>
+		<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
+			<li>
+				La myopie forte expose à des complications rétiniennes graves, telles que la déchirure
+				rétinienne ou le décollement de rétine.
+			</li>
+			<li>
+				Un antécédent de DMLA impose la plus grande réactivité en cas de baisse d’acuité visuelle
+				brutale et profonde, signant parfois la présence d’un hématome rétinien ou la récidive d’un
+				œdème maculaire.
+			</li>
+			<li>Chez un enfant, une baisse de vision doit toujours être prise au sérieux.</li>
+		</ul>
+	</section>
 
-<Section spacing="comfortable">
-	<div class="space-y-8">
-		<div class="space-y-4">
-			<Title level="h2">Quand consulter en urgence ?</Title>
-			<Text>Consultez votre ophtalmologiste en moins de 48 h si la baisse est :</Text>
-			<div class="space-y-3">
-				<Title level="sub2">Profonde</Title>
-				<ul class="list-disc space-y-2 pl-5">
-					<li>Impossibilité de lire des caractères habituellement faciles malgré la correction ;</li>
-					<li>Tache sombre fixe empiétant le point de fixation ;</li>
-					<li>Amputation nette du champ visuel.</li>
-				</ul>
-			</div>
-			<div class="space-y-3">
-				<Title level="sub2">Brutale</Title>
-				<Text>La rapidité d’installation oriente vers certains diagnostics. Une dégradation sur plusieurs mois est moins urgente.</Text>
-			</div>
-			<div class="space-y-3">
-				<Title level="sub2">Post-chirurgicale</Title>
-				<Text>
-					Toute baisse après une chirurgie oculaire, notamment la cataracte, nécessite un examen précoce pour écarter une
-					infection post-opératoire.
-				</Text>
-			</div>
-			<TextWithCorners>L’absence de douleur ou de rougeur n’exclut pas l’urgence.</TextWithCorners>
-		</div>
-
-		<div class="space-y-4">
-			<Title level="h2">Situations particulières</Title>
-			<ul class="list-disc space-y-2 pl-5">
-				<li>Myopie forte : risque de déchirure ou décollement de rétine ;</li>
-				<li>Antécédent de DMLA : possible hématome ou récidive d’œdème maculaire ;</li>
-				<li>Enfant : toute baisse visuelle doit être prise très au sérieux.</li>
-			</ul>
-		</div>
-
-		<div class="space-y-4">
-			<Title level="h2">Quand peut-on différer l'examen ?</Title>
-			<Text>L’examen peut être reporté de 48 h à quelques jours si la baisse est :</Text>
-			<ul class="list-disc space-y-2 pl-5">
-				<li>Progressive sur plusieurs semaines ou mois ;</li>
-				<li>Fluctuante, par exemple améliorée par le clignement ;</li>
-				<li>Minime.</li>
-			</ul>
-		</div>
-	</div>
-</Section>
+	<TextWithCorners
+		>L’absence de douleur ou de rougeur n’est pas un bon élément pour définir le caractère urgent ou
+		non de la situation.</TextWithCorners
+	>
+	<section>
+		<Title level="h3" as="h2"
+			>L’examen ophtalmologique pourra être différé de 48 heures à quelques jours si la baisse de
+			vision est :</Title
+		>
+		<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
+			<li>Survenue progressivement, en quelques semaines ou mois ;</li>
+			<li>Fluctuante, notamment avec le clignement de la paupière ;</li>
+			<li>Minime.</li>
+		</ul>
+	</section>
+</DiseaseArticleLayout>

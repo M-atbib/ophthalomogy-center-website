@@ -1,74 +1,105 @@
 <script lang="ts">
-	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
+	import { Button, Section, Text, TextWithCorners, Title } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable">
 	<Button variant="ghost" href="/maladie-oeil/blepharite-secheresse-surface-oculaire" class="w-fit">
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="space-y-4 lg:w-7/12">
+	<!-- The question-led structure is retained because the Figma source presents this page as practical patient guidance. -->
+	<article class="mt-10 space-y-12">
 		<Title level="h1">Que faire en cas de sécheresse oculaire ?</Title>
+
 		<Text>
-			La sécheresse oculaire résulte d’un déficit quantitatif ou qualitatif du film lacrymal. Elle provoque brûlures,
-			inconfort et flou visuel intermittent. Une prise en charge précoce améliore le confort quotidien.
+			Si vous êtes atteint d’un syndrome de l’œil sec, voici quelques conseils simples à appliquer
+			au quotidien. Ils permettront de soulager vos symptômes.
 		</Text>
-	</div>
-</Section>
 
-<Section spacing="comfortable">
-	<div class="space-y-8">
-		<div class="space-y-4">
-			<Title level="h2">Identifier la cause</Title>
+		<section>
+			<Title level="h3" as="h2">
+				Le niveau d'hydratation influence-t-il les signes de sécheresse oculaire ?
+			</Title>
 			<Text>
-				L’ophtalmologiste réalise un examen complet (questionnaire, test de rupture du film lacrymal, coloration, mesure
-				de la sécrétion) pour déterminer s’il s’agit d’un déficit aqueux, d’une atteinte évaporative (dysfonction des
-				glandes de Meibomius) ou d’une cause mixte.
+				De manière générale, une hydratation abondante est nécessaire. Il est recommandé de boire
+				entre 1,5 et 2 litres d’eau par jour, si vous êtes un adulte en bonne santé. Le film
+				lacrymal est, en effet, majoritairement composé d’eau.
 			</Text>
-			<Text>
-				Certaines pathologies (blépharite, maladies auto-immunes, chirurgie oculaire récente, environnement sec, écrans)
-				peuvent déclencher ou aggraver les symptômes.
-			</Text>
-		</div>
+		</section>
 
-		<div class="space-y-4">
-			<Title level="h2">Mesures d'hygiène et d'environnement</Title>
-			<ul class="list-disc space-y-2 pl-5">
-				<li>Éviter les flux d’air directs (ventilateurs, climatisation) ;</li>
-				<li>Faire des pauses régulières lors du travail sur écran pour cligner et humidifier les yeux ;</li>
-				<li>Utiliser un humidificateur d’air si nécessaire ;</li>
-				<li>Porter des lunettes de soleil enveloppantes à l’extérieur pour limiter l’évaporation.</li>
-			</ul>
-		</div>
-
-		<div class="space-y-4">
-			<Title level="h2">Soins locaux</Title>
+		<section>
+			<Title level="h3" as="h2">
+				Peut-on agir sur son environnement pour réduire les signes de sécheresse ?
+			</Title>
 			<Text>
-				Les larmes artificielles sans conservateur humidifient et améliorent le confort. Elles s’utilisent plusieurs fois
-				par jour selon la prescription.
-			</Text>
-			<Text>
-				En cas de dysfonction meibomienne, l’hygiène palpébrale (chaleur + massages réguliers) reste essentielle pour
-				désobstruer les glandes.
-			</Text>
-			<Text>
-				Des gels ou pommades lubrifiantes peuvent être recommandés la nuit lorsque les paupières sont mal occluses.
-			</Text>
-		</div>
-
-		<div class="space-y-4">
-			<Title level="h2">Traitements médicaux</Title>
-			<Text>
-				Selon la sévérité, le spécialiste peut prescrire des anti-inflammatoires locaux (corticoïdes de courte durée,
-				ciclosporine, etc.), des antibiotiques en cas de blépharite infectée, ou proposer des dispositifs (bouchons
-				méatiques, lumière pulsée, etc.).
+				De manière générale, il est conseillé d'éviter les environnement climatisés et les courants
+				d'air. L’air sec, surtout s’il est projeté vers le visage, peut accentuer l’évaporation des
+				larmes. Il est donc recommandé de ne pas s’asseoir face au souffle d’un ventilateur ou d’un
+				appareil de climatisation, notamment à son poste de travail. L’air très sec et filtré a
+				tendance à aggraver les signes de sécheresse oculaire.
 			</Text>
 			<TextWithCorners>
-				Seul un ophtalmologiste peut adapter le traitement : évitez l’automédication. La régularité est la clé d’une bonne
-				prise en charge.
+				En voiture, détournez les buses de climatisation de votre visage.
 			</TextWithCorners>
-		</div>
-	</div>
+		</section>
+
+		<section>
+			<Title level="h3" as="h2">
+				Le travail sur écran est-il compatible avec une sécheresse oculaire ?
+			</Title>
+			<Text>
+				Pour les personnes qui travaillent sur écran, il est recommandé de garder la ligne des yeux
+				au-dessus du poste. Ainsi, la direction du regard, orienté vers le bas, maintient le globe
+				oculaire au contact de la paupière inférieure et des larmes. À l’inverse, regarder un écran
+				horizontalement ou, pire encore, situé plus haut que le visage, découvre la partie basse du
+				globe oculaire, élargissant la surface possible d’assèchement.
+			</Text>
+			<Text>
+				Il est conseillé, entre chaque heure de travail, de marquer une courte pause, de lever le
+				nez, d’arrêter la lecture ou la fixation et de cligner régulièrement des paupières, quelques
+				dizaines de fois. Ceci permet de restaurer en partie l’équilibre et l’étalement régulier du
+				film lacrymal.
+			</Text>
+		</section>
+
+		<section>
+			<Title level="h3" as="h2">
+				Comment réaliser les soins et massages des paupières en cas de sécheresse oculaire ?
+			</Title>
+			<Text>
+				Les soins des paupières quotidiens, s’ils vous ont été prescrits, sont indispensables pour
+				réduire les manifestations de sécheresse et préserver la surface oculaire.
+			</Text>
+		</section>
+
+		<section>
+			<Title level="h3" as="h2">Est-il conseillé d'utiliser des collyres lubrifiants ?</Title>
+			<Text>
+				En cas de sécheresse oculaire, votre ophtalmologiste prescrira sans doute l'instillation,
+				plusieurs fois par jour, de collyres lubrifiants.
+			</Text>
+			<Text>
+				Ils permettent à la fois d'hydrater la surface oculaire et de faciliter la cicatrisation de
+				certaines lésions. Il existe une très grande variété de collyres lubrifiants, dont la
+				composition et les caractéristiques peuvent être très différentes.
+			</Text>
+		</section>
+
+		<section>
+			<Title level="h3" as="h2">
+				Le port de lentilles est-il dangereux en cas de sécheresse oculaire ?
+			</Title>
+			<Text>
+				Le port prolongé de lentilles de contact peut aggraver le syndrome sec oculaire. Il est donc
+				primordial de respecter formellement les consignes de port de votre ophtalmologiste et il
+				peut être prudent de limiter la durée de port de vos lentilles.
+			</Text>
+			<TextWithCorners>
+				Le modèle de lentilles prescrit ne doit pas être modifié sans l’accord de votre médecin ; le
+				matériau ne serait alors peut-être plus adapté à votre surface oculaire.
+			</TextWithCorners>
+		</section>
+	</article>
 </Section>

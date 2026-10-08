@@ -1,64 +1,119 @@
 <script lang="ts">
-	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
+	import { Button, Section, Text, TextWithCorners, Title } from '$lib';
+	import { BlepharitePageFourIlluOne, BlepharitePageFourIlluTwo } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
+
+	// The paired page-four illustrations distinguish the two benign surface lesions in the Figma reference.
+	const pterygionIllustration = BlepharitePageFourIlluOne;
+	const pingueculaIllustration = BlepharitePageFourIlluTwo;
 </script>
 
-<Section width="wide" spacing="comfortable" contentSpacing="none">
+<Section width="wide" spacing="comfortable">
 	<Button variant="ghost" href="/maladie-oeil/blepharite-secheresse-surface-oculaire" class="w-fit">
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="space-y-4 lg:w-7/12">
-		<Title level="h1">Ptérygion & pinguecula</Title>
+	<!-- The article keeps diagnosis, consequences, and treatment in the source order to avoid changing medical meaning. -->
+	<article class="mt-10 space-y-12">
+		<Title level="h1">Ptérygion, pinguecula</Title>
+
 		<Text>
-			Certaines lésions bénignes peuvent se développer à partir de la conjonctive, membrane transparente qui recouvre la
-			surface de l’œil et la face interne des paupières.
+			Certaines lésions, assez fréquentes, peuvent se développer aux dépens de la conjonctive, qui
+			est l’enveloppe transparente tapissant la surface du globe oculaire et la face interne des
+			paupières.
 		</Text>
-	</div>
-</Section>
 
-<Section spacing="comfortable">
-	<div class="space-y-8">
-		<div class="space-y-4">
-			<Title level="h2">Ptérygion : causes et description</Title>
-			<Text>
-				Le ptérygion apparaît plus volontiers chez les personnes exposées au soleil ou travaillant en extérieur. L’effet
-				« Coroneo » (rayons latéraux concentrés par la cornée) expliquerait sa localisation nasale fréquente.
-			</Text>
-			<Text>
-				Il prend l’aspect d’un triangle progressant lentement sur la cornée. Bien que bénin, il peut devenir inflammatoire,
-				empiéter sur la zone optique et provoquer une baisse de vision ou un astigmatisme.
-			</Text>
-		</div>
+		<section>
+			<Title level="h3" as="h2">Ptérygion</Title>
 
-		<div class="space-y-4">
-			<Title level="h2">Prise en charge du ptérygion</Title>
+			<Title level="sub1" as="h3">Causes de survenue</Title>
+			<TextWithCorners>Ne pas traiter la cause entraîne un risque de récidive.</TextWithCorners>
 			<Text>
-				La prévention passe par la protection solaire, notamment contre les rayons latéraux : lunettes de soleil à larges
-				branches recommandées. Les lunettes corrigent l’astigmatisme, tandis que les lentilles peuvent être instables.
+				Cette lésion est, en effet, plus volontiers diagnostiquée chez des patients pratiquant une
+				activité professionnelle d’extérieur ou ayant grandi dans des régions ou pays fortement
+				ensoleillés. La principale théorie permettant d’expliquer sa localisation est l’effet «
+				CORONEO » : ce sont les rayons latéraux du soleil qui arrivent, non pas de face, mais via le
+				côté de l’œil qui, par effet de concentration de la cornée, vont se focaliser sur la région
+				conjonctivale nasale et entraîner une prolifération anormale des tissus conjonctivaux.
 			</Text>
-			<Text>
-				Si la lésion envahit la cornée et gêne la vision, une ablation chirurgicale superficielle est pratiquée en
-				ambulatoire. Le risque principal reste la récidive malgré la résection complète.
-			</Text>
-			<TextWithCorners>Ne pas traiter la cause augmente le risque de récidive.</TextWithCorners>
-		</div>
 
-		<div class="space-y-4">
-			<Title level="h2">Pinguecula</Title>
+			<Title level="sub1" as="h3">Description et conséquences</Title>
 			<Text>
-				La pinguecula est un diagnostic différentiel : petite lésion conjonctivale bénigne, souvent bien limitée et sans
-				retentissement visuel. Elle peut toutefois s’inflammer, devenir rouge ou douloureuse et nécessite alors un
-				traitement médical.
+				Le ptérygion prend l’aspect d’un triangle, évoluant à la surface de l’œil, plus fréquemment
+				dans le quadrant nasal de celui-ci. Il s’agit d’une lésion évolutive, mais parfaitement
+				bénigne. Sa croissance est très lente, mais il arrive qu’il empiète, parfois très largement,
+				sur la cornée. Il peut entraîner une baisse de la vision.
 			</Text>
+
+			<figure class="mx-auto my-10 aspect-square w-full max-w-sm overflow-hidden rounded-md">
+				<img
+					src={pterygionIllustration}
+					alt="Illustration d’un ptérygion progressant sur la cornée"
+					class="h-full w-full object-contain"
+					loading="lazy"
+				/>
+			</figure>
+
 			<Text>
-				En évoluant, elle peut se transformer en ptérygion. Une simple surveillance est généralement suffisante.
+				Le ptérygion peut survenir sur les deux yeux. Il est très souvent visible à l’œil nu et peut
+				avoir tendance à devenir inflammatoire, nécessitant alors un traitement spécifique.
 			</Text>
-			<TextWithCorners>
-				Toute lésion inhabituelle de la surface oculaire doit être montrée à un ophtalmologiste, certaines pouvant être
-				malignes.
-			</TextWithCorners>
-		</div>
-	</div>
+
+			<Title level="sub1" as="h3">Prise en charge</Title>
+			<ul class="mt-2 mb-6 list-disc space-y-4 pl-5">
+				<li>
+					Il existe des mesures préventives, qui vont empêcher un ptérygion d'apparaître ou de
+					progresser. Il est vivement conseillé de se protéger des rayons du soleil et, dans ce cas
+					précis, des rayons latéraux. Le port de lunettes de soleil à larges branches est la
+					solution la plus efficace, surtout chez les personnes à haut risque d’exposition.
+				</li>
+				<li>
+					L’astigmatisme est corrigé par le port de lunettes. Les lentilles de contact, par contre,
+					peuvent être instables à cause du relief excessif induit par cette lésion et une
+					adaptation ne sera pas toujours possible.
+				</li>
+				<li>
+					Si le ptérygion empiète fortement sur la cornée, il va constituer un obstacle à la
+					pénétration de la lumière dans l’œil. Le port de lunettes n’est alors plus suffisant et
+					une ablation chirurgicale peut s’imposer. La technique opératoire est simple et
+					s’envisage, dans l’immense majorité des cas, en chirurgie ambulatoire. Il n’est pas
+					nécessaire de pénétrer dans l’œil et le geste se limitera donc aux tissus superficiels. Le
+					principale risque de la chirurgie est la récidive de la lésion. La prolifération des
+					tissus est parfois mal contrôlée et il arrive que la croissance se poursuive, même après
+					résection complète.
+				</li>
+			</ul>
+		</section>
+
+		<section>
+			<Title level="h3" as="h2">Pinguecula</Title>
+			<Text>
+				La pinguecula est l'un des diagnostics différentiels du ptérygion ; son aspect clinique, en
+				cas d’examen ophtalmologique, montre cependant quelques différences. Il s’agit également
+				d’une lésion bénigne de la surface oculaire. En évoluant, elle peut se transformer en
+				ptérygion. Son aspect est souvent plus localisé, moins étendu que ce dernier.
+			</Text>
+
+			<figure class="mx-auto my-10 aspect-square w-full max-w-sm overflow-hidden rounded-md">
+				<img
+					src={pingueculaIllustration}
+					alt="Illustration d’une pinguecula localisée sur la conjonctive"
+					class="h-full w-full object-contain"
+					loading="lazy"
+				/>
+			</figure>
+
+			<Text>
+				En cas de pinguecula, seule une surveillance s’impose. En effet, elle n’occasionne, en règle
+				générale, pas de baisse de vision. Elle peut aussi devenir inflammatoire, rouge, voire
+				douloureuse. Une prise en charge médicale est alors nécessaire.
+			</Text>
+			<Text tone="accent" weight="medium">
+				Les lésions de la surface oculaire sont variées et certaines peuvent se révéler être
+				malignes. Pour cette raison, il est vivement recommandé de solliciter l’avis d’un
+				ophtalmologiste si vous remarquez quelque chose d’inhabituel.
+			</Text>
+		</section>
+	</article>
 </Section>
