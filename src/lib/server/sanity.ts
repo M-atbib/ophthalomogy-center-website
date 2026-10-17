@@ -6,7 +6,8 @@ const fallbackProjectId = 'qdrihdi9';
 const fallbackDataset = 'production';
 const fallbackApiVersion = '2024-10-01';
 
-const projectId = privateEnv.SANITY_PROJECT_ID ?? publicEnv.PUBLIC_SANITY_PROJECT_ID ?? fallbackProjectId;
+const projectId =
+	privateEnv.SANITY_PROJECT_ID ?? publicEnv.PUBLIC_SANITY_PROJECT_ID ?? fallbackProjectId;
 const dataset = privateEnv.SANITY_DATASET ?? publicEnv.PUBLIC_SANITY_DATASET ?? fallbackDataset;
 const apiVersion = privateEnv.SANITY_API_VERSION ?? fallbackApiVersion;
 const token = privateEnv.SANITY_API_READ_TOKEN;
@@ -21,7 +22,8 @@ export const sanityClient = createClient({
 	apiVersion,
 	useCdn: !token,
 	token,
-	perspective: token ? 'previewDrafts' : 'published'
+	// Public pages and the sitemap must never expose draft content.
+	perspective: 'published'
 });
 
 export const sanityConfig = {

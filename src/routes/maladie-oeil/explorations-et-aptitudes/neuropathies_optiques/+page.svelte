@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ExplorationsPageTwoIlluOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -29,10 +30,11 @@
 	</Text>
 
 	<figure class="mx-auto w-full max-w-md overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={ExplorationsPageTwoIlluOne}
+			imageKey="exploration-page2-illu1"
 			alt="Illustration de la cataracte"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Title level="h3">Neuropathies optiques inflammatoires</Title>

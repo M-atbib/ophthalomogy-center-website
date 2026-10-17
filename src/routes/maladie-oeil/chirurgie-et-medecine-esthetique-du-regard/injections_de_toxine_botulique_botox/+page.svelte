@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { EsthetiqueEyePageOneImgOne, EsthetiqueEyePageOneImgTwo } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -47,12 +48,14 @@
 			</Text>
 		</div>
 		<figure class="max-w-2xl overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={EsthetiqueEyePageOneImgOne}
+				imageKey="esthetique-eye-page1-img1"
 				alt="Illustration du choix d'implant sur mesure"
 				class="h-full w-full object-cover"
 				loading="lazy"
-			/>
+
+				sizes="(max-width: 640px) 100vw, 50vw"/>
 		</figure>
 	</div>
 
@@ -76,12 +79,14 @@
 
 	<div class="mt-10 flex items-center gap-10">
 		<figure class="max-w-xl overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={EsthetiqueEyePageOneImgTwo}
+				imageKey="esthetique-eye-page1-img2"
 				alt="Illustration du choix d'implant sur mesure"
 				class="h-full w-full object-center"
 				loading="lazy"
-			/>
+
+				sizes="(max-width: 640px) 100vw, 50vw"/>
 		</figure>
 		<div>
 			<Title level="h2">Déroulement d'une séance d’injections</Title>

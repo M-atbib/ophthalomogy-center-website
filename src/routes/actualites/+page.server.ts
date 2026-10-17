@@ -1,10 +1,9 @@
-import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { sanityClient } from '$lib/server/sanity';
 import type { BlogArticleSummary } from '$lib/types/blog';
 
 const blogListQuery = `
-	*[_type == "blogArticle" && status == "active"] | order(coalesce(publishedAt, _createdAt) desc) {
+	*[_type == "blogArticle" && status == "active" && defined(slug.current) && (!defined(publishedAt) || publishedAt <= now())] | order(coalesce(publishedAt, _createdAt) desc) {
 		'id': _id,
 		title,
 		subtitle,
@@ -12,7 +11,9 @@ const blogListQuery = `
 		briefing,
 		'imageUrl': image.asset->url,
 		'imageAlt': coalesce(image.alt, title),
-		'publishedAt': coalesce(publishedAt, _createdAt)
+		'imageWidth': image.asset->metadata.dimensions.width,
+		'imageHeight': image.asset->metadata.dimensions.height,
+		publishedAt
 	}
 `;
 
@@ -21,10 +22,11 @@ export const load = (async () => {
 		const articles = await sanityClient.fetch<BlogArticleSummary[]>(blogListQuery);
 
 		return {
-			articles
+			articles,
+			unavailable: false
 		};
 	} catch (err) {
 		console.error('Failed to load blog articles from Sanity', err);
-		throw error(500, 'Impossible de charger les actualités pour le moment.');
+		return { articles: [], unavailable: true };
 	}
 }) satisfies PageServerLoad;

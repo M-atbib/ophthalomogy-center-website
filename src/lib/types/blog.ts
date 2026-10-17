@@ -8,7 +8,10 @@ export type BlogArticleSummary = {
 	briefing: string;
 	imageUrl?: string;
 	imageAlt?: string;
+	imageWidth?: number;
+	imageHeight?: number;
 	publishedAt?: string;
+	updatedAt?: string;
 };
 
 export type BlogArticle = BlogArticleSummary & {

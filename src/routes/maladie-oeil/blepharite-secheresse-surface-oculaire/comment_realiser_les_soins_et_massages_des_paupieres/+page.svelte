@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Button, Section, Text, TextWithCorners, Title } from '$lib';
 	import { BlepharitePageFiveIlluOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -54,7 +55,7 @@
 			</TextWithCorners>
 
 			<figure class="mx-auto my-10 aspect-square w-full max-w-lg overflow-hidden rounded-md">
-				<img
+				<ResponsiveImage
 					src={meibomianGlandsIllustration}
 					alt="Coupe anatomique montrant les glandes de Meibomius dans les paupières"
 					class="h-full w-full object-contain"

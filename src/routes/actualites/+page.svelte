@@ -4,7 +4,7 @@
 	import { MoveRight } from '@lucide/svelte';
 
 	const { data } = $props<{ data: PageData }>();
-	const articles = data.articles ?? [];
+	const articles = $derived(data.articles ?? []);
 
 	const formatDate = (value?: string) => {
 		if (!value) return undefined;
@@ -21,17 +21,15 @@
 		<Text variant="eyebrow" tone="cta" align="center">Actualités</Text>
 		<Title level="h1" align="center">Les dernières nouvelles en monde de l'ophtalmologie</Title>
 		<Text tone="muted" align="center" class="text-pretty">
-			Restez informé sur nos prises en charge, les nouveautés technologiques et les conseils de nos
-			spécialistes.
+			Retrouvez les articles et les informations sur la santé des yeux publiés sur le site.
 		</Text>
 	</div>
 
 	{#if articles.length === 0}
 		<Card variant="muted" padding="lg" align="center" class="mx-auto max-w-2xl">
-			<Title level="sub2" class="text-balance">Aucun article à afficher pour le moment</Title>
+			<Title level="sub2" class="text-balance">{data.unavailable ? 'Articles indisponibles pour le moment' : 'Aucun article à afficher pour le moment'}</Title>
 			<Text tone="muted" class="text-pretty">
-				Nous préparons de nouveaux contenus pour vous informer au mieux. Revenez bientôt ou
-				inscrivez-vous à notre newsletter.
+				{data.unavailable ? 'Veuillez réessayer plus tard.' : 'Revenez bientôt pour découvrir les prochains articles.'}
 			</Text>
 			<Button variant="solid" tone="cta" href="/contactez-nous">Nous contacter</Button>
 		</Card>
@@ -51,6 +49,8 @@
 								<img
 									src={article.imageUrl}
 									alt={article.imageAlt ?? article.title}
+									width={article.imageWidth}
+									height={article.imageHeight}
 									class="h-60 w-full object-cover"
 									loading="lazy"
 								/>

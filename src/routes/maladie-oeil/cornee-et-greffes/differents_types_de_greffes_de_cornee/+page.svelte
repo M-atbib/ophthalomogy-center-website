@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		GlaucomePageOneImgOne,
@@ -63,8 +64,9 @@
 	</Text>
 
 	<figure class="mx-auto w-full max-w-md overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={CorneePageTwoImgOne}
+			imageKey="cornee-page2-img1"
 			alt="Illustration de la cataracte"
 			class="h-full w-full object-cover"
 		/>
@@ -81,8 +83,9 @@
 	</Text>
 
 	<figure class="mx-auto w-full max-w-md overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={CorneePageTwoImgTwo}
+			imageKey="cornee-page2-img2"
 			alt="Illustration de la cataracte"
 			class="h-full w-full object-cover"
 		/>

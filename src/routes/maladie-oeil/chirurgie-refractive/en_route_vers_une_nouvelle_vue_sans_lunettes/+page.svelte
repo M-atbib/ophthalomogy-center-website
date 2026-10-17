@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import {
@@ -46,9 +47,10 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-xl overflow-hidden rounded-md border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={ChirurgieRefactivePageFiveImgOne}
-				alt="Consultation pré-opératoire de chirurgie réfractive"
+				imageKey="chirurgie-refactive-page5-img1-male"
+				alt="Patient lors d’un examen de la vue"
 				class="h-full w-full object-cover"
 			/>
 		</figure>
@@ -56,9 +58,10 @@
 
 	<div class="my-8 flex items-center gap-12">
 		<figure class="mx-auto mt-6 w-full max-w-2xl overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={ChirurgieRefactivePageFiveImgTwo}
-				alt="Analyse des yeux avant la chirurgie réfractive"
+				imageKey="chirurgie-refactive-page5-img2-male"
+				alt="Examen de la vue d’un patient à la lampe à fente"
 				class="h-full w-full object-cover"
 				loading="lazy"
 			/>
@@ -87,9 +90,10 @@
 			</Text>
 		</div>
 		<figure class="mx-auto mt-6 w-full max-w-2xl overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={ChirurgieRefactivePageFiveImgThree}
-				alt="Discussion avec le chirurgien réfractif"
+				imageKey="chirurgie-refactive-page5-img3-male"
+				alt="Patient à l’accueil d’un cabinet médical"
 				class="h-full w-full object-cover"
 				loading="lazy"
 			/>

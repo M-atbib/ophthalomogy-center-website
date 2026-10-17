@@ -1,304 +1,143 @@
 <script lang="ts">
-	import logo from '$lib/assets/logo.png';
 	import { listEyeDiseases } from '$lib/content';
 	import { ChevronDown, Menu, X } from '@lucide/svelte';
-	import { onDestroy } from 'svelte';
+	import { onDestroy, tick } from 'svelte';
 
-	type DropdownItem = {
-		label: string;
-		href: string;
-	};
+	type Link = { label: string; href: string };
+	type Item = { label: string; href?: string; children?: Link[] };
 
-	type NavItem = {
-		id: string;
-		label: string;
-		href?: string;
-		dropdown: boolean;
-		dropdownItems?: DropdownItem[];
-	};
-
-	const diseaseDropdownItems: DropdownItem[] = listEyeDiseases.map((disease) => ({
-		label: disease.diseases,
-		href: disease.href
-	}));
-
-	const navItems: NavItem[] = [
-		{
-			id: 'home',
-			label: 'Acceuil',
-			href: '/',
-			dropdown: false
-		},
-		{
-			id: 'about',
-			label: 'A propos',
-			dropdown: true,
-			dropdownItems: [
-				{ label: 'A propos', href: '/a-propos' },
-				{ label: 'Equipement', href: '/equipement' },
-				{ label: 'Urgences', href: '/urgences' },
-				{ label: 'Nous adresser un patient', href: '/adresser-patient' }
-			]
-		},
-		{ id: 'news', label: 'Actualités', href: '/actualites', dropdown: false },
-		{
-			id: 'eye-diseases',
-			label: "Les maladies de l'oeil",
-			dropdown: true,
-			dropdownItems: diseaseDropdownItems
-		},
-		{
-			id: 'conseils',
-			label: 'Les conseils de votre ophtalmo',
-			dropdown: true,
-			dropdownItems: [
-				{ label: 'Conseils thérapeutiques', href: '/conseils/conseils-therapeutiques' },
-				{
-					label: 'Conseils lunettes et lentilles',
-					href: '/conseils/conseils-lunettes-et-lentilles'
-				},
-				{
-					label: 'Conseils après soins et chirurgie oculaire',
-					href: '/conseils/conseils-apres-soins-et-chirurgie-oculaire'
-				}
-			]
-		},
-		{
-			id: 'contact',
-			label: 'Contactez-nous',
-			href: '/contactez-nous',
-			dropdown: false
-		}
+	const items: Item[] = [
+		{ label: 'Accueil', href: '/' },
+		{ label: 'À propos', href: '/a-propos' },
+		{ label: 'Santé des yeux', children: listEyeDiseases.map(({ diseases, href }) => ({ label: diseases, href })) },
+		{ label: 'Conseils', href: '/conseils' },
+		{ label: 'Actualités', href: '/actualites' },
+		{ label: 'Contact', href: '/contactez-nous' }
 	];
 
-	let isMobileNavOpen = $state(false);
-	let activeDropdown = $state<string | null>(null);
-	let activeMobileDropdown = $state<string | null>(null);
-	let dropdownCloseTimer: ReturnType<typeof setTimeout> | null = null;
+	let mobileOpen = $state(false);
+	let menuButton: HTMLButtonElement;
+	let mobileCloseButton = $state<HTMLButtonElement>();
+	let mobilePanel = $state<HTMLElement>();
 
-	const lockBodyScroll = (lock: boolean) => {
-		if (typeof document === 'undefined') return;
-		document.body.style.overflow = lock ? 'hidden' : '';
-	};
+	async function openMobile() {
+		mobileOpen = true;
+		document.body.style.overflow = 'hidden';
+		await tick();
+		mobileCloseButton?.focus();
+	}
 
-	const toggleMobileNav = () => {
-		isMobileNavOpen = !isMobileNavOpen;
-		if (!isMobileNavOpen) {
-			activeMobileDropdown = null;
+	function closeMobile(restoreFocus = true) {
+		mobileOpen = false;
+		document.body.style.overflow = '';
+		if (restoreFocus) menuButton?.focus();
+	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			if (mobileOpen) closeMobile();
+			const activeDetail = (event.target as HTMLElement | null)?.closest<HTMLDetailsElement>('details');
+			if (activeDetail?.open) {
+				activeDetail.open = false;
+				activeDetail.querySelector('summary')?.focus();
+			}
+			for (const detail of document.querySelectorAll<HTMLDetailsElement>('.desktop-nav details[open]')) {
+				detail.open = false;
+			}
 		}
-		lockBodyScroll(isMobileNavOpen);
-	};
-
-	const closeMobileNav = () => {
-		if (!isMobileNavOpen) return;
-		isMobileNavOpen = false;
-		activeMobileDropdown = null;
-		lockBodyScroll(false);
-	};
-
-	const toggleMobileDropdown = (itemId: string) => {
-		activeMobileDropdown = activeMobileDropdown === itemId ? null : itemId;
-	};
-
-	const handleDropdownEnter = (itemId: string) => {
-		if (dropdownCloseTimer) {
-			clearTimeout(dropdownCloseTimer);
-			dropdownCloseTimer = null;
+		if (event.key !== 'Tab' || !mobileOpen || !mobilePanel) return;
+		const focusable = [...mobilePanel.querySelectorAll<HTMLElement>('a[href], button, summary')].filter(
+			(element) => element.getClientRects().length > 0
+		);
+		if (!focusable.length) return;
+		const first = focusable[0];
+		const last = focusable[focusable.length - 1];
+		if (event.shiftKey && document.activeElement === first) {
+			event.preventDefault();
+			last.focus();
+		} else if (!event.shiftKey && document.activeElement === last) {
+			event.preventDefault();
+			first.focus();
 		}
-		activeDropdown = itemId;
-	};
+	}
 
-	const handleDropdownLeave = () => {
-		if (dropdownCloseTimer) {
-			clearTimeout(dropdownCloseTimer);
+	function handleWindowClick(event: MouseEvent) {
+		const target = event.target;
+		if (!(target instanceof Node)) return;
+		for (const detail of document.querySelectorAll<HTMLDetailsElement>('.desktop-nav details[open]')) {
+			if (!detail.contains(target)) detail.open = false;
 		}
-		dropdownCloseTimer = setTimeout(() => {
-			activeDropdown = null;
-		}, 200);
-	};
+		if (mobileOpen && mobilePanel && !mobilePanel.contains(target) && target !== menuButton) {
+			closeMobile(false);
+		}
+	}
 
 	onDestroy(() => {
-		lockBodyScroll(false);
-		if (dropdownCloseTimer) {
-			clearTimeout(dropdownCloseTimer);
-		}
+		if (typeof document !== 'undefined') document.body.style.overflow = '';
 	});
 </script>
 
-<nav
-	class="sticky top-8 z-30 mx-auto my-8 w-[85%] rounded-xl border border-light-grey bg-primary-background shadow-sm"
->
-	<div class="mx-auto flex items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-		<a class="inline-flex items-center gap-3" href="/" aria-label="Aller à l'accueil">
-			<img src={logo} alt="logo du centre d'ophtalmologie" class="h-12 w-auto" />
+<svelte:window onkeydown={handleKeydown} onclick={handleWindowClick} />
+
+<nav aria-label="Navigation principale" class="sticky top-0 z-30 border-b border-light-grey/60 bg-primary-background/95 shadow-sm backdrop-blur-md">
+	<div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-5 px-4 py-3 sm:px-6 lg:px-8">
+		<a href="/" class="inline-flex min-w-0 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta" aria-label="Accueil du Cabinet du Dr Amal Alouan">
+			<img src="/brand/logo-full.png" alt="Cabinet du Dr Amal Alouan" width="1200" height="400" class="h-12 w-auto max-w-[190px] object-contain sm:h-14 sm:max-w-[230px]" />
 		</a>
 
-		<button
-			type="button"
-			class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-light-grey/70 bg-white text-primary shadow-sm transition hover:border-cta hover:text-cta focus-visible:ring-2 focus-visible:ring-cta focus-visible:outline-none lg:hidden"
-			onclick={toggleMobileNav}
-			aria-label={isMobileNavOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-		>
-			{#if isMobileNavOpen}
-				<X class="h-5 w-5" />
-			{:else}
-				<Menu class="h-5 w-5" />
-			{/if}
+		<div class="desktop-nav hidden items-center gap-1 lg:flex">
+			{#each items as item (item.label)}
+				{#if item.children}
+					<details class="group relative">
+						<summary class="flex min-h-11 cursor-pointer list-none items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-sections-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta [&::-webkit-details-marker]:hidden">
+							{item.label}<ChevronDown class="size-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+						</summary>
+						<div class="absolute right-0 top-full z-40 w-80 pt-2">
+							<ul class="max-h-[70vh] overflow-y-auto rounded-xl border border-light-grey/60 bg-white p-2 shadow-xl">
+								{#each item.children as child (child.href)}
+									<li><a href={child.href} class="block rounded-lg px-3 py-2 text-sm text-primary hover:bg-sections-background focus-visible:bg-sections-background">{child.label}</a></li>
+								{/each}
+							</ul>
+						</div>
+					</details>
+				{:else}
+					<a href={item.href} class="inline-flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-sections-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta">{item.label}</a>
+				{/if}
+			{/each}
+		</div>
+
+		<button bind:this={menuButton} type="button" class="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-light-grey/70 text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta lg:hidden" aria-label="Ouvrir le menu" aria-controls={mobileOpen ? 'mobile-navigation' : undefined} aria-expanded={mobileOpen} onclick={openMobile}>
+			<Menu class="size-6" aria-hidden="true" />
 		</button>
+	</div>
+</nav>
 
-		<div class="hidden flex-1 items-center justify-end lg:flex">
-			<ul class="flex items-center gap-5 text-sm font-medium text-primary">
-				{#each navItems as item (item.id)}
-					<li
-						class="group relative"
-						onpointerenter={() => handleDropdownEnter(item.id)}
-						onpointerleave={handleDropdownLeave}
-					>
-						{#if item.dropdown}
-							<button
-								type="button"
-								class="inline-flex items-center gap-1.5 rounded-full px-3 py-2 transition-colors hover:text-cta focus-visible:ring-2 focus-visible:ring-cta focus-visible:outline-none"
-								onfocus={() => handleDropdownEnter(item.id)}
-								onclick={() => handleDropdownEnter(item.id)}
-								onblur={handleDropdownLeave}
-								aria-haspopup="true"
-								aria-expanded={activeDropdown === item.id}
-							>
-								<span class="flex items-center gap-1.5">
-									{item.label}
-									<ChevronDown
-										class={`h-3.5 w-3.5 transition-transform duration-200 ${
-											activeDropdown === item.id ? 'rotate-180 text-cta' : 'text-secondary'
-										}`}
-										aria-hidden="true"
-									/>
-								</span>
-							</button>
-						{:else}
-							<a
-								href={item.href!}
-								class="inline-flex items-center gap-1.5 rounded-full px-3 py-2 transition-colors hover:text-cta focus-visible:ring-2 focus-visible:ring-cta focus-visible:outline-none"
-								onfocus={() => handleDropdownEnter(item.id)}
-								onblur={handleDropdownLeave}
-							>
-								<span class="flex items-center gap-1.5">
-									{item.label}
-								</span>
-							</a>
-						{/if}
-
-						{#if item.dropdown && item.dropdownItems}
-							<div
-								class={`absolute top-full left-0 z-20 mt-1 min-w-[280px] rounded-2xl border border-light-grey/70 bg-white/95 p-3 shadow-2xl transition-all duration-200 ease-out ${
-									activeDropdown === item.id
-										? 'pointer-events-auto translate-y-0 opacity-100'
-										: 'pointer-events-none -translate-y-1 opacity-0'
-								}`}
-								onpointerenter={() => handleDropdownEnter(item.id)}
-								onpointerleave={handleDropdownLeave}
-							>
-								<ul class="space-y-1">
-									{#each item.dropdownItems as dropdownItem, index (`${item.id}-${index}`)}
-										<li>
-											<a
-												href={dropdownItem.href}
-												class="flex rounded-lg px-3 py-2 text-sm text-primary transition-colors hover:bg-sections-background hover:text-cta"
-											>
-												{dropdownItem.label}
-											</a>
-										</li>
+{#if mobileOpen}
+	<div class="fixed inset-0 z-40 bg-primary/45 lg:hidden" aria-hidden="true"></div>
+	<div bind:this={mobilePanel} id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Menu de navigation" class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col bg-primary-background shadow-2xl lg:hidden">
+		<div class="flex items-center justify-between border-b border-light-grey/60 px-5 py-4">
+			<span class="font-semibold text-primary">Menu</span>
+			<button bind:this={mobileCloseButton} type="button" aria-label="Fermer le menu" class="inline-flex size-11 items-center justify-center rounded-lg border border-light-grey/70 text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta" onclick={() => closeMobile()}><X class="size-6" aria-hidden="true" /></button>
+		</div>
+		<nav aria-label="Navigation mobile" class="min-h-0 flex-1 overflow-y-auto px-5 py-5">
+			<ul class="space-y-2">
+				{#each items as item (item.label)}
+					<li>
+						{#if item.children}
+							<details class="rounded-xl border border-light-grey/60 bg-white">
+								<summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 font-medium text-primary [&::-webkit-details-marker]:hidden">{item.label}<ChevronDown class="size-4" aria-hidden="true" /></summary>
+								<ul class="max-h-[48vh] space-y-1 overflow-y-auto border-t border-light-grey/60 p-2">
+									{#each item.children as child (child.href)}
+										<li><a href={child.href} class="block rounded-lg px-3 py-3 text-sm text-primary hover:bg-sections-background" onclick={() => closeMobile(false)}>{child.label}</a></li>
 									{/each}
 								</ul>
-							</div>
+							</details>
+						{:else}
+							<a href={item.href} class="flex min-h-12 items-center rounded-xl border border-light-grey/60 bg-white px-4 py-3 font-medium text-primary hover:bg-sections-background" onclick={() => closeMobile(false)}>{item.label}</a>
 						{/if}
 					</li>
 				{/each}
 			</ul>
-		</div>
+		</nav>
 	</div>
-</nav>
-
-<button
-	type="button"
-	class={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 lg:hidden ${
-		isMobileNavOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
-	}`}
-	onclick={closeMobileNav}
-	aria-label="Fermer le menu mobile"
-></button>
-
-<aside
-	class={`fixed inset-y-0 left-0 z-50 w-full bg-primary-background shadow-2xl transition-transform duration-300 lg:hidden ${
-		isMobileNavOpen ? 'translate-x-0' : '-translate-x-full'
-	}`}
->
-	<div class="flex h-full w-full flex-col items-center justify-center gap-8 px-6 py-10">
-		<ul class="w-full max-w-md space-y-4 text-center text-lg font-medium text-primary">
-			{#each navItems as item (item.id)}
-				<li>
-					{#if item.dropdown}
-						<button
-							type="button"
-							class="flex w-full items-center justify-center gap-2 rounded-full border border-light-grey/70 bg-white/80 px-6 py-3 text-center transition hover:border-cta hover:text-cta"
-							onclick={() => toggleMobileDropdown(item.id)}
-							aria-expanded={activeMobileDropdown === item.id}
-							aria-controls={`mobile-dropdown-${item.id}`}
-						>
-							{item.label}
-							<ChevronDown
-								class={`h-4 w-4 transition-transform ${
-									activeMobileDropdown === item.id ? 'rotate-180 text-cta' : 'text-secondary'
-								}`}
-								aria-hidden="true"
-							/>
-						</button>
-					{:else}
-						<a
-							href={item.href!}
-							class="block rounded-full border border-light-grey/70 bg-white/80 px-6 py-3 transition hover:border-cta hover:text-cta"
-							onclick={closeMobileNav}
-						>
-							<span class="flex items-center justify-center gap-2">
-								{item.label}
-							</span>
-						</a>
-					{/if}
-
-					{#if item.dropdown && item.dropdownItems}
-						<div
-							id={`mobile-dropdown-${item.id}`}
-							class={`overflow-hidden transition-all duration-200 ease-out ${
-								activeMobileDropdown === item.id ? 'mt-3 max-h-96 opacity-100' : 'max-h-0 opacity-0'
-							}`}
-						>
-							<ul
-								class="space-y-2 rounded-2xl border border-light-grey/60 bg-white/80 px-4 py-3 text-sm"
-							>
-								{#each item.dropdownItems as dropdownItem, index (`mobile-${item.id}-${index}`)}
-									<li>
-										<a
-											href={dropdownItem.href}
-											class="block rounded-lg px-3 py-2 text-left transition hover:bg-sections-background hover:text-cta"
-											onclick={closeMobileNav}
-										>
-											{dropdownItem.label}
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					{/if}
-				</li>
-			{/each}
-		</ul>
-	</div>
-
-	<button
-		type="button"
-		class="absolute top-4 right-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-light-grey/70 bg-white text-primary shadow-sm transition hover:border-cta hover:text-cta"
-		onclick={closeMobileNav}
-		aria-label="Fermer le menu mobile"
-	>
-		<X class="h-5 w-5" />
-	</button>
-</aside>
+{/if}

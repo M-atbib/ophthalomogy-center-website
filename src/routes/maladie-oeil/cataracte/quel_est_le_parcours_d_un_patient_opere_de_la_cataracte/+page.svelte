@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		CataractePageFourImgOne,
@@ -18,16 +19,16 @@
 		<div class="lg:w-1/2">
 			<Title level="h1">Quel est le parcours d'un patient opéré de la cataracte ?</Title>
 			<Text class="mt-4">
-				La chirurgie de cataracte est couramment pratiquée au [Nom de Clinique]. Notre expérience
-				nous a permis de construire un parcours sécurisé et fluide dans nos différents cabinets.
+				Cette page présente les étapes possibles du parcours d'un patient opéré de la cataracte.
 			</Text>
 		</div>
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-3xl overflow-hidden rounded-md border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={CataractePageFourImgOne}
-				alt="Patient accueilli pour une chirurgie de la cataracte"
+				imageKey="cataracte-page4-img1-male"
+				alt="Patient lors d’un examen ophtalmologique"
 				class="h-full w-full object-cover"
 			/>
 		</figure>
@@ -45,10 +46,10 @@
 	<ul class="mt-4 list-disc pl-5 [&>li+li]:mt-2">
 		<li>Par téléphone, en précisant le motif de votre appel ;</li>
 		<li>Par internet, en indiquant qu'il s'agit d'une chirurgie de cataracte ;</li>
-		<li>En vous déplaçant directement dans l'un de nos cabinets.</li>
+		<li>En vous déplaçant directement dans le cabinet.</li>
 	</ul>
 	<TextWithCorners class="mt-6"
-		>Nos secrétaires vous proposeront le rendez-vous le plus adapté.</TextWithCorners
+		>Contactez le cabinet pour connaître les rendez-vous disponibles.</TextWithCorners
 	>
 
 	<Title class="mt-8" level="sub2">Consultation préopératoire</Title>
@@ -67,8 +68,9 @@
 		</ul>
 
 		<figure class="mx-auto mt-8 w-full max-w-3xl overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={CataractePageFourImgTwo}
+				imageKey="cataracte-page4-img2"
 				alt="Consultation préopératoire en cabinet"
 				class="h-full w-full object-cover"
 				loading="lazy"
@@ -169,9 +171,10 @@
 	</Text>
 
 	<figure class="mx-auto mt-8 w-full max-w-3xl overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={CataractePageFourImgThree}
-			alt="Equipe médicale après une chirurgie de la cataracte"
+			imageKey="cataracte-page4-img3-male"
+			alt="Patient en fauteuil roulant accompagné par un soignant"
 			class="h-full w-full object-cover"
 			loading="lazy"
 		/>
@@ -261,8 +264,8 @@
 		poursuivre.
 	</Text>
 	<TextWithCorners class="mt-6">
-		Au [Nom de Clinique], nous continuons à suivre tous les patients opérés, s'ils le souhaitent :
-		la chirurgie de la cataracte n'est qu'une étape de leur parcours visuel.
+		Un suivi après l'opération peut être nécessaire : la chirurgie de la cataracte n'est qu'une étape
+		du parcours visuel.
 	</TextWithCorners>
 
 	<Title class="mt-10" level="h2">Et après ?</Title>

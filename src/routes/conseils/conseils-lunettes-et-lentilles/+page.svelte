@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Button, Card, Section, Text, Title } from '$lib';
 	import { LunetteHero } from '$lib/assets';
 	import { ArrowLeft, MoveRight } from '@lucide/svelte';
@@ -56,9 +57,10 @@
 		</div>
 
 		<figure class="overflow-hidden rounded-md border border-light-grey/60">
-			<img
+			<ResponsiveImage
 				src={LunetteHero}
-				alt="Montures de lunettes présentées chez un opticien"
+				imageKey="lunette-hero-male"
+				alt="Patient portant une monture d’essai pour un examen de la vue"
 				class="h-full w-full object-cover"
 				loading="eager"
 			/>

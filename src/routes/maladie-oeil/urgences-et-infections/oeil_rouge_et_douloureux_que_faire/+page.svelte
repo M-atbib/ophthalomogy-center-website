@@ -41,7 +41,7 @@
 	>
 	<Text tone="accent" weight="medium"
 		>Si vous ne parvenez pas à joindre notre secrétariat téléphonique, vous pouvez vous rendre
-		directement dans le centre [Nom de Clinique] le plus proche de chez vous. Une permanence
+		directement dans le cabinet du Dr Amal Alouan. Une permanence
 		d’accueil des urgences est mise en place pendant les heures d’ouverture du cabinet pour vous
 		recevoir.</Text
 	>

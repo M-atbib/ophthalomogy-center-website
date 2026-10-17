@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { StrabologiePageThreeImgOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -64,9 +65,10 @@
 			</Text>
 		</div>
 		<figure class="mx-auto w-full max-w-xl overflow-hidden">
-			<img
+			<ResponsiveImage
 				src={StrabologiePageThreeImgOne}
-				alt="Illustration de la cataracte"
+				imageKey="strabologie-page3-img1-male"
+				alt="Soignants accompagnant un enfant avant une intervention"
 				class="h-full w-full object-cover"
 			/>
 		</figure>

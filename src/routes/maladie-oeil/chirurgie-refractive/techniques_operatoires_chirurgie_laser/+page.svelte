@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { ChirurgieRefactivePageThreeHero } from '$lib/assets';
@@ -28,8 +29,9 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-3xl overflow-hidden rounded-md border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={ChirurgieRefactivePageThreeHero}
+				imageKey="chirurgie-refactive-page3-hero"
 				alt="Technologie de chirurgie laser"
 				class="h-full w-full object-cover"
 			/>

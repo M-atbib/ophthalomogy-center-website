@@ -1,113 +1,50 @@
 <script lang="ts">
-	import logo from '$lib/assets/logo.png';
-	import { Instagram, Mail, MapPin, Phone, PhoneCall } from '@lucide/svelte';
+	import { Instagram, Mail, MapPin, Phone } from '@lucide/svelte';
+	import { cabinet, cabinetAddress, cabinetMapUrl } from '$lib/cabinet';
 
-	const primaryLinks = [
-		{
-			label: 'Accueil',
-			url: '/'
-		},
-		{
-			label: 'À propos',
-			url: '/a-propos'
-		},
-		{
-			label: 'Les maladies de l’oeil',
-			url: '/maladie-oeil'
-		},
-		{
-			label: 'Les conseils de votre ophtalmo',
-			url: '/conseils'
-		},
-		{
-			label: 'Contactez-nous',
-			url: '/contactez-nous'
-		}
+	const links = [
+		{ label: 'Accueil', href: '/' },
+		{ label: 'À propos', href: '/a-propos' },
+		{ label: 'Cataracte', href: '/maladie-oeil/cataracte' },
+		{ label: 'Glaucome', href: '/maladie-oeil/glaucome' },
+		{ label: 'Conseils', href: '/conseils' },
+		{ label: 'Actualités', href: '/actualites' },
+		{ label: 'Contact', href: '/contactez-nous' }
 	];
 
-	const contactItems = [
-		{
-			icon: Phone,
-			title: 'Appelez-nous',
-			lines: ['05 37 810 828', '06 66 82 42 47']
-		},
-		{
-			icon: Mail,
-			title: 'Envoyez-nous un e-mail',
-			lines: ['dr.amalalouan@gmail.com'],
-			link: 'mailto:dr.amalalouan@gmail.com'
-		},
-		{
-			icon: MapPin,
-			title: 'Visitez-nous',
-			lines: ['Imm.67,APPT 1 Lot Al Andalouss, Avenue Abderrahim Bouaabid, Hay Essalam Salé']
-		}
-	];
-
-	const socialLinks = [
-		{ icon: PhoneCall, label: 'Appel telephonique', href: 'tel:+212537810828' },
-		{ icon: Mail, label: 'Boite mail', href: 'mailto:dr.amalalouan@gmail.com' },
-		{ icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/dramalalouan/' },
-	];
+	const address = cabinetAddress;
+	const directionsUrl = cabinetMapUrl;
 </script>
 
-<footer class="bg-sections-background px-4 py-12 text-primary sm:px-6 lg:px-8">
-	<div
-		class="mx-auto grid w-[80%] gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)_minmax(0,1fr)]"
-	>
-		<div class="flex flex-col">
-			<img
-				src={logo}
-				alt="Centre d'ophtalmologie Salé"
-				class="w-full max-w-[280px] object-contain"
-			/>
-			<div class="mt-8 flex flex-wrap gap-4" aria-label="Réseaux sociaux">
-				{#each socialLinks as { icon: Icon, label, href } (label)}
-					<a
-						{href}
-						aria-label={label}
-						target="_blank"
-						class="flex size-12 items-center justify-center rounded-full border-2 border-cta text-cta transition-colors hover:bg-cta hover:text-white"
-					>
-						<Icon class="size-5" />
-					</a>
-				{/each}
-			</div>
+<footer class="border-t border-light-grey/60 bg-sections-background px-4 py-12 text-primary sm:px-6 lg:px-8">
+	<div class="mx-auto grid w-full max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
+		<div class="space-y-5">
+			<a href="/" class="inline-block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta" aria-label="Accueil du Cabinet du Dr Amal Alouan">
+				<img src="/brand/logo-full.png" alt="Cabinet du Dr Amal Alouan" width="1200" height="400" class="h-auto w-full max-w-[260px] object-contain" loading="lazy" />
+			</a>
+			<p class="max-w-sm text-sm leading-relaxed text-secondary">Informations du Cabinet du Dr Amal Alouan à Salé.</p>
+			<a href="https://www.instagram.com/dramalalouan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram du cabinet (nouvel onglet)" class="inline-flex size-11 items-center justify-center rounded-full border border-cta text-cta hover:bg-cta hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta"><Instagram class="size-5" aria-hidden="true" /></a>
 		</div>
 
 		<div>
-			<h3 class="text-2xl font-semibold text-primary">Liens utiles</h3>
-			<div class="mt-6 grid gap-x-12 gap-y-4 sm:grid-cols-2">
-				<ul class="space-y-3 text-secondary">
-					{#each primaryLinks as link (link)}
-						<li>
-							<a href={link.url}>{link.label}</a>
-						</li>
-					{/each}
-				</ul>
-			</div>
+			<h2 class="mb-5 text-xl font-semibold">Pages utiles</h2>
+			<ul class="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
+				{#each links as link (link.href)}
+					<li><a href={link.href} class="inline-flex min-h-8 items-center text-secondary underline-offset-4 hover:text-cta hover:underline focus-visible:underline">{link.label}</a></li>
+				{/each}
+			</ul>
 		</div>
 
-		<div class="flex flex-col gap-6">
-			{#each contactItems as { icon: Icon, title, lines, link } (title)}
-				<div>
-					<div class="flex gap-2">
-						<Icon class="size-5" />
-						<p class="font-semibold text-primary">{title}</p>
-					</div>
-					{#each lines as line (line)}
-						{#if link}
-							<a href={link} class="block text-secondary underline underline-offset-4">{line}</a>
-						{:else}
-							<p class="text-secondary">{line}</p>
-						{/if}
-					{/each}
-				</div>
-			{/each}
+		<div>
+			<h2 class="mb-5 text-xl font-semibold">Contacter le cabinet</h2>
+			<ul class="space-y-4 text-secondary">
+				<li class="flex items-start gap-3"><Phone class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /><div>{#each cabinet.phones as phone (phone.href)}<a href={phone.href} class="block underline underline-offset-4">{phone.label}</a>{/each}</div></li>
+				<li class="flex items-start gap-3"><Mail class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /><a href={`mailto:${cabinet.email}`} class="break-all underline underline-offset-4">{cabinet.email}</a></li>
+				<li class="flex items-start gap-3"><MapPin class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /><a href={directionsUrl} target="_blank" rel="noopener noreferrer" class="underline underline-offset-4">{address}<span class="sr-only"> (ouvre Google Maps dans un nouvel onglet)</span></a></li>
+			</ul>
 		</div>
 	</div>
-
-	<div class="mx-auto mt-10 w-[80%] border-t-2 border-cta"></div>
-
-	<p class="mx-auto mt-4 w-[80%] text-sm text-secondary">All rights are reserved © 2025</p>
+	<div class="mx-auto mt-10 w-full max-w-7xl border-t border-light-grey/70 pt-5 text-sm text-secondary">
+		<p>© {new Date().getFullYear()} Cabinet du Dr Amal Alouan</p>
+	</div>
 </footer>

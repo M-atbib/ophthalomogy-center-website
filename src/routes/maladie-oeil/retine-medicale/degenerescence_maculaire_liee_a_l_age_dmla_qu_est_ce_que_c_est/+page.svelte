@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import {
@@ -26,8 +27,9 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-xl overflow-hidden rounded-md border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={RetineMedicalPageOneHero}
+				imageKey="retine-medical-pag1-hero"
 				alt="Vue rapprochée de la macula"
 				class="h-full w-full object-cover"
 			/>
@@ -88,10 +90,11 @@
 			s’étendre et le scotome, logiquement, faire de même.
 		</Text>
 		<figure class="mx-auto mt-4 w-full max-w-lg overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={RetineMedicalPageOneIlluOne}
+				imageKey="retine-medical-page1-illu1"
 				alt="Illustration d'une DMLA sèche"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 				loading="lazy"
 			/>
 		</figure>
@@ -112,10 +115,11 @@
 			symptômes, il convient de consulter d’urgence un ophtalmologiste !
 		</TextWithCorners>
 		<figure class="mx-auto mt-4 w-full max-w-lg overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={RetineMedicalPageOneIlluTwo}
+				imageKey="retine-medical-page1-illu2"
 				alt="Illustration d'une DMLA humide"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 				loading="lazy"
 			/>
 		</figure>

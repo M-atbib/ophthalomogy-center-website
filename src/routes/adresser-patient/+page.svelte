@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Card, Section, Text, Title } from '$lib';
 	import { AdressingPatientHero, AdressingPatientIllustration } from '$lib/assets';
 </script>
@@ -17,9 +18,10 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-6/12"
 		>
-			<img
+			<ResponsiveImage
 				src={AdressingPatientHero}
-				alt="Professionnel adressant un patient"
+				imageKey="adressin-patient-hero-male"
+				alt="Groupe de professionnels de santé, image d’illustration"
 				class="h-full w-full object-cover"
 				loading="lazy"
 			/>

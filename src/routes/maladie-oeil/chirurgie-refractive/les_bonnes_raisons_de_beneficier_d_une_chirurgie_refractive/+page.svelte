@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { ChirurgieRefactivePageOneImgOne } from '$lib/assets';
@@ -20,9 +21,10 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-3xl overflow-hidden rounded-md border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={ChirurgieRefactivePageOneImgOne}
-				alt="Patiente heureuse après une chirurgie réfractive"
+				imageKey="chirurgie-refactive-page1-img1-male"
+				alt="Patient tenant une paire de lunettes"
 				class="h-full w-full object-cover"
 			/>
 		</figure>

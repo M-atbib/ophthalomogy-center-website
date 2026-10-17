@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import {
@@ -76,10 +77,11 @@
 	</Text>
 
 	<figure class="mx-auto mt-6 w-full max-w-lg overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={RetineMedicalPageTwoIlluOne}
+			imageKey="retine-medical-page2-illu1"
 			alt="Illustration d'une rétinopathie diabétique"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>
@@ -158,10 +160,11 @@
 			traitement aux zones en souffrance.
 		</Text>
 		<figure class="mx-auto mt-4 w-full max-w-2xl overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={RetineMedicalPageTwoIlluTwo}
+				imageKey="retine-medical-page2-illu2"
 				alt="Laser argon pour la rétinopathie diabétique"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 				loading="lazy"
 			/>
 		</figure>
@@ -177,10 +180,11 @@
 			complications oculaires du diabète : les anti-VEGF et les corticoïdes.
 		</Text>
 		<figure class="mx-auto mt-4 w-full max-w-2xl overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={RetineMedicalPageTwoIlluThree}
+				imageKey="retine-medical-page2-illu3"
 				alt="Préparation d'une injection intra-vitréenne"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 				loading="lazy"
 			/>
 		</figure>
@@ -208,7 +212,7 @@
 		diabétiques.
 	</Text>
 	<Text class="mt-4">
-		Au [Nom de Clinique], nous mettons en place la réalisation d’un fond d’œil annuel pour tous les
+		Au cabinet du Dr Amal Alouan, nous mettons en place la réalisation d’un fond d’œil annuel pour tous les
 		patients diabétiques.
 	</Text>
 	<TextWithCorners class="mt-6">

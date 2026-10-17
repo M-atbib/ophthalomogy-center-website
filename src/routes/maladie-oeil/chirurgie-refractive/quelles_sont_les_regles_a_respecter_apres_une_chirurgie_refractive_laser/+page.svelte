@@ -108,10 +108,8 @@
 	</ul>
 	<TextWithCorners class="mt-6">
 		Si vous présentez un de ces symptômes, nous vous invitons à appeler notre standard (05 37 810
-		828) en journée et en semaine. Sinon, vous pouvez également vous rendre dans l'un de nos
-		cabinets, sans rendez-vous. En dehors de nos horaires d'ouverture, appelez l'établissement
-		(Clinique ou Centre Hospitalier) dans lequel vous avez été opéré(e). Les chirurgiens du [Nom de
-		Clinique] organisent des astreintes pour s'occuper de leurs patients dans ce type de situation..
+		828) en journée et en semaine. En dehors des horaires d'ouverture, appelez l'établissement
+		(Clinique ou Centre Hospitalier) dans lequel vous avez été opéré(e).
 	</TextWithCorners>
 
 	<Title class="mt-10" level="h2">
@@ -135,8 +133,6 @@
 		de votre cornée.
 	</Text>
 	<TextWithCorners class="mt-4">
-		Dans tous les cas, l'équipe du [Nom de Clinique] se tient à votre disposition pour répondre à
-		vos questions, vous prendre en charge et vous suivre de manière attentive à la suite de votre
-		intervention.
+		Dans tous les cas, contactez le cabinet du Dr Amal Alouan si vous avez des questions.
 	</TextWithCorners>
 </Section>

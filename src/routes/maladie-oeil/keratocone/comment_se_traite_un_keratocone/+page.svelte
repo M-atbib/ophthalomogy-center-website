@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		GlaucomePageOneImgOne,
@@ -38,10 +39,11 @@
 		(UVA), après l’avoir imprégnée d’une solution photosensibilisante.
 	</Text>
 	<figure class="mx-auto w-full max-w-md overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={KératocônePageTwoIlluOne}
-			alt="Illustration de la cataracte"
-			class="h-full w-full object-cover"
+			imageKey="keratocone-page2-illu1"
+			alt="Schéma d'un traitement de la cornée par lumière"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -100,10 +102,11 @@
 	</ul>
 
 	<figure class="mx-auto w-full max-w-md overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={KératocônePageTwoIlluTwo}
-			alt="Illustration de la cataracte"
-			class="h-full w-full object-cover"
+			imageKey="keratocone-page2-illu2"
+			alt="Schéma d'une intervention sur la cornée"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 

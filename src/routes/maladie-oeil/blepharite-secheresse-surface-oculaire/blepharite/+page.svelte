@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		BlepharitePageOneIlluOne,
@@ -16,6 +17,8 @@
 		Retour
 	</Button>
 
+	<h1 class="text-3xl font-semibold">La blépharite et le film lacrymal</h1>
+
 	<Text>
 		Le film lacrymal est la couche de larmes qui recouvre la surface de l'oeil. Il est composé,
 		schématiquement, de deux éléments: l'eau et le meibum.
@@ -30,10 +33,11 @@
 	<figure
 		class="mx-auto w-full max-w-lg overflow-hidden border-light-grey/60 bg-primary-background"
 	>
-		<img
+		<ResponsiveImage
 			src={BlepharitePageOneIlluOne}
-			alt="Illustration de la capsulotomie au laser YAG"
-			class="h-full w-full object-cover"
+			imageKey="blepharite-page1-illu1"
+			alt="Schéma du film lacrymal et des paupières"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -65,10 +69,11 @@
 	<figure
 		class="mx-auto w-full max-w-lg overflow-hidden border-light-grey/60 bg-primary-background"
 	>
-		<img
+		<ResponsiveImage
 			src={BlepharitePageOneIlluOne}
-			alt="Illustration de la capsulotomie au laser YAG"
-			class="h-full w-full object-cover"
+			imageKey="blepharite-page1-illu1"
+			alt="Schéma du film lacrymal et des paupières"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -114,10 +119,11 @@
 	<figure
 		class="mx-auto w-full max-w-lg overflow-hidden border-light-grey/60 bg-primary-background"
 	>
-		<img
+		<ResponsiveImage
 			src={BlepharitePageOneIlluTwo}
-			alt="Illustration de la capsulotomie au laser YAG"
-			class="h-full w-full object-cover"
+			imageKey="blepharite-page1-illu2"
+			alt="Schéma des glandes des paupières"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 

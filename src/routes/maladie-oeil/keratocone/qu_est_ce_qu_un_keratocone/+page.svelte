@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { KératocônePageOneIlluOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -21,10 +22,11 @@
 	</Text>
 
 	<figure class="mx-auto w-full max-w-md overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={KératocônePageOneIlluOne}
-			alt="Illustration de la cataracte"
-			class="h-full w-full object-cover"
+			imageKey="keratocone-page1-illu1"
+			alt="Schéma de l'œil avec une cornée bombée"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 

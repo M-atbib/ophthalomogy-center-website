@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { CataractePageFiveIlluOne, CataractePageFiveIlluTwo } from '$lib/assets';
@@ -28,10 +29,11 @@
 	<figure
 		class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-xl overflow-hidden rounded-md"
 	>
-		<img
+		<ResponsiveImage
 			src={CataractePageFiveIlluOne}
+			imageKey="cataracte-page5-illu1"
 			alt="Illustration d'un œil examiné après une chirurgie"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Text class="mt-4 font-semibold"
@@ -105,10 +107,11 @@
 	</Text>
 
 	<figure class="mx-auto mt-8 w-full max-w-xl overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={CataractePageFiveIlluTwo}
+			imageKey="cataracte-page5-illu2"
 			alt="Illustration des structures oculaires"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>

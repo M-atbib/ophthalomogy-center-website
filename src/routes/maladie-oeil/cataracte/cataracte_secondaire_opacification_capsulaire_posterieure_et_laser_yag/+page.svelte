@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		CataractePageSevenIlluOne,
@@ -63,10 +64,11 @@
 	<figure
 		class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-lg overflow-hidden"
 	>
-		<img
+		<ResponsiveImage
 			src={CataractePageSevenIlluOne}
+			imageKey="cataracte-page7-illu1"
 			alt="Illustration de la capsulotomie au laser YAG"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -76,10 +78,11 @@
 	</TextWithCorners>
 
 	<figure class="mx-auto mt-8 w-full max-w-lg overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={CataractePageSevenIlluTwo}
+			imageKey="cataracte-page7-illu2"
 			alt="Salle de traitement pour le laser YAG"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>
@@ -98,10 +101,11 @@
 	</TextWithCorners>
 
 	<figure class="mx-auto mt-8 w-full max-w-xl overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={CataractePageSevenIlluThree}
+			imageKey="cataracte-page7-illu3"
 			alt="Examens après le laser YAG"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>

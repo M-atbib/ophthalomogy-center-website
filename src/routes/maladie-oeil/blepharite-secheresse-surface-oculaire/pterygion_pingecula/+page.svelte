@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Button, Section, Text, TextWithCorners, Title } from '$lib';
 	import { BlepharitePageFourIlluOne, BlepharitePageFourIlluTwo } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -47,7 +48,7 @@
 			</Text>
 
 			<figure class="mx-auto my-10 aspect-square w-full max-w-sm overflow-hidden rounded-md">
-				<img
+				<ResponsiveImage
 					src={pterygionIllustration}
 					alt="Illustration d’un ptérygion progressant sur la cornée"
 					class="h-full w-full object-contain"
@@ -96,7 +97,7 @@
 			</Text>
 
 			<figure class="mx-auto my-10 aspect-square w-full max-w-sm overflow-hidden rounded-md">
-				<img
+				<ResponsiveImage
 					src={pingueculaIllustration}
 					alt="Illustration d’une pinguecula localisée sur la conjonctive"
 					class="h-full w-full object-contain"

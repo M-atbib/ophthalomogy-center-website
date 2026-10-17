@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Text, Title, TextWithCorners } from '$lib';
 	import { UrgenceHero } from '$lib/assets';
 </script>
@@ -17,8 +18,9 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-7/12"
 		>
-			<img
+			<ResponsiveImage
 				src={UrgenceHero}
+				imageKey="urgence-hero"
 				alt="Consultation d'urgence"
 				class="h-full w-full object-cover"
 				loading="lazy"

@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { GlaucomePageOneImgOne, GlaucomePageOneIlluOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -26,8 +27,9 @@
 		<figure
 			class="mx-auto w-full max-w-3xl overflow-hidden rounded-md border border-light-grey/60 bg-primary-background shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={GlaucomePageOneImgOne}
+				imageKey="glaucome-page1-img1"
 				alt="Illustration du glaucome chronique"
 				class="h-full w-full object-cover"
 			/>
@@ -44,10 +46,11 @@
 	</Text>
 
 	<figure class="mx-auto w-full max-w-sm overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={GlaucomePageOneIlluOne}
+			imageKey="glaucome-page1-illu1"
 			alt="Illustration des effets du glaucome sur la vision"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { RetineChirurgicalePageThreeIlluOne } from '$lib/assets';
@@ -39,10 +40,11 @@
 		soulève la rétine.
 	</Text>
 	<figure class="mx-auto w-full max-w-lg">
-		<img
+		<ResponsiveImage
 			src={RetineChirurgicalePageThreeIlluOne}
+			imageKey="retine-chirurgicale-page3-illu1"
 			alt="Schéma illustrant une déchirure rétinienne"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Text>
@@ -141,6 +143,6 @@
 	<Text>
 		Si vous avez bénéficié d'un barrage au laser et que, dans les jours suivants, vous présentez une
 		baisse de vision ou une amputation du champ de vision, il est possible que la rétine se soit
-		décollée. Nous vous invitons, dans ce cas, à vous rendre en urgence dans l'un de nos cabinets.
+		décollée. Nous vous invitons, dans ce cas, à vous rendre en urgence dans le cabinet.
 	</Text>
 </Section>
