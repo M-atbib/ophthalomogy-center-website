@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Card, Section, Text, Title } from '$lib';
 	import { EquipementHero } from '$lib/assets';
 	import { equipement as equipementContent } from '$lib/content';
@@ -69,7 +70,8 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-7/12"
 		>
-			<img src={EquipementHero} alt="" class="h-full w-full object-cover" loading="lazy" />
+			<ResponsiveImage src={EquipementHero}
+ imageKey="equipement-hero" alt="" class="h-full w-full object-cover" loading="lazy" />
 		</figure>
 	</div>
 </Section>
@@ -125,7 +127,7 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full max-w-xl overflow-hidden border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={firstSection.sectionImage}
 				alt={firstSection.title}
 				class="h-full w-full object-cover"
@@ -150,7 +152,7 @@
 					<figure
 						class="border-light-grey/40 bg-primary-background h-full w-full rounded-3xl border p-4"
 					>
-						<img src={image} alt={title} class="h-full w-full object-contain" loading="lazy" />
+						<ResponsiveImage src={image} alt={title} class="h-full w-full object-contain" loading="lazy" />
 					</figure>
 				</div>
 				<div class="space-y-3">

@@ -1,25 +1,17 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Button, Card, Map, Section, Text, Title } from '$lib';
 	import { ContactHero } from '$lib/assets';
 	import { contactItems } from '$lib/content';
+	import { cabinet, cabinetMapUrl } from '$lib/cabinet';
 
-	const phoneMain = {
-		label: '05 37 810 828',
-		href: 'tel:+212537810828'
-	};
-
-	const phoneAlt = {
-		label: '06 66 82 42 47',
-		href: 'tel:+212666824247'
-	};
-
-	const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-		'Imm.67,APPT 1 Lot Al Andalouss, Avenue Abderrahim Bouaabid, Hay Essalam Salé'
-	)}`;
+	const phoneMain = cabinet.phones[0];
+	const phoneAlt = cabinet.phones[1];
+	const mapsHref = cabinetMapUrl;
 
 	const contactGuidelines = [
 		'Nos formulaires sont réservés aux demandes non-urgentes.',
-		"Indiquez le motif de votre demande, le cabinet concerné et l'identité du patient.",
+		"Indiquez le motif de votre demande et l'identité du patient.",
 		'Les demandes hors périmètre ne recevront pas de réponse.'
 	];
 </script>
@@ -28,20 +20,21 @@
 	<div class="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-stretch lg:gap-12">
 		<div class="space-y-8 sm:space-y-10 lg:flex-[1.05]">
 			<div class="mb-8">
-				<Text variant="eyebrow" tone="cta">contact clinique</Text>
+				<Text variant="eyebrow" tone="cta">Cabinet du Dr Amal Alouan · Salé</Text>
 				<Title level="h1" class="mb-3 max-w-4xl text-pretty">
-					Nous traiterons votre demande avec toute l'attention nécessaire
+					Contacter le cabinet à Salé
 				</Title>
 				<Text tone="muted" class="max-w-2xl text-pretty">
-					Choisissez le formulaire adapté et renseignez précisément les informations demandées pour
-					permettre à nos équipes de vous répondre rapidement.
+					Retrouvez l’adresse du cabinet, près de Rabat, les numéros de téléphone et les formulaires
+					pour demander un rendez-vous ou adresser un patient.
 				</Text>
 			</div>
 
 			<Card variant="muted" class="gap-6">
 				<div class="relative overflow-hidden rounded-xl bg-light-grey/50" aria-hidden="true">
-					<img
+					<ResponsiveImage
 						src={ContactHero}
+						imageKey="contact-hero"
 						alt=""
 						class="h-52 w-full object-cover sm:h-60 lg:h-64"
 						loading="lazy"
@@ -105,7 +98,7 @@
 
 					<Button href={phoneMain.href} variant="outline" tone="cta" size="lg" fullWidth>
 						<span class="flex flex-col items-center leading-tight">
-							<span>Appeler la clinique</span>
+						<span>Appeler le cabinet</span>
 							<span class="text-xs font-medium opacity-80 sm:text-sm">{phoneMain.label}</span>
 						</span>
 					</Button>
@@ -183,10 +176,10 @@
 			<Text variant="eyebrow" tone="cta">localisation</Text>
 			<Title level="h3" class="text-pretty">Accès et itinéraire</Title>
 			<Text variant="body-sm" tone="muted" class="m-0 max-w-2xl text-pretty">
-				Retrouvez la clinique sur la carte et préparez votre trajet.
+					Retrouvez le cabinet à Salé sur la carte et préparez votre trajet depuis Salé ou Rabat.
 			</Text>
 		</div>
 
-		<Map title="Localisation de la clinique" />
+		<Map title="Localisation du Cabinet du Dr Amal Alouan à Salé" />
 	</div>
 </Section>

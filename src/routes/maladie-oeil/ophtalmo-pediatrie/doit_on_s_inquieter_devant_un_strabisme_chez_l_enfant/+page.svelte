@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		ExplorationsPageTwoIlluOne,
@@ -24,28 +25,31 @@
 	<ul class="mt-2 mb-6 list-disc space-y-2 pl-5">
 		<li>L'oeil dévié est orienté vers le nez : le strabisme est convergent ;</li>
 		<figure class="mx-auto w-full max-w-md overflow-hidden">
-			<img
+			<ResponsiveImage
 				src={PediatriePageTwoIlluOne}
+				imageKey="pediatrie-page2-illu1"
 				alt="Illustration de la cataracte"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 			/>
 		</figure>
 		<li>
 			L'oeil dévié est orienté vers l'extérieur (vers la tempe) : le strabisme est divergent ;
 		</li>
 		<figure class="mx-auto w-full max-w-md overflow-hidden">
-			<img
+			<ResponsiveImage
 				src={PediatriePageTwoIlluTwo}
+				imageKey="pediatrie-page2-illu2"
 				alt="Illustration de la cataracte"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 			/>
 		</figure>
 		<li>L'oeil dévié est orienté vers le haut ou vers le bas : le strabisme est vertical.</li>
 		<figure class="mx-auto w-full max-w-md overflow-hidden">
-			<img
+			<ResponsiveImage
 				src={PediatriePageTwoIlluThree}
+				imageKey="pediatrie-page2-illu3"
 				alt="Illustration de la cataracte"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 			/>
 		</figure>
 	</ul>

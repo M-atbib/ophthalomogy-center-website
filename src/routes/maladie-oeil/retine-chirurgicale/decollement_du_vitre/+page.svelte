@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { RetineChirurgicalePageTwoIlluOne, RetineChirurgicalePageTwoIlluTwo } from '$lib/assets';
@@ -34,10 +35,11 @@
 	</ul>
 
 	<figure class=" mx-auto w-full max-w-lg overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={RetineChirurgicalePageTwoIlluOne}
+			imageKey="retine-chirurgicale-page2-illu1"
 			alt="Structure du vitré"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -53,10 +55,11 @@
 	>
 
 	<figure class="mx-auto w-full max-w-lg overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={RetineChirurgicalePageTwoIlluTwo}
+			imageKey="retine-chirurgicale-page2-illu2"
 			alt="Décollement postérieur du vitré"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>

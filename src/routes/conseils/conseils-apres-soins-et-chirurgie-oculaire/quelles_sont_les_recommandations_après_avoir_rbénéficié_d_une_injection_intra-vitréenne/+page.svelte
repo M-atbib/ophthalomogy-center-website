@@ -11,8 +11,7 @@
 >
 	<!-- This advice route keeps the emergency warning flow from the rétine médicale source page. -->
 	<Text>
-		Vous venez bénéficier d’une injection intra vitréenne ? Les ophtalmologistes du [Nom de
-		Clinique] vous invitent à lire attentivement les informations suivantes.
+		Vous venez bénéficier d’une injection intra vitréenne ? Voici les informations à lire attentivement.
 	</Text>
 
 	<section>
@@ -91,13 +90,11 @@
 		/>
 		<Text>
 			Si vous présentez un de ces symptômes, nous vous invitons à appeler notre standard (05 37 810
-			828) en journée et en semaine. Sinon, vous pouvez également vous rendre dans l'un de nos
-			cabinets, sans rendez-vous.
+			828) en journée et en semaine. En dehors des horaires d'ouverture, appelez l'établissement
+			dans lequel vous avez été opéré(e).
 		</Text>
 		<TextWithCorners>
-			Au moindre doute, l'équipe du [Nom de Clinique] se tient à votre disposition pour répondre à
-			vos questions, vous prendre en charge et vous suivre de manière attentive à la suite de votre
-			intervention.
+			Au moindre doute, contactez le cabinet du Dr Amal Alouan.
 		</TextWithCorners>
 	</section>
 </DiseaseArticleLayout>

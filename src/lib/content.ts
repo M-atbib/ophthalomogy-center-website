@@ -46,6 +46,7 @@ import {
 	RetineMedical,
 	StrabologieHero
 } from './assets';
+import { cabinet, cabinetAddress } from './cabinet';
 
 export const listEyeDiseases = [
 	{
@@ -627,18 +628,18 @@ export const contactItems = [
 	{
 		icon: Phone,
 		title: 'Appelez-nous',
-		lines: ['05 37 810 828', '06 66 82 42 47']
+		lines: cabinet.phones.map((phone) => phone.label)
 	},
 	{
 		icon: Mail,
 		title: 'Envoyez-nous un e-mail',
-		lines: ['dr.amalalouan@gmail.com'],
-		link: 'mailto:dr.amalalouan@gmail.com'
+		lines: [cabinet.email],
+		link: `mailto:${cabinet.email}`
 	},
 	{
 		icon: MapPin,
 		title: 'Visitez-nous',
-		lines: ['Imm.67,APPT 1 Lot Al Andalouss, Avenue Abderrahim Bouaabid, Hay Essalam Salé']
+		lines: [cabinetAddress]
 	}
 ];
 

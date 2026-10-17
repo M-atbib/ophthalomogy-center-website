@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { RetineMedical, RetineMedicalPageThreeIlluOne } from '$lib/assets';
@@ -24,10 +25,11 @@
 	<figure
 		class="border-light-grey/60 bg-primary-background r mx-auto w-full max-w-lg overflow-hidden"
 	>
-		<img
+		<ResponsiveImage
 			src={RetineMedicalPageThreeIlluOne}
+			imageKey="retine-medical-page3-illu1"
 			alt="Patiente après une injection intra-vitréenne"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 

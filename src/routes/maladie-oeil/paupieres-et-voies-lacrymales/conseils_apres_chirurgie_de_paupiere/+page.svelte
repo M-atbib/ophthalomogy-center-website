@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { PaupieresPageThreeIlluOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -17,10 +18,11 @@
 	</Text>
 
 	<figure class="d mx-auto w-full max-w-lg overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageThreeIlluOne}
+			imageKey="paupiere-page3-illu1"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 

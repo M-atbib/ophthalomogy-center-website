@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Button, Section, Text, TextWithCorners, Title } from '$lib';
 	import { BlepharitePageThreeIlluThree, PaupieresPageThreeIlluTwo } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -38,7 +39,7 @@
 				</div>
 
 				<figure class="mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-md lg:w-5/12">
-					<img
+					<ResponsiveImage
 						src={chalazionIllustration}
 						alt="Illustration d’un chalazion sur la paupière inférieure"
 						class="h-full w-full object-contain"
@@ -59,7 +60,7 @@
 			</Text>
 
 			<figure class="mx-auto my-10 w-full max-w-sm overflow-hidden rounded-md">
-				<img
+				<ResponsiveImage
 					src={orgeletIllustration}
 					alt="Vue anatomique de profil des glandes de la paupière"
 					class="h-full w-full object-contain"
@@ -154,7 +155,7 @@
 			</Text>
 
 			<figure class="mx-auto mt-10 w-full max-w-sm overflow-hidden rounded-md">
-				<img
+				<ResponsiveImage
 					src={orgeletIllustration}
 					alt="Illustration de profil d’un orgelet"
 					class="h-full w-full object-contain"

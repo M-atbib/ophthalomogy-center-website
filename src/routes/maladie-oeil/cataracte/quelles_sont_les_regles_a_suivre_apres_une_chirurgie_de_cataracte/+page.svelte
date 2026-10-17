@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { CataractePageSixIlluOne, CataractePageSixIlluTwo } from '$lib/assets';
@@ -13,8 +14,7 @@
 	<div class="my-10">
 		<Title level="h1">Quelles sont les règles à suivre après une chirurgie de cataracte ?</Title>
 		<Text class="mt-4">
-			Vous venez d'être opéré(e) ? Voici l'ensemble des consignes partagées par les chirurgiens du
-			[Nom de Clinique] pour assurer une récupération sereine.
+			Vous venez d'être opéré(e) ? Voici les consignes à suivre après l'intervention.
 		</Text>
 	</div>
 
@@ -77,18 +77,17 @@
 	<figure
 		class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-lg overflow-hidden"
 	>
-		<img
+		<ResponsiveImage
 			src={CataractePageSixIlluOne}
+			imageKey="cataracte-page6-illu1"
 			alt="Patiente suivant les consignes post-opératoires"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Text class="text-accent-one mt-4">
 		Si vous présentez un de ces symptômes, nous vous invitons à appeler notre standard (05 37 810
-		828) en journée et en semaine. Sinon, vous pouvez également vous rendre dans l'un de nos
-		cabinets, sans rendez-vous. En dehors de nos horaires d'ouverture, appelez l'établissement
-		(Clinique ou Centre Hospitalier) dans lequel vous avez été opéré(e). Les chirurgiens du [Nom de
-		Clinique] organisent des astreintes pour s'occuper de leurs patients dans ce type de situation.
+		828) en journée et en semaine. En dehors des horaires d'ouverture, appelez l'établissement
+		(Clinique ou Centre Hospitalier) dans lequel vous avez été opéré(e).
 	</Text>
 
 	<Title class="mt-8" level="h2"
@@ -119,17 +118,16 @@
 	</Text>
 
 	<figure class="mx-auto mt-8 w-full max-w-lg overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={CataractePageSixIlluTwo}
+			imageKey="cataracte-page6-illu2"
 			alt="Patient appliquant des collyres"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>
 
 	<TextWithCorners class="mt-8">
-		Au moindre doute, l'équipe du [Nom de Clinique] se tient à votre disposition pour répondre à vos
-		questions, vous prendre en charge et vous suivre de manière attentive à la suite de votre
-		intervention.
+		Au moindre doute, contactez le cabinet du Dr Amal Alouan.
 	</TextWithCorners>
 </Section>

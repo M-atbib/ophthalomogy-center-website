@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { CataractePageTwoHero } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -26,9 +27,10 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-2xl overflow-hidden rounded-md border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={CataractePageTwoHero}
-				alt="Illustration de la cataracte"
+				imageKey="cataracte-page2-hero-male"
+				alt="Examen de la vue d’un patient à la lampe à fente"
 				class="h-full w-full object-cover"
 			/>
 		</figure>

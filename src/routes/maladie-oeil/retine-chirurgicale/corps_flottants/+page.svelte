@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { RetineChirurgicalePageOneIlluOne } from '$lib/assets';
@@ -64,10 +65,11 @@
 		</li>
 	</ul>
 	<figure class="mx-auto w-full max-w-lg overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={RetineChirurgicalePageOneIlluOne}
+			imageKey="retine-chirurgicale-page1-illu1"
 			alt="Illustration des corps flottants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Title class="mt-10" level="h2">Prise en charge</Title>

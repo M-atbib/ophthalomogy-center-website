@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		ExplorationsPageTwoIlluOne,
@@ -34,8 +35,9 @@
 			</Text>
 		</div>
 		<figure class="mx-auto w-full max-w-2xl overflow-hidden">
-			<img
+			<ResponsiveImage
 				src={PediatriePageThreeImgOne}
+				imageKey="pediatrie-page3-img1"
 				alt="Illustration de la cataracte"
 				class="h-full w-full object-cover"
 			/>
@@ -81,11 +83,13 @@
 			</Text>
 		</div>
 		<figure class="mx-auto w-full max-w-2xl overflow-hidden">
-			<img
+			<ResponsiveImage
 				src={PediatriePageThreeImgTwo}
+				imageKey="pediatrie-page3-img2"
 				alt="Illustration de la cataracte"
 				class="h-full w-full object-cover"
-			/>
+
+				sizes="(max-width: 640px) 100vw, 50vw"/>
 		</figure>
 	</div>
 

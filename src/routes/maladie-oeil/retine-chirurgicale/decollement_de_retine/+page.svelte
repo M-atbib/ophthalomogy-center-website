@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import {
@@ -38,10 +39,11 @@
 		La rétine peut se détacher de son support : c'est le décollement de rétine.
 	</TextWithCorners>
 	<figure class=" mx-auto w-full max-w-lg">
-		<img
+		<ResponsiveImage
 			src={RetineChirurgicalePageFourIlluOne}
+			imageKey="retine-chirurgicale-page4-illu1"
 			alt="Illustration d'un décollement de rétine"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -99,7 +101,7 @@
 
 	<Text>
 		En cas survenue d'un ou plusieurs de ces symptômes, nous vous invitons à vous rendre en urgence
-		dans l'un de nos cabinets, afin de s'assurer de l'absence de complications rétiniennes.
+		dans le cabinet, afin de s'assurer de l'absence de complications rétiniennes.
 	</Text>
 
 	<Title level="h2">Traitement du décollement de rétine</Title>
@@ -123,10 +125,11 @@
 	</ul>
 
 	<figure class=" mx-auto w-full max-w-lg">
-		<img
+		<ResponsiveImage
 			src={RetineChirurgicalePageFourIlluTwo}
+			imageKey="retine-chirurgicale-page4-illu2"
 			alt="Illustration d'un décollement de rétine"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 

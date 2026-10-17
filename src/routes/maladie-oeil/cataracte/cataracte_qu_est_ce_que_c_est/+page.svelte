@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		CataractePageOneHero,
@@ -25,9 +26,10 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-3xl overflow-hidden rounded-md border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={CataractePageOneHero}
-				alt="Illustration de la cataracte"
+				imageKey="cataracte-page1-hero-male"
+				alt="Patient examiné à la lampe à fente"
 				class="h-full w-full object-cover"
 			/>
 		</figure>
@@ -45,10 +47,11 @@
 	</div>
 
 	<figure class="mx-auto w-full max-w-sm overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={CataractePageOneIlluTwo}
+			imageKey="cataracte-page1-illu2"
 			alt="Courbe illustrant l'augmentation des chirurgies de la cataracte"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>
@@ -155,10 +158,11 @@
 		</Text>
 
 		<figure class=" mx-auto w-full max-w-sm overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={CataractePageOneIlluOne}
+				imageKey="cataracte-page1-illu1"
 				alt="Illustration de la chirurgie de la cataracte"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 				loading="lazy"
 			/>
 		</figure>

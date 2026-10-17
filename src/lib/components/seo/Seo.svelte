@@ -23,7 +23,7 @@
 	<meta name="robots" content={metadata.robots} />
 	<link rel="canonical" href={metadata.canonicalUrl} />
 
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content={metadata.openGraphType} />
 	<meta property="og:site_name" content={seoConfig.siteName} />
 	<meta property="og:locale" content={seoConfig.locale} />
 	<meta property="og:locale:alternate" content={seoConfig.alternateLocale} />
@@ -31,6 +31,9 @@
 	<meta property="og:description" content={metadata.description} />
 	<meta property="og:url" content={metadata.canonicalUrl} />
 	<meta property="og:image" content={metadata.openGraphImageUrl} />
+	{#if metadata.article?.datePublished}
+		<meta property="article:published_time" content={metadata.article.datePublished} />
+	{/if}
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={metadata.metaTitle} />

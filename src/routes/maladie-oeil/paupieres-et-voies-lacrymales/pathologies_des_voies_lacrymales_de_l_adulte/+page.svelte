@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { PaupieresPageFourIlluOne, PaupieresPageFourIlluTwo } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -47,10 +48,11 @@
 	</Text>
 
 	<figure class=" mx-auto w-full max-w-lg overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageFourIlluOne}
+			imageKey="paupiere-page4-illu1"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -72,10 +74,11 @@
 		locaux.
 	</Text>
 	<figure class=" mx-auto w-full max-w-lg overflow-hidden">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageFourIlluTwo}
+			imageKey="paupiere-page4-illu2"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Text>

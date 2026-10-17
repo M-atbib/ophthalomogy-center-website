@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import {
@@ -41,18 +42,20 @@
 
 	<div class="mt-6 flex items-center">
 		<figure class="mx-auto w-full max-w-lg overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={ChirurgieRefactivePageFourIlluOne}
+				imageKey="chirurgie-refactive-page4-illu1"
 				alt="Illustration de la chirurgie PRELEX"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 				loading="lazy"
 			/>
 		</figure>
 		<figure class="mx-auto w-full max-w-lg overflow-hidden rounded-md">
-			<img
+			<ResponsiveImage
 				src={ChirurgieRefactivePageFourIlluTwo}
+				imageKey="chirurgie-refactive-page4-illu2"
 				alt="Implant posé lors d'une chirurgie PRELEX"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 				loading="lazy"
 			/>
 		</figure>
@@ -68,10 +71,11 @@
 		voit souvent chez les hypermétropes.
 	</Text>
 	<figure class="mx-auto mt-6 w-full max-w-lg overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={ChirurgieRefactivePageFourIlluThree}
+			imageKey="chirurgie-refactive-page4-illu3"
 			alt="Schéma d'un implant phaque"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>

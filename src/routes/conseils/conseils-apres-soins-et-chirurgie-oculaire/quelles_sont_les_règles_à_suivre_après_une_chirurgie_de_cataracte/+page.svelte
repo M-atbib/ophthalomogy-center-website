@@ -11,8 +11,7 @@
 >
 	<!-- This conseils version mirrors the completed cataracte article while keeping navigation inside the advice section. -->
 	<Text>
-		Vous venez de vous faire opérer de cataracte ? Les chirurgiens du [Nom de Clinique] vous
-		invitent à suivre attentivement ces consignes :
+		Vous venez de vous faire opérer de cataracte ? Voici les consignes à suivre attentivement :
 	</Text>
 
 	<section>
@@ -82,8 +81,7 @@
 		/>
 		<Text tone="accent" weight="medium">
 			Si vous présentez un de ces symptômes, nous vous invitons à appeler notre standard (05 37 810
-			828) en journée et en semaine. Sinon, vous pouvez également vous rendre dans l'un de nos
-			cabinets, sans rendez-vous. En dehors de nos horaires d'ouverture, appelez l'établissement
+			828) en journée et en semaine. En dehors des horaires d'ouverture, appelez l'établissement
 			dans lequel vous avez été opéré(e).
 		</Text>
 	</section>
@@ -118,9 +116,7 @@
 			class="max-w-lg"
 		/>
 		<TextWithCorners>
-			Au moindre doute, l'équipe du [Nom de Clinique] se tient à votre disposition pour répondre à
-			vos questions, vous prendre en charge et vous suivre de manière attentive à la suite de votre
-			intervention.
+			Au moindre doute, contactez le cabinet du Dr Amal Alouan.
 		</TextWithCorners>
 	</section>
 </DiseaseArticleLayout>

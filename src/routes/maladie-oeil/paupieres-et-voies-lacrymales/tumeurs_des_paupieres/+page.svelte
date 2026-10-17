@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { CataractePageTwoIlluOne, CataractePageTwoIlluTwo } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -26,10 +27,11 @@
 	<figure
 		class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-lg overflow-hidden"
 	>
-		<img
+		<ResponsiveImage
 			src={CataractePageTwoIlluOne}
+			imageKey="cataracte-page2-illu1"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -96,10 +98,11 @@
 	<figure
 		class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-lg overflow-hidden"
 	>
-		<img
+		<ResponsiveImage
 			src={CataractePageTwoIlluTwo}
+			imageKey="cataracte-page2-illu2"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 </Section>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		PaupieresPageTwoIlluFour,
@@ -39,10 +40,11 @@
 		supérieure. L’entropion peut être intermittent ou permanent, selon le mécanisme en cause.
 	</Text>
 	<figure class="mx-auto w-full max-w-xs">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageTwoIlluOne}
+			imageKey="paupiere-page2-illu1"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Text>
@@ -56,10 +58,11 @@
 	</Text>
 
 	<figure class="mx-auto w-full max-w-xs">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageTwoIlluTwo}
+			imageKey="paupiere-page2-illu2"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -98,10 +101,11 @@
 		excessive et de l’assèchement induit.
 	</Text>
 	<figure class="mx-auto w-full max-w-xs">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageTwoIlluThree}
+			imageKey="paupiere-page2-illu3"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<TextWithCorners>
@@ -114,10 +118,11 @@
 		joue.
 	</Text>
 	<figure class="mx-auto w-full max-w-xs">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageTwoIlluFour}
+			imageKey="paupiere-page2-illu4"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Title level="sub2">Les causes de survenue d'un ectropion</Title>

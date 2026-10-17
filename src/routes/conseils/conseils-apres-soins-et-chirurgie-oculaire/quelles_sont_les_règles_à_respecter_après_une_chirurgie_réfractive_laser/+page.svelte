@@ -105,7 +105,8 @@
 		</ul>
 		<TextWithCorners>
 			Si vous présentez un de ces symptômes, nous vous invitons à appeler notre standard (05 37 810
-			828) en journée et en semaine, ou à vous rendre dans l'un de nos cabinets sans rendez-vous.
+			828) en journée et en semaine. En dehors des horaires d'ouverture, appelez l'établissement
+			dans lequel vous avez été opéré(e).
 		</TextWithCorners>
 	</section>
 
@@ -131,9 +132,7 @@
 			cicatrisation de votre cornée.
 		</Text>
 		<TextWithCorners>
-			Dans tous les cas, l'équipe du [Nom de Clinique] se tient à votre disposition pour répondre à
-			vos questions, vous prendre en charge et vous suivre de manière attentive à la suite de votre
-			intervention.
+			Dans tous les cas, contactez le cabinet du Dr Amal Alouan si vous avez des questions.
 		</TextWithCorners>
 	</section>
 </DiseaseArticleLayout>

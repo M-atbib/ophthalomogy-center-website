@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Card, Section, Text, Title } from '$lib';
 	import { BlephariteHero, LentillesHero, LunetteHero, RetineMedical } from '$lib/assets';
 	import { MoveRight } from '@lucide/svelte';
@@ -33,6 +34,12 @@
 	];
 
 	const secondaryImage = LentillesHero;
+	const relatedTopics = [
+		{ label: 'Cataracte', href: '/maladie-oeil/cataracte' },
+		{ label: 'Glaucome', href: '/maladie-oeil/glaucome' },
+		{ label: 'Rétine médicale', href: '/maladie-oeil/retine-medicale' },
+		{ label: 'Sécheresse oculaire', href: '/maladie-oeil/blepharite-secheresse-surface-oculaire' }
+	];
 </script>
 
 <Section width="wide" spacing="comfortable">
@@ -40,7 +47,7 @@
 		<div>
 			<Title level="h1">Les conseils de votre ophtalmo</Title>
 			<Text variant="body-lg" tone="muted" class="mt-4 text-pretty">
-				Retrouvez les recommandations pratiques du centre pour mieux suivre vos traitements,
+				Retrouvez les recommandations pratiques du cabinet pour mieux suivre vos traitements,
 				préparer vos soins et prendre soin de vos lunettes ou lentilles.
 			</Text>
 		</div>
@@ -48,7 +55,7 @@
 		<figure
 			class="max-h-[420px] overflow-hidden rounded-md border border-light-grey/60 bg-primary-background"
 		>
-			<img
+			<ResponsiveImage
 				src={secondaryImage}
 				alt="Patiente portant des lentilles de contact"
 				class="h-full w-full object-cover"
@@ -62,7 +69,7 @@
 	<div class="grid gap-5 md:grid-cols-3">
 		{#each categories as category}
 			<Card variant="accent" radius="md" class="h-full overflow-hidden" padding="none">
-				<img src={category.image} alt="" class="h-44 w-full object-cover" loading="lazy" />
+				<ResponsiveImage src={category.image} alt="" class="h-44 w-full object-cover" loading="lazy" />
 				<div class="flex flex-1 flex-col gap-4 p-5 sm:p-6">
 					<div>
 						<Title level="h3">{category.title}</Title>
@@ -79,4 +86,14 @@
 			</Card>
 		{/each}
 	</div>
+</Section>
+
+<Section width="wide" spacing="tight" variant="muted" aria-labelledby="related-topics-title">
+	<Title level="h2" id="related-topics-title">Explorer les sujets médicaux liés aux conseils</Title>
+	<Text tone="muted" class="mt-3 max-w-3xl">Ces dossiers donnent accès aux articles déjà publiés sur le site. Pour une question liée à votre situation, contactez un professionnel de santé.</Text>
+	<ul class="mt-6 flex flex-wrap gap-3">
+		{#each relatedTopics as topic (topic.href)}
+			<li><a href={topic.href} class="inline-flex min-h-11 items-center rounded-xl border border-light-grey/60 bg-white px-4 py-2 font-semibold text-cta underline-offset-4 hover:underline">{topic.label}</a></li>
+		{/each}
+	</ul>
 </Section>

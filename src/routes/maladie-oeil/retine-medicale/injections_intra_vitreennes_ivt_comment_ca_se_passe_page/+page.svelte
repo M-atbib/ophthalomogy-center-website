@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { RetineMedicalPageTwoIlluThree } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -34,10 +35,11 @@
 	</div>
 
 	<figure class="mx-auto mt-6 w-full max-w-lg overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={RetineMedicalPageTwoIlluThree}
+			imageKey="retine-medical-page2-illu3"
 			alt="Fond d’œil présentant une occlusion veineuse"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>

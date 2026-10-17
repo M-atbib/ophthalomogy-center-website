@@ -1,4 +1,5 @@
 <script>
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ExplorationsPageTwoIlluOne, PediatriePageSixImgOne } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -58,11 +59,13 @@
 				</li>
 			</div>
 			<figure class="mx-auto w-full max-w-xl overflow-hidden">
-				<img
+				<ResponsiveImage
 					src={PediatriePageSixImgOne}
-					alt="Illustration de la cataracte"
+					imageKey="pediatrie-page6-img1-male"
+					alt="Examen de la vue d’une enfant par un professionnel de santé"
 					class="h-full w-full object-cover"
-				/>
+
+					sizes="(max-width: 640px) 100vw, 50vw"/>
 			</figure>
 		</div>
 		<TextWithCorners>

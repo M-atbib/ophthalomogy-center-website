@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { PaupieresPageOneIlluOne, PaupieresPageOneIlluTwo } from '$lib/assets';
 	import { ArrowLeft } from '@lucide/svelte';
@@ -25,10 +26,11 @@
 		en jeu.
 	</Text>
 	<figure class="mx-auto w-full max-w-xs">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageOneIlluOne}
+			imageKey="paupiere-page1-illu1"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 
@@ -117,10 +119,11 @@
 		de peau, de graisse sous-cutanée.</Text
 	>
 	<figure class="mx-auto w-full max-w-lg">
-		<img
+		<ResponsiveImage
 			src={PaupieresPageOneIlluTwo}
+			imageKey="paupiere-page1-illu2"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Text>

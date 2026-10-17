@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { RetineChirurgicalePageNineIlluOne } from '$lib/assets';
@@ -22,10 +23,11 @@
 	</Text>
 
 	<figure class=" mx-auto w-full max-w-lg">
-		<img
+		<ResponsiveImage
 			src={RetineChirurgicalePageNineIlluOne}
+			imageKey="retine-chirurgicale-page9-illu1"
 			alt="Luxation du cristallin dans le vitré"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import {
 		CataractePageThreeIlluOne,
@@ -28,10 +29,11 @@
 	<figure
 		class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-lg overflow-hidden"
 	>
-		<img
+		<ResponsiveImage
 			src={CataractePageThreeIlluOne}
+			imageKey="cataracte-page3-illu1"
 			alt="Illustration de la sélection d'implants"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<TextWithCorners class="mt-6">
@@ -81,10 +83,11 @@
 	</div>
 
 	<figure class="mx-auto mt-10 w-full max-w-2xl overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={CataractePageThreeIlluTwo}
+			imageKey="cataracte-page3-illu2"
 			alt="Illustration du choix d'implant sur mesure"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>
@@ -129,10 +132,11 @@
 	>
 
 	<figure class="mx-auto mt-10 w-full max-w-xl overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={CataractePageThreeIlluThree}
+			imageKey="cataracte-page3-illu3"
 			alt="Implant intra-oculaire"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>

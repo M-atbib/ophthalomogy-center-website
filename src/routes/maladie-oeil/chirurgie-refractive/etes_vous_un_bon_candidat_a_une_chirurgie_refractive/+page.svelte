@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { ChirurgieRefactive, ChirurgieRefactivePageTwoImgOne } from '$lib/assets';
@@ -15,15 +16,16 @@
 			<Title level="h1">Êtes-vous un bon candidat à une chirurgie réfractive ?</Title>
 			<Text class="mt-4">
 				Tout le monde peut-il être opéré ? Suis-je trop jeune ou trop vieux pour envisager cette
-				intervention ? Le [Nom de Clinique] répond à toutes vos questions !
+				intervention ? Le cabinet du Dr Amal Alouan répond à toutes vos questions !
 			</Text>
 		</div>
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-3xl overflow-hidden rounded-md border shadow-sm"
 		>
-			<img
+			<ResponsiveImage
 				src={ChirurgieRefactivePageTwoImgOne}
-				alt="Bloc opératoire de chirurgie réfractive"
+				imageKey="chirurgie-refactive-page2-img1-male"
+				alt="Patient tenant ses lunettes"
 				class="h-full w-full object-cover"
 			/>
 		</figure>

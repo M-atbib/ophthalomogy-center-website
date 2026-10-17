@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { RetineMedicalPageSixIlluOne } from '$lib/assets';
@@ -13,8 +14,7 @@
 	<div class="my-10">
 		<Title level="h1">Quelles sont les recommandations après une injection intra-vitréenne ?</Title>
 		<Text>
-			Vous venez bénéficier d’une injection intra vitréenne ? Les ophtalmologistes du [Nom de
-			Clinique] vous invitent à lire attentivement les informations suivantes.
+			Vous venez bénéficier d’une injection intra vitréenne ? Voici les informations à lire attentivement.
 		</Text>
 	</div>
 
@@ -94,22 +94,19 @@
 	<figure
 		class="border-light-grey/60 bg-primary-background r mx-auto w-full max-w-lg overflow-hidden"
 	>
-		<img
+		<ResponsiveImage
 			src={RetineMedicalPageSixIlluOne}
+			imageKey="retine-medical-page6-illu1"
 			alt="Patiente après une injection intra-vitréenne"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 	<Text>
 		Si vous présentez un de ces symptômes, nous vous invitons à appeler notre standard (05 37 810
-		828) en journée et en semaine. Sinon, vous pouvez également vous rendre dans l'un de nos
-		cabinets, sans rendez-vous. En dehors de nos horaires d'ouverture, appelez l'établissement
-		(Clinique ou Centre Hospitalier) dans lequel vous avez été opéré(e). Les chirurgiens du [Nom de
-		Clinique] organisent des astreintes pour s'occuper de leurs patients dans ce type de situation.
+		828) en journée et en semaine. En dehors des horaires d'ouverture, appelez l'établissement
+		(Clinique ou Centre Hospitalier) dans lequel vous avez été opéré(e).
 	</Text>
 	<TextWithCorners class="mt-6">
-		Au moindre doute, l'équipe du [Nom de Clinique] se tient à votre disposition pour répondre à vos
-		questions, vous prendre en charge et vous suivre de manière attentive à la suite de votre
-		intervention.
+		Au moindre doute, contactez le cabinet du Dr Amal Alouan.
 	</TextWithCorners>
 </Section>

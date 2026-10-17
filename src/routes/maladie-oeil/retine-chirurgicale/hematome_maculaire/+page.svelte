@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import { RetineChirurgicalePageEightIlluOne } from '$lib/assets';
@@ -42,10 +43,11 @@
 		c'est le centre de la rétine (la macula) qui est atteint.
 	</Text>
 	<figure class=" mx-auto w-full max-w-lg">
-		<img
+		<ResponsiveImage
 			src={RetineChirurgicalePageEightIlluOne}
+			imageKey="retine-chirurgicale-pag8-illu1"
 			alt="Illustration d'un hématome sous-maculaire"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 		/>
 	</figure>
 

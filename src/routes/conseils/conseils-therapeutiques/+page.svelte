@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Button, Card, Section, Text, Title } from '$lib';
 	import { BlephariteHero } from '$lib/assets';
 	import { ArrowLeft, MoveRight } from '@lucide/svelte';
@@ -47,8 +48,9 @@
 		</div>
 
 		<figure class="overflow-hidden rounded-md border border-light-grey/60">
-			<img
+			<ResponsiveImage
 				src={BlephariteHero}
+				imageKey="blepharite-heor"
 				alt="Illustration des soins de surface oculaire"
 				class="h-full w-full object-cover"
 				loading="eager"

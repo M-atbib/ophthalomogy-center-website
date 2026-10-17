@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Title, Text, Button, TextWithCorners } from '$lib';
 	import { ArrowLeft } from '@lucide/svelte';
 	import {
@@ -25,10 +26,11 @@
 		<figure
 			class="border-light-grey/60 bg-primary-background mx-auto w-full max-w-lg overflow-hidden"
 		>
-			<img
+			<ResponsiveImage
 				src={RetineMedicalPageThreeIlluOne}
+				imageKey="retine-medical-page3-illu1"
 				alt="Schéma des vaisseaux de la rétine"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-contain"
 			/>
 		</figure>
 	</div>
@@ -149,10 +151,11 @@
 		vous ne présentez aucun autre symptôme général.</Text
 	>
 	<figure class="mx-auto mt-6 w-full max-w-2xl overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={RetineMedicalPageThreeIlluTwo}
+			imageKey="retine-medical-page3-illu2"
 			alt="Fond d’œil présentant une occlusion veineuse"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>
@@ -183,10 +186,11 @@
 		</li>
 	</ul>
 	<figure class="mx-auto mt-6 w-full max-w-2xl overflow-hidden rounded-md">
-		<img
+		<ResponsiveImage
 			src={RetineMedicalPageTwoIlluThree}
+			imageKey="retine-medical-page2-illu3"
 			alt="Fond d’œil présentant une occlusion veineuse"
-			class="h-full w-full object-cover"
+			class="h-full w-full object-contain"
 			loading="lazy"
 		/>
 	</figure>
