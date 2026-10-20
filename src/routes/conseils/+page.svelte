@@ -3,6 +3,7 @@
 	import { Card, Section, Text, Title } from '$lib';
 	import { BlephariteHero, LentillesHero, LunetteHero, RetineMedical } from '$lib/assets';
 	import { MoveRight } from '@lucide/svelte';
+	import Breadcrumb from '$lib/components/general/Breadcrumb.svelte';
 
 	type AdviceCategory = {
 		title: string;
@@ -42,9 +43,11 @@
 	];
 </script>
 
-<Section width="wide" spacing="comfortable">
-	<div class="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
+<Section width="wide" spacing="comfortable" variant="muted">
+	<Breadcrumb current="Conseils" />
+	<div class="site-hero-grid">
 		<div>
+			<Text variant="eyebrow" tone="cta" class="mb-5">Conseils aux patients</Text>
 			<Title level="h1">Les conseils de votre ophtalmo</Title>
 			<Text variant="body-lg" tone="muted" class="mt-4 text-pretty">
 				Retrouvez les recommandations pratiques du cabinet pour mieux suivre vos traitements,
@@ -52,9 +55,7 @@
 			</Text>
 		</div>
 
-		<figure
-			class="max-h-[420px] overflow-hidden rounded-md border border-light-grey/60 bg-primary-background"
-		>
+		<figure class="site-hero-media">
 			<ResponsiveImage
 				src={secondaryImage}
 				alt="Patiente portant des lentilles de contact"

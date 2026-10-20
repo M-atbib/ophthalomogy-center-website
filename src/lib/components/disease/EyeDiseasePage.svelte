@@ -4,6 +4,7 @@
 	import type { EyeDisease } from '$lib/content';
 	import { MoveRight } from '@lucide/svelte';
 	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
+	import Breadcrumb from '$lib/components/general/Breadcrumb.svelte';
 
 	export let disease: EyeDisease | undefined;
 
@@ -22,9 +23,11 @@
 </script>
 
 {#if disease}
-	<Section spacing="comfortable" width="wide">
-		<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
-			<div class="lg:w-5/12">
+	<Section spacing="comfortable" width="wide" variant="muted">
+		<Breadcrumb current={disease.diseases} />
+		<div class="site-hero-grid">
+			<div>
+				<Text variant="eyebrow" tone="cta" class="mb-5">Santé des yeux</Text>
 				<Title level="h1" class="mb-4">{disease.diseases}</Title>
 				{#each disease.content as content}
 					<Text variant="body-lg" tone="muted" class="text-pretty">
@@ -32,9 +35,7 @@
 					</Text>
 				{/each}
 			</div>
-			<figure
-				class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-7/12"
-			>
+			<figure class="site-hero-media">
 				<ResponsiveImage
 					src={disease.img}
 					alt={heroAltByTopic[disease.diseases] ?? `Illustration pour ${disease.diseases}`}

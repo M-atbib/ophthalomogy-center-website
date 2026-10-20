@@ -2,11 +2,14 @@
 	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Section, Text, Title, TextWithCorners } from '$lib';
 	import { UrgenceHero } from '$lib/assets';
+	import Breadcrumb from '$lib/components/general/Breadcrumb.svelte';
 </script>
 
-<Section spacing="comfortable" width="wide">
-	<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
-		<div class="space-y-6 lg:w-5/12">
+<Section spacing="comfortable" width="wide" variant="muted">
+	<Breadcrumb current="Urgences" />
+	<div class="site-hero-grid">
+		<div class="space-y-6">
+			<Text variant="eyebrow" tone="cta">Santé des yeux</Text>
 			<Title level="h1" class="text-pretty">Urgences</Title>
 			<Text variant="body-lg" tone="muted" class="text-pretty">
 				Vous présentez un problème ophtalmologique urgent ?<br />
@@ -15,9 +18,7 @@
 				Nous s'engageons pour une meilleure santé oculaire.
 			</Text>
 		</div>
-		<figure
-			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-7/12"
-		>
+		<figure class="site-hero-media">
 			<ResponsiveImage
 				src={UrgenceHero}
 				imageKey="urgence-hero"

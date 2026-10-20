@@ -32,14 +32,15 @@
 	];
 </script>
 
-<Section width="wide" spacing="comfortable">
+<Section width="wide" spacing="comfortable" variant="muted">
 	<Button variant="ghost" href="/conseils" class="w-fit">
 		<ArrowLeft />
 		Retour
 	</Button>
 
-	<div class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
+	<div class="site-hero-grid mt-10">
 		<div>
+			<Text variant="eyebrow" tone="cta" class="mb-5">Conseils aux patients</Text>
 			<Title level="h1">Conseils thérapeutiques</Title>
 			<Text variant="body-lg" tone="muted" class="mt-4 text-pretty">
 				Des fiches pratiques pour mieux appliquer vos traitements et réaliser les gestes prescrits
@@ -47,7 +48,7 @@
 			</Text>
 		</div>
 
-		<figure class="overflow-hidden rounded-md border border-light-grey/60">
+		<figure class="site-hero-media">
 			<ResponsiveImage
 				src={BlephariteHero}
 				imageKey="blepharite-heor"

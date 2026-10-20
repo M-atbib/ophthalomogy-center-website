@@ -2,11 +2,14 @@
 	import ResponsiveImage from '$lib/components/general/ResponsiveImage.svelte';
 	import { Card, Section, Text, Title } from '$lib';
 	import { AdressingPatientHero, AdressingPatientIllustration } from '$lib/assets';
+	import Breadcrumb from '$lib/components/general/Breadcrumb.svelte';
 </script>
 
-<Section spacing="comfortable" width="wide">
-	<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
-		<div class="space-y-6 lg:w-6/12">
+<Section spacing="comfortable" width="wide" variant="muted">
+	<Breadcrumb current="Adresser un patient" />
+	<div class="site-hero-grid">
+		<div class="space-y-6">
+			<Text variant="eyebrow" tone="cta">Professionnels de santé</Text>
 			<Title level="h1" class="text-pretty">Nous adresser un patient</Title>
 			<Text variant="body-lg" tone="muted" class="text-pretty">
 				ATTENTION : Cette page s'adresse uniquement aux professionnels de santé<br />
@@ -15,9 +18,7 @@
 				Plusieurs possibilités s’offrent à vous, selon le niveau d'urgence estimé de la situation.
 			</Text>
 		</div>
-		<figure
-			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-6/12"
-		>
+		<figure class="site-hero-media">
 			<ResponsiveImage
 				src={AdressingPatientHero}
 				imageKey="adressin-patient-hero-male"

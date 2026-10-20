@@ -54,10 +54,11 @@
 		both: 'border-y border-light-grey/50'
 	};
 
+	// Keep the existing width prop for callers; every section uses the same outer guide.
 	const widthClasses: Record<SectionWidth, string> = {
-		default: 'mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8',
-		wide: 'mx-auto w-full max-w-[85%] px-4 sm:px-8 lg:px-10',
-		full: 'w-full max-w-[95%] px-4 sm:px-8 lg:px-10'
+		default: 'site-container',
+		wide: 'site-container',
+		full: 'site-container'
 	};
 
 	const alignClasses: Record<SectionAlign, string> = {
@@ -72,7 +73,7 @@
 	class={`${variantClasses[variant]} ${spacingClasses[spacing]} ${dividerClasses[divider]} ${classFromParent}`}
 >
 	{#if contain}
-		<div class={`${widthClasses[width]}  ${alignClasses[align]}`}>
+		<div class={`${widthClasses[width]} ${alignClasses[align]}`}>
 			{@render children?.()}
 		</div>
 	{:else}

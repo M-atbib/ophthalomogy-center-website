@@ -71,7 +71,7 @@
 <svelte:element
 	this={as}
 	{...forwarded}
-	class={`flex w-full flex-col gap-3 sm:gap-4 ${variantClasses[variant]} ${paddingClasses[padding]} ${elevationClasses[elevation]} ${radiusClasses[radius]} ${alignClasses[align]} ${
+	class={`flex min-w-0 w-full flex-col gap-3 sm:gap-4 ${variantClasses[variant]} ${paddingClasses[padding]} ${elevationClasses[elevation]} ${radiusClasses[radius]} ${alignClasses[align]} ${
 		interactive
 			? 'transition-transform duration-200 hover:-translate-y-1 hover:shadow-md'
 			: ''

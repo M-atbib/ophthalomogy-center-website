@@ -43,8 +43,8 @@
 	};
 </script>
 
-<Section spacing="tight">
-	<div class="mx-auto max-w-7xl">
+<Section spacing="tight" variant="muted">
+	<div class="max-w-4xl">
 		<Button variant="ghost" tone="cta" href="/actualites" class="group mb-8 w-fit p-0">
 			<MoveLeft class="size-4 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
 			Retour aux actualités
@@ -65,7 +65,11 @@
 			{/if}
 			<Text variant="body-sm" tone="muted">Durée de lecture : 3 min</Text>
 		</div>
+	</div>
+</Section>
 
+<Section spacing="comfortable">
+	<div class="max-w-4xl">
 		{#if article.imageUrl}
 			<figure
 				class="bg-primary-background border-light-grey/60 mb-10 overflow-hidden rounded-3xl border"
@@ -84,7 +88,7 @@
 		{/if}
 
 		<div
-			class="prose prose-lg prose-headings:text-primary prose-p:text-primary prose-strong:text-primary prose-a:text-cta text-primary max-w-7xl"
+			class="prose prose-lg prose-headings:text-primary prose-p:text-primary prose-strong:text-primary prose-a:text-cta max-w-none text-primary"
 		>
 			<PortableText value={articleBlocks} />
 		</div>

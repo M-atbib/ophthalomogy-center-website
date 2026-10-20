@@ -26,7 +26,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 </svelte:head>
 
-<div class="flex min-h-screen flex-col bg-primary-background text-primary">
+<div class="flex min-h-screen flex-col bg-primary-background pb-20 text-primary sm:pb-0">
 	<Navbar />
 
 	<main class="w-full flex-1">

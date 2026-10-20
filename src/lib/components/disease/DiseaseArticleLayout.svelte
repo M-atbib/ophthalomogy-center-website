@@ -12,15 +12,18 @@
 	let { title, backHref, children }: DiseaseArticleLayoutProps = $props();
 </script>
 
-<!-- A shared shell keeps disease articles aligned while their medical content remains page-specific. -->
-<Section width="wide" spacing="comfortable">
-	<Button variant="ghost" href={backHref} class="w-fit">
-		<ArrowLeft />
+<!-- The same calm page opening is used for every medical and advice article. -->
+<Section width="wide" spacing="tight" variant="muted">
+	<Button variant="ghost" href={backHref} class="mb-8 w-fit">
+		<ArrowLeft class="size-5" aria-hidden="true" />
 		Retour
 	</Button>
+	<p class="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-cta-ink sm:text-sm">Santé des yeux · Conseils</p>
+	<Title level="h1" class="max-w-4xl text-pretty">{title}</Title>
+</Section>
 
-	<article class="mt-10 space-y-12">
-		<Title level="h1">{title}</Title>
+<Section width="wide" spacing="comfortable">
+	<article class="max-w-4xl space-y-12">
 		{@render children?.()}
 	</article>
 </Section>
