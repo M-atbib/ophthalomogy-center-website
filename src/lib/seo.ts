@@ -68,9 +68,9 @@ export const routeSeoOverrides: Record<string, SeoRoute> = {
 		changeFrequency: 'weekly'
 	},
 	'/a-propos': {
-		title: 'À propos du Dr Amal Alouan',
+		title: 'Dr Amal Alouan – Ophtalmologue à Salé, parcours et cabinet',
 		description:
-			'Découvrez le cabinet du Dr Amal Alouan à Salé et retrouvez les informations pratiques pour préparer votre visite.'
+			'Découvrez le parcours du Dr Amal Alouan, ophtalmologue à Salé : formation, expérience hospitalière, compétences et informations du cabinet.'
 	},
 	'/actualites': {
 		title: "Actualités d'ophtalmologie",
@@ -264,7 +264,7 @@ export const buildJsonLd = (metadata: PageSeo) => {
 	const websiteId = absoluteUrl('/#website');
 	const graph: Record<string, unknown>[] = [
 		{
-			'@type': 'MedicalOrganization',
+			'@type': 'MedicalClinic',
 			'@id': organizationId,
 			name: seoConfig.siteName,
 			url: absoluteUrl('/'),
@@ -316,6 +316,26 @@ export const buildJsonLd = (metadata: PageSeo) => {
 			}))
 		}
 	];
+
+	if (metadata.path === '/a-propos') {
+		const physicianId = absoluteUrl('/a-propos#physician');
+		graph.push({
+			'@type': 'Physician',
+			'@id': physicianId,
+			name: 'Dr Amal Alouan',
+			url: metadata.canonicalUrl,
+			jobTitle: 'Ophtalmologue',
+			medicalSpecialty: 'Ophthalmology',
+			worksFor: { '@id': organizationId },
+			hasCredential: {
+				'@type': 'EducationalOccupationalCredential',
+				name: 'Diplôme de spécialiste en ophtalmologie',
+				dateCreated: '2015'
+			}
+		});
+		const webPage = graph.find((node) => node['@type'] === 'WebPage');
+		if (webPage) webPage.about = { '@id': physicianId };
+	}
 
 	if (metadata.article) {
 		graph.push({
@@ -407,7 +427,10 @@ const buildBreadcrumbs = (path: string): BreadcrumbItem[] => {
 		const route = routeSeoOverrides[crumbPath];
 
 		breadcrumbs.push({
-			name: route?.title ?? labelFromSegment(segments[index]),
+			name:
+				crumbPath === '/a-propos'
+					? 'À propos'
+					: (route?.title ?? labelFromSegment(segments[index])),
 			path: crumbPath,
 			url: absoluteUrl(crumbPath)
 		});

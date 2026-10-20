@@ -3,6 +3,7 @@
 	import { Card, Section, Text, Title } from '$lib';
 	import { EquipementHero } from '$lib/assets';
 	import { equipement as equipementContent } from '$lib/content';
+	import Breadcrumb from '$lib/components/general/Breadcrumb.svelte';
 
 	const { firstSection, secondSection } = equipementContent;
 
@@ -56,9 +57,11 @@
 	}));
 </script>
 
-<Section spacing="comfortable" width="wide">
-	<div class="flex flex-col gap-10 lg:flex-row lg:items-center">
-		<div class="space-y-6 lg:w-5/12">
+<Section spacing="comfortable" width="wide" variant="muted">
+	<Breadcrumb current="Nos équipements" />
+	<div class="site-hero-grid">
+		<div class="space-y-6">
+			<Text variant="eyebrow" tone="cta">Le cabinet</Text>
 			<Title level="h1" class="text-pretty">Nos équipements</Title>
 			<Text variant="body-lg" tone="muted" class="text-pretty">
 				L'Ophtalmologie est une spécialité extrêmement pointue et exigeante. Nous sommes rompus aux
@@ -67,9 +70,7 @@
 				Avec, toujours, un seul objectif : vous proposer des soins de qualité.
 			</Text>
 		</div>
-		<figure
-			class="border-light-grey/60 bg-primary-background rounded-4xl mx-auto w-full overflow-hidden border shadow-sm lg:w-7/12"
-		>
+		<figure class="site-hero-media">
 			<ResponsiveImage src={EquipementHero}
  imageKey="equipement-hero" alt="" class="h-full w-full object-cover" loading="lazy" />
 		</figure>

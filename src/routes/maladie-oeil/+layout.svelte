@@ -15,7 +15,7 @@
 {@render children?.()}
 
 {#if topic}
-	<nav aria-label="Pages liées" class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+	<nav aria-label="Pages liées" class="site-container py-10">
 		<div class="rounded-2xl border border-light-grey/60 bg-sections-background/50 p-6 sm:p-8">
 			<h2 class="mb-4 text-2xl font-semibold text-primary">Continuer votre lecture</h2>
 			<ul class="grid gap-3 text-cta sm:grid-cols-2">

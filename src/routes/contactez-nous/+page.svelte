@@ -4,6 +4,7 @@
 	import { ContactHero } from '$lib/assets';
 	import { contactItems } from '$lib/content';
 	import { cabinet, cabinetMapUrl } from '$lib/cabinet';
+	import Breadcrumb from '$lib/components/general/Breadcrumb.svelte';
 
 	const phoneMain = cabinet.phones[0];
 	const phoneAlt = cabinet.phones[1];
@@ -16,7 +17,8 @@
 	];
 </script>
 
-<Section spacing="tight" width="wide" class="bg-primary-background">
+<Section spacing="tight" width="wide" variant="muted">
+	<Breadcrumb current="Contact" />
 	<div class="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-stretch lg:gap-12">
 		<div class="space-y-8 sm:space-y-10 lg:flex-[1.05]">
 			<div class="mb-8">

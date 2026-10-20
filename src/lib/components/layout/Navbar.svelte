@@ -67,7 +67,7 @@
 		for (const detail of document.querySelectorAll<HTMLDetailsElement>('.desktop-nav details[open]')) {
 			if (!detail.contains(target)) detail.open = false;
 		}
-		if (mobileOpen && mobilePanel && !mobilePanel.contains(target) && target !== menuButton) {
+		if (mobileOpen && mobilePanel && !mobilePanel.contains(target) && !menuButton?.contains(target)) {
 			closeMobile(false);
 		}
 	}
@@ -80,7 +80,7 @@
 <svelte:window onkeydown={handleKeydown} onclick={handleWindowClick} />
 
 <nav aria-label="Navigation principale" class="sticky top-0 z-30 border-b border-light-grey/60 bg-primary-background/95 shadow-sm backdrop-blur-md">
-	<div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-5 px-4 py-3 sm:px-6 lg:px-8">
+	<div class="site-container flex items-center justify-between gap-5 py-3">
 		<a href="/" class="inline-flex min-w-0 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta" aria-label="Accueil du Cabinet du Dr Amal Alouan">
 			<img src="/brand/logo-full.png" alt="Cabinet du Dr Amal Alouan" width="1200" height="400" class="h-12 w-auto max-w-[190px] object-contain sm:h-14 sm:max-w-[230px]" />
 		</a>

@@ -29,8 +29,8 @@
 
 </script>
 
-<Section spacing="comfortable" width="wide" class="overflow-hidden">
-	<div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+<Section spacing="comfortable" width="wide" variant="muted" class="overflow-hidden">
+	<div class="site-hero-grid">
 		<div class="space-y-6">
 			<Text variant="eyebrow" tone="cta">Cabinet d’ophtalmologie · Salé</Text>
 			<Title level="h1" class="max-w-3xl text-pretty">
@@ -40,7 +40,7 @@
 				À Salé, près de Rabat, retrouvez l’adresse du cabinet, les informations sur la santé des yeux
 				et les moyens de nous contacter.
 			</Text>
-			<div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 				<Button href="/contactez-nous" size="lg" class="w-full sm:w-auto">Prendre rendez-vous</Button>
 				<Button href={phone.href} variant="outline" size="lg" class="w-full sm:w-auto">
 					<Phone class="size-5" aria-hidden="true" /> Appeler le cabinet
@@ -48,7 +48,7 @@
 			</div>
 			<p class="text-sm text-secondary">{address}</p>
 		</div>
-		<div class="overflow-hidden rounded-3xl bg-sections-background shadow-sm">
+		<figure class="site-hero-media">
 			<ResponsiveImage
 				src={hero}
 				imageKey="home-hero-male"
@@ -58,7 +58,7 @@
 				fetchpriority="high"
 				class="h-auto w-full object-cover"
 			/>
-		</div>
+		</figure>
 	</div>
 </Section>
 

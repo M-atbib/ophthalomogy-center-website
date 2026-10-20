@@ -2,100 +2,49 @@
 	import { Button, Section, Text, Title } from '$lib';
 	import { doctorProfile } from '$lib/doctor-profile';
 	import { cabinet, cabinetAddress } from '$lib/cabinet';
-	import DoctorProfileCard from '$lib/components/general/DoctorProfileCard.svelte';
+	import DoctorJourney from '$lib/components/general/DoctorJourney.svelte';
+	import Breadcrumb from '$lib/components/general/Breadcrumb.svelte';
 	import CabinetGallery from '$lib/components/general/CabinetGallery.svelte';
-	import { ArrowRight, MapPin, Phone } from '@lucide/svelte';
+	import AmalPhoto from '$lib/assets/images/amal.webp';
+	import AmalPhotoSmall from '$lib/assets/images/amal-w480.webp';
+	import { MapPin, Phone } from '@lucide/svelte';
 
 	const phone = cabinet.phones[0];
 </script>
 
-<Section spacing="comfortable" width="wide">
-	<nav aria-label="Fil d’Ariane" class="mb-8 text-sm text-secondary">
-		<a href="/" class="underline underline-offset-4">Accueil</a>
-		<span aria-hidden="true" class="mx-2">/</span>
-		<span aria-current="page">À propos</span>
-	</nav>
-	<div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-		<div class="space-y-5">
-			<Text variant="eyebrow" tone="cta">À propos du cabinet</Text>
-			<Title level="h1">{doctorProfile.name}, {doctorProfile.profession.toLowerCase()} à {doctorProfile.location}</Title>
-			<Text variant="body-lg" tone="muted">
-				Retrouvez les coordonnées du Cabinet du Dr Amal Alouan et les informations utiles pour
-				préparer votre visite.
-			</Text>
-			{#if doctorProfile.fullBio}
-				<Text tone="muted">{doctorProfile.fullBio}</Text>
-			{/if}
-			<div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-				<Button href="/contactez-nous" size="lg">Prendre rendez-vous</Button>
-				<Button href={phone.href} variant="outline" size="lg"><Phone class="size-5" aria-hidden="true" /> Appeler le cabinet</Button>
-			</div>
-		</div>
-		<DoctorProfileCard showLink={false} />
+<Section spacing="tight" width="default" variant="muted" class="about-hero">
+	<Breadcrumb current="À propos" />
+	<div class="hero-layout">
+		<header class="hero-intro">
+			<Text variant="eyebrow" tone="cta" weight="semibold" class="!text-cta-ink">Le parcours du médecin</Text>
+			<Title level="h1" class="hero-title mt-5">
+				{doctorProfile.name},<span class="block text-cta-ink"> une expertise dédiée à votre vision.</span>
+			</Title>
+			<p class="hero-lead">Ophtalmologue à Salé, elle associe la rigueur d’une formation hospitalière à une attention personnelle portée à chaque patient.</p>
+			<p class="hero-support">Son parcours, construit à Rabat, Boujdour et Salé, nourrit une pratique qui va de la consultation générale aux examens spécialisés.</p>
+		</header>
+		<figure class="hero-photo">
+			<img
+				src={AmalPhoto}
+				srcset={`${AmalPhotoSmall} 480w, ${AmalPhoto} 960w`}
+				sizes="(min-width: 1024px) 42vw, (min-width: 768px) 70vw, 100vw"
+				width="960"
+				height="1280"
+				alt="Dr Amal Alouan lors d'une activité ophtalmologique"
+				loading="eager"
+				fetchpriority="high"
+				decoding="async"
+			/>
+		</figure>
+		<dl class="hero-credentials">
+			<div><dt>Rabat</dt><dd>Doctorat en médecine en 2008</dd></div>
+			<div><dt>2015</dt><dd>Diplôme de spécialiste en ophtalmologie</dd></div>
+			<div><dt>Depuis 2017</dt><dd>Cabinet privé à Hay Essalam, Salé</dd></div>
+		</dl>
 	</div>
 </Section>
 
-{#if doctorProfile.approach}
-	<Section variant="muted" spacing="comfortable" width="wide" aria-labelledby="approach-title">
-		<Title level="h2" id="approach-title">Approche professionnelle</Title>
-		<Text tone="muted" class="max-w-3xl">{doctorProfile.approach}</Text>
-	</Section>
-{/if}
-
-{#if doctorProfile.timeline.length > 0}
-	<Section spacing="comfortable" width="wide" aria-labelledby="timeline-title">
-		<Title level="h2" id="timeline-title">Parcours professionnel</Title>
-		<ol class="mt-8 space-y-7 border-l-2 border-cta/30 pl-6 sm:pl-8">
-			{#each doctorProfile.timeline as event (`${event.date}-${event.title}`)}
-				<li class="relative">
-					<span class="absolute -left-[31px] top-2 size-3 rounded-full bg-cta sm:-left-[39px]" aria-hidden="true"></span>
-					<p class="text-sm font-semibold text-cta">{event.date}</p>
-					<h3 class="mt-1 text-xl font-semibold text-primary">{event.title}</h3>
-					{#if event.institution}<p class="text-secondary">{event.institution}</p>{/if}
-					{#if event.detail}<p class="mt-2 text-secondary">{event.detail}</p>{/if}
-				</li>
-			{/each}
-		</ol>
-	</Section>
-{/if}
-
-{#if doctorProfile.degrees.length > 0 || doctorProfile.training.length > 0}
-	<Section variant="muted" spacing="comfortable" width="wide">
-		<div class="grid gap-10 lg:grid-cols-2">
-			{#if doctorProfile.degrees.length > 0}
-				<div>
-					<Title level="h2">Diplômes et qualifications</Title>
-					<ul class="mt-6 space-y-5">
-						{#each doctorProfile.degrees as degree (`${degree.title}-${degree.institution ?? ''}`)}
-							<li class="rounded-xl bg-white p-5"><p class="font-semibold text-primary">{degree.title}</p>{#if degree.institution}<p class="text-secondary">{degree.institution}</p>{/if}{#if degree.date}<p class="text-sm text-secondary">{degree.date}</p>{/if}</li>
-						{/each}
-					</ul>
-				</div>
-			{/if}
-			{#if doctorProfile.training.length > 0}
-				<div>
-					<Title level="h2">Formations complémentaires</Title>
-					<ul class="mt-6 space-y-5">
-						{#each doctorProfile.training as item (`${item.title}-${item.institution ?? ''}`)}
-							<li class="rounded-xl bg-white p-5"><p class="font-semibold text-primary">{item.title}</p>{#if item.institution}<p class="text-secondary">{item.institution}</p>{/if}{#if item.date}<p class="text-sm text-secondary">{item.date}</p>{/if}</li>
-						{/each}
-					</ul>
-				</div>
-			{/if}
-		</div>
-	</Section>
-{/if}
-
-{#if doctorProfile.activities.length > 0}
-	<Section spacing="comfortable" width="wide" aria-labelledby="activities-title">
-		<Title level="h2" id="activities-title">Activités médicales confirmées</Title>
-		<ul class="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-			{#each doctorProfile.activities as activity (activity.href)}
-				<li><a href={activity.href} class="flex min-h-14 items-center justify-between gap-3 rounded-xl border border-light-grey/60 px-5 py-3 font-medium text-primary hover:border-cta"><span>{activity.label}</span><ArrowRight class="size-4 shrink-0 text-cta" aria-hidden="true" /></a></li>
-			{/each}
-		</ul>
-	</Section>
-{/if}
+<DoctorJourney />
 
 <CabinetGallery />
 
@@ -114,3 +63,41 @@
 		</div>
 	</div>
 </Section>
+
+<style>
+	.hero-layout {
+		display: grid;
+		grid-template-areas: 'intro' 'photo' 'credentials';
+		gap: 1.75rem;
+		align-items: center;
+	}
+	.hero-intro { grid-area: intro; }
+	:global(.hero-title) { max-width: 20ch; font-size: clamp(2.3rem, 4.5vw, 3.8rem); line-height: 1.08; }
+	:global(.hero-title span) { max-width: 14ch; margin-top: .18em; font-size: .8em; line-height: 1.15; }
+	.hero-lead { max-width: 36rem; margin-top: 1.75rem; font-size: clamp(1.08rem, 1.8vw, 1.28rem); line-height: 1.6; color: #333; }
+	.hero-support { max-width: 35rem; margin-top: .9rem; line-height: 1.7; color: #666; }
+	.hero-photo { grid-area: photo; position: relative; margin: 0; width: 100%; max-width: 35rem; }
+	.hero-photo::before { content: ''; position: absolute; inset: -1rem -1rem 1rem 1rem; border: 1px solid #9fc6c4; border-radius: 1.15rem; pointer-events: none; }
+	.hero-photo img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center; border-radius: 1rem; }
+	.hero-credentials { grid-area: credentials; display: grid; gap: 1rem; max-width: 38rem; padding-top: 1.1rem; border-top: 1px solid #b8d4d0; }
+	.hero-credentials > div { display: grid; grid-template-columns: 7.25rem 1fr; gap: .8rem; align-items: baseline; }
+	.hero-credentials dt { color: #0f6978; font-size: .8rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+	.hero-credentials dd { margin: 0; color: #333; font-size: .93rem; line-height: 1.5; }
+	@media (min-width: 1024px) {
+		.hero-layout { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); grid-template-areas: 'intro photo' 'credentials photo'; column-gap: clamp(3rem, 5vw, 6rem); row-gap: 1.8rem; }
+		.hero-photo { justify-self: end; }
+	}
+	@media (min-width: 768px) and (max-width: 1023px) {
+		.hero-photo { max-width: 31rem; margin-inline: auto; }
+	}
+	@media (max-width: 639px) {
+		.hero-photo::before { inset: -.6rem -.5rem .6rem .5rem; }
+		.hero-credentials > div { grid-template-columns: 6.5rem 1fr; }
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		.hero-intro { animation: hero-enter .7s ease-out both; }
+		.hero-photo { animation: hero-enter .85s .12s ease-out both; }
+		.hero-credentials { animation: hero-enter .7s .22s ease-out both; }
+		@keyframes hero-enter { from { opacity: .75; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+	}
+</style>

@@ -16,8 +16,8 @@
 	const directionsUrl = cabinetMapUrl;
 </script>
 
-<footer class="border-t border-light-grey/60 bg-sections-background px-4 py-12 text-primary sm:px-6 lg:px-8">
-	<div class="mx-auto grid w-full max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
+<footer class="border-t border-light-grey/60 bg-sections-background py-12 text-primary">
+	<div class="site-container grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
 		<div class="space-y-5">
 			<a href="/" class="inline-block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta" aria-label="Accueil du Cabinet du Dr Amal Alouan">
 				<img src="/brand/logo-full.png" alt="Cabinet du Dr Amal Alouan" width="1200" height="400" class="h-auto w-full max-w-[260px] object-contain" loading="lazy" />
@@ -27,10 +27,10 @@
 		</div>
 
 		<div>
-			<h2 class="mb-5 text-xl font-semibold">Pages utiles</h2>
-			<ul class="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
+			<h2 class="mb-2 text-xl font-semibold">Pages utiles</h2>
+			<ul class="grid gap-x-4 sm:grid-cols-2 md:grid-cols-1">
 				{#each links as link (link.href)}
-					<li><a href={link.href} class="inline-flex min-h-8 items-center text-secondary underline-offset-4 hover:text-cta hover:underline focus-visible:underline">{link.label}</a></li>
+					<li><a href={link.href} class="flex min-h-8 items-center text-secondary underline-offset-4 hover:text-cta hover:underline focus-visible:underline">{link.label}</a></li>
 				{/each}
 			</ul>
 		</div>
@@ -44,7 +44,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="mx-auto mt-10 w-full max-w-7xl border-t border-light-grey/70 pt-5 text-sm text-secondary">
-		<p>© {new Date().getFullYear()} Cabinet du Dr Amal Alouan</p>
+	<div class="site-container mt-10 text-sm text-secondary">
+		<p class="border-t border-light-grey/70 pt-5">© {new Date().getFullYear()} Cabinet du Dr Amal Alouan</p>
 	</div>
 </footer>

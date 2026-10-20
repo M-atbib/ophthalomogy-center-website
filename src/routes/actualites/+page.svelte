@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import { Button, Card, Section, Text, Title } from '$lib';
 	import { MoveRight } from '@lucide/svelte';
+	import Breadcrumb from '$lib/components/general/Breadcrumb.svelte';
 
 	const { data } = $props<{ data: PageData }>();
 	const articles = $derived(data.articles ?? []);
@@ -16,15 +17,18 @@
 	};
 </script>
 
-<Section spacing="tight" width="wide">
-	<div class="mx-auto mb-12 max-w-4xl space-y-5 text-center">
-		<Text variant="eyebrow" tone="cta" align="center">Actualités</Text>
-		<Title level="h1" align="center">Les dernières nouvelles en monde de l'ophtalmologie</Title>
-		<Text tone="muted" align="center" class="text-pretty">
+<Section spacing="tight" width="wide" variant="muted">
+	<Breadcrumb current="Actualités" />
+	<div class="max-w-4xl space-y-5">
+		<Text variant="eyebrow" tone="cta">Actualités</Text>
+		<Title level="h1">Les dernières nouvelles en monde de l'ophtalmologie</Title>
+		<Text tone="muted" class="text-pretty">
 			Retrouvez les articles et les informations sur la santé des yeux publiés sur le site.
 		</Text>
 	</div>
+</Section>
 
+<Section spacing="comfortable" width="wide">
 	{#if articles.length === 0}
 		<Card variant="muted" padding="lg" align="center" class="mx-auto max-w-2xl">
 			<Title level="sub2" class="text-balance">{data.unavailable ? 'Articles indisponibles pour le moment' : 'Aucun article à afficher pour le moment'}</Title>
