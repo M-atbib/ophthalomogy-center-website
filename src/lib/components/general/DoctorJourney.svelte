@@ -146,7 +146,7 @@
 		<div class="research-contact">
 			<p>Votre santé visuelle mérite une attention adaptée. Le cabinet vous accueille à Salé.</p>
 			<div>
-				<Button href="https://docs.google.com/forms/d/e/1FAIpQLSdAIASA4P_Y4BXSHUcBpThsUTXYiBT6ApY8iJzV-FdCl_USIw/viewform" target="_blank" rel="noreferrer" class="!bg-white !text-cta-ink hover:!bg-sections-background">Prendre rendez-vous</Button>
+				<Button data-gtm="click_appointment" href="https://docs.google.com/forms/d/e/1FAIpQLSdAIASA4P_Y4BXSHUcBpThsUTXYiBT6ApY8iJzV-FdCl_USIw/viewform" target="_blank" rel="noreferrer" class="!bg-white !text-cta-ink hover:!bg-sections-background">Prendre rendez-vous</Button>
 				<a href="/contactez-nous" class="contact-link">Contacter le cabinet <ArrowUpRight class="link-arrow" aria-hidden="true" /></a>
 			</div>
 		</div>

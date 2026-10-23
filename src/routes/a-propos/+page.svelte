@@ -54,7 +54,7 @@
 			<Text variant="eyebrow" tone="cta">Venir au cabinet</Text>
 			<Title level="h2" id="visit-title">Informations pratiques</Title>
 			<p class="flex items-start gap-3 text-secondary"><MapPin class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /> <span>{cabinetAddress}</span></p>
-			<p class="flex items-start gap-3 text-secondary"><Phone class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /> <a href={phone.href} class="underline underline-offset-4">{phone.label}</a></p>
+			<p class="flex items-start gap-3 text-secondary"><Phone class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /> <a data-gtm="click_phone" href={phone.href} class="underline underline-offset-4">{phone.label}</a></p>
 		</div>
 		<div class="rounded-2xl border border-light-grey/60 bg-white p-6 sm:p-8">
 			<h3 class="mb-3 text-xl font-semibold text-primary">Préparer votre visite</h3>

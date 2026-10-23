@@ -17,6 +17,7 @@
 </script>
 
 <a
+	data-gtm="click_appointment"
 	href="https://docs.google.com/forms/d/e/1FAIpQLSdAIASA4P_Y4BXSHUcBpThsUTXYiBT6ApY8iJzV-FdCl_USIw/viewform"
 	target="_blank"
 	rel="noopener noreferrer"

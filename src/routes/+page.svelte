@@ -41,8 +41,8 @@
 				et les moyens de nous contacter.
 			</Text>
 			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-				<Button href="/contactez-nous" size="lg" class="w-full sm:w-auto">Prendre rendez-vous</Button>
-				<Button href={phone.href} variant="outline" size="lg" class="w-full sm:w-auto">
+				<Button data-gtm="click_appointment" href="/contactez-nous" size="lg" class="w-full sm:w-auto">Prendre rendez-vous</Button>
+				<Button data-gtm="click_phone" href={phone.href} variant="outline" size="lg" class="w-full sm:w-auto">
 					<Phone class="size-5" aria-hidden="true" /> Appeler le cabinet
 				</Button>
 			</div>
@@ -106,11 +106,11 @@
 			<Title level="h2" id="visit-title">Trouver le cabinet à Salé</Title>
 			<div class="space-y-4 text-secondary">
 				<p class="flex items-start gap-3"><MapPin class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /> <span>{address}</span></p>
-				<p class="flex items-start gap-3"><Phone class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /> <a href={phone.href} class="underline underline-offset-4">{phone.label}</a></p>
+				<p class="flex items-start gap-3"><Phone class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" /> <a data-gtm="click_phone" href={phone.href} class="underline underline-offset-4">{phone.label}</a></p>
 			</div>
 			<div class="flex flex-wrap gap-3">
 				<Button href={directionsUrl} target="_blank" rel="noopener noreferrer" variant="outline">Itinéraire Google Maps</Button>
-				<Button href="/contactez-nous" variant="ghost">Contact et rendez-vous</Button>
+				<Button data-gtm="click_appointment" href="/contactez-nous" variant="ghost">Contact et rendez-vous</Button>
 			</div>
 			<a href="/adresser-patient" class="inline-flex min-h-11 items-center gap-2 font-semibold text-cta underline underline-offset-4">Informations pour adresser un patient <ArrowRight class="size-4" aria-hidden="true" /></a>
 		</div>

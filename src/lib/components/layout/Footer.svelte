@@ -97,6 +97,7 @@
 					<Phone class="mt-1 size-5 shrink-0 text-cta" aria-hidden="true" />
 					<div>
 						{#each cabinet.phones as phone (phone.href)}<a
+								data-gtm="click_phone"
 								dir="ltr"
 								href={`tel:${phone.international}`}
 								class="block underline underline-offset-4">{phone.label}</a

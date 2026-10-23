@@ -17,7 +17,17 @@
 {:else if href?.startsWith('#')}
 	<a href={`#${href.slice(1)}`}>{@render children?.()}</a>
 {:else if href}
-	<a {href} rel="external">{@render children?.()}</a>
+	<a
+		data-gtm={/^tel:/i.test(href)
+			? 'click_phone'
+			: /^https?:\/\/(?:wa\.me|(?:api|web|www)\.whatsapp\.com)(?:\/|$)/i.test(href)
+				? 'click_whatsapp'
+				: /^https:\/\/docs\.google\.com\/forms\/d\/e\/1FAIpQLSdAIASA4P_Y4BXSHUcBpThsUTXYiBT6ApY8iJzV-FdCl_USIw\/viewform(?:[?#]|$)/.test(href)
+					? 'click_appointment'
+					: undefined}
+		{href}
+		rel="external"
+	>{@render children?.()}</a>
 {:else}
 	{@render children?.()}
 {/if}

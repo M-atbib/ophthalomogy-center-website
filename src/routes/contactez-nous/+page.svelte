@@ -61,13 +61,13 @@
 						En cas de problème médical urgent, appelez-nous ou rendez-vous directement au cabinet.
 					</Text>
 					<div class="flex flex-col gap-3 sm:flex-row">
-						<Button href={phoneMain.href} tone="cta" size="md" fullWidth>
+						<Button data-gtm="click_phone" href={phoneMain.href} tone="cta" size="md" fullWidth>
 							<span class="flex flex-col items-center leading-tight">
 								<span>Appeler</span>
 								<span class="text-xs font-medium opacity-80 sm:text-sm">{phoneMain.label}</span>
 							</span>
 						</Button>
-						<Button href={phoneAlt.href} variant="outline" tone="cta" size="md" fullWidth>
+						<Button data-gtm="click_phone" href={phoneAlt.href} variant="outline" tone="cta" size="md" fullWidth>
 							<span class="flex flex-col items-center leading-tight">
 								<span>Appeler</span>
 								<span class="text-xs font-medium opacity-80 sm:text-sm">{phoneAlt.label}</span>
@@ -88,6 +88,7 @@
 
 				<div class="grid gap-4">
 					<Button
+						data-gtm="click_appointment"
 						href="https://docs.google.com/forms/d/e/1FAIpQLSdAIASA4P_Y4BXSHUcBpThsUTXYiBT6ApY8iJzV-FdCl_USIw/viewform"
 						tone="cta"
 						size="lg"
@@ -98,7 +99,7 @@
 						Prendre rendez-vous
 					</Button>
 
-					<Button href={phoneMain.href} variant="outline" tone="cta" size="lg" fullWidth>
+					<Button data-gtm="click_phone" href={phoneMain.href} variant="outline" tone="cta" size="lg" fullWidth>
 						<span class="flex flex-col items-center leading-tight">
 						<span>Appeler le cabinet</span>
 							<span class="text-xs font-medium opacity-80 sm:text-sm">{phoneMain.label}</span>
@@ -141,6 +142,7 @@
 								{#each lines as line (line)}
 									{#if title === 'Appelez-nous'}
 										<a
+											data-gtm="click_phone"
 											href={line === phoneMain.label ? phoneMain.href : phoneAlt.href}
 											class="block text-secondary underline underline-offset-4"
 										>

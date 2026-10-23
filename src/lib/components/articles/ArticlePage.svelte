@@ -86,7 +86,7 @@
 							: 'Contactez le cabinet pour prendre rendez-vous.'}</Text
 					>
 				</div>
-				<Button tone="cta" variant="solid" href="/contactez-nous"
+				<Button data-gtm="click_appointment" tone="cta" variant="solid" href="/contactez-nous"
 					>{ar ? 'حجز موعد' : 'Prendre rendez-vous'}<ArrowRight
 						class="size-4 rtl:rotate-180"
 						aria-hidden="true"
