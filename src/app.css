@@ -175,3 +175,15 @@
 		inset: -0.5rem -0.4rem 0.5rem 0.4rem;
 	}
 }
+
+/* Existing shared components use physical text alignment. Articles follow their language. */
+.editorial .text-left {
+	text-align: start;
+}
+.editorial[dir='rtl'] {
+	font-family: Tahoma, Arial, sans-serif;
+}
+.editorial[dir='rtl'] .tracking-tight,
+.editorial[dir='rtl'] .tracking-wide {
+	letter-spacing: normal;
+}

@@ -24,7 +24,7 @@
 		{ title: 'Conseils thérapeutiques', href: '/conseils/conseils-therapeutiques' },
 		{ title: 'Lunettes et lentilles', href: '/conseils/conseils-lunettes-et-lentilles' },
 		{ title: 'Après des soins ou une chirurgie', href: '/conseils/conseils-apres-soins-et-chirurgie-oculaire' },
-		{ title: 'Actualités du cabinet', href: '/actualites' }
+		{ title: 'Articles du cabinet', href: '/articles' }
 	];
 
 </script>

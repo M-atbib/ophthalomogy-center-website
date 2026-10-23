@@ -1,19 +1,45 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { listEyeDiseases } from '$lib/content';
 	import { ChevronDown, Menu, X } from '@lucide/svelte';
 	import { onDestroy, tick } from 'svelte';
 
+	import type { ArticleLanguage } from '$lib/types/blog';
+	let { language = 'fr' }: { language?: ArticleLanguage } = $props();
+	const ar = $derived(language === 'ar');
+
 	type Link = { label: string; href: string };
 	type Item = { label: string; href?: string; children?: Link[] };
 
-	const items: Item[] = [
+	const frenchItems: Item[] = [
 		{ label: 'Accueil', href: '/' },
 		{ label: 'À propos', href: '/a-propos' },
-		{ label: 'Santé des yeux', children: listEyeDiseases.map(({ diseases, href }) => ({ label: diseases, href })) },
+		{
+			label: 'Santé des yeux',
+			children: listEyeDiseases.map(({ diseases, href }) => ({ label: diseases, href }))
+		},
 		{ label: 'Conseils', href: '/conseils' },
-		{ label: 'Actualités', href: '/actualites' },
+		{ label: 'Articles', href: '/articles' },
 		{ label: 'Contact', href: '/contactez-nous' }
 	];
+
+	const arabicLabels: Record<string, string> = {
+		Accueil: 'الرئيسية',
+		'À propos': 'عن الطبيبة',
+		'Santé des yeux': 'صحة العيون',
+		Conseils: 'نصائح',
+		Articles: 'المقالات',
+		Contact: 'اتصل بنا',
+		Cataracte: 'الساد',
+		Glaucome: 'الزرق'
+	};
+	const items: Item[] = $derived(
+		frenchItems.map((item) => ({
+			...item,
+			label: ar ? arabicLabels[item.label] : item.label,
+			href: ar && item.href === '/articles' ? '/ar/articles' : item.href
+		}))
+	);
 
 	let mobileOpen = $state(false);
 	let menuButton: HTMLButtonElement;
@@ -36,19 +62,23 @@
 	function handleKeydown(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
 			if (mobileOpen) closeMobile();
-			const activeDetail = (event.target as HTMLElement | null)?.closest<HTMLDetailsElement>('details');
+			const activeDetail = (event.target as HTMLElement | null)?.closest<HTMLDetailsElement>(
+				'details'
+			);
 			if (activeDetail?.open) {
 				activeDetail.open = false;
 				activeDetail.querySelector('summary')?.focus();
 			}
-			for (const detail of document.querySelectorAll<HTMLDetailsElement>('.desktop-nav details[open]')) {
+			for (const detail of document.querySelectorAll<HTMLDetailsElement>(
+				'.desktop-nav details[open]'
+			)) {
 				detail.open = false;
 			}
 		}
 		if (event.key !== 'Tab' || !mobileOpen || !mobilePanel) return;
-		const focusable = [...mobilePanel.querySelectorAll<HTMLElement>('a[href], button, summary')].filter(
-			(element) => element.getClientRects().length > 0
-		);
+		const focusable = [
+			...mobilePanel.querySelectorAll<HTMLElement>('a[href], button, summary')
+		].filter((element) => element.getClientRects().length > 0);
 		if (!focusable.length) return;
 		const first = focusable[0];
 		const last = focusable[focusable.length - 1];
@@ -64,10 +94,17 @@
 	function handleWindowClick(event: MouseEvent) {
 		const target = event.target;
 		if (!(target instanceof Node)) return;
-		for (const detail of document.querySelectorAll<HTMLDetailsElement>('.desktop-nav details[open]')) {
+		for (const detail of document.querySelectorAll<HTMLDetailsElement>(
+			'.desktop-nav details[open]'
+		)) {
 			if (!detail.contains(target)) detail.open = false;
 		}
-		if (mobileOpen && mobilePanel && !mobilePanel.contains(target) && !menuButton?.contains(target)) {
+		if (
+			mobileOpen &&
+			mobilePanel &&
+			!mobilePanel.contains(target) &&
+			!menuButton?.contains(target)
+		) {
 			closeMobile(false);
 		}
 	}
@@ -79,34 +116,76 @@
 
 <svelte:window onkeydown={handleKeydown} onclick={handleWindowClick} />
 
-<nav aria-label="Navigation principale" class="sticky top-0 z-30 border-b border-light-grey/60 bg-primary-background/95 shadow-sm backdrop-blur-md">
+<nav
+	aria-label={ar ? 'التنقل الرئيسي' : 'Navigation principale'}
+	class="sticky top-0 z-30 border-b border-light-grey/60 bg-primary-background/95 shadow-sm backdrop-blur-md"
+>
 	<div class="site-container flex items-center justify-between gap-5 py-3">
-		<a href="/" class="inline-flex min-w-0 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta" aria-label="Accueil du Cabinet du Dr Amal Alouan">
-			<img src="/brand/logo-full.png" alt="Cabinet du Dr Amal Alouan" width="1200" height="400" class="h-12 w-auto max-w-[190px] object-contain sm:h-14 sm:max-w-[230px]" />
+		<a
+			href={resolve('/')}
+			class="inline-flex min-w-0 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta"
+			aria-label={ar
+				? 'الصفحة الرئيسية لعيادة الدكتورة أمل علوان'
+				: 'Accueil du Cabinet du Dr Amal Alouan'}
+		>
+			<img
+				src="/brand/logo-full.png"
+				alt="Cabinet du Dr Amal Alouan"
+				width="1200"
+				height="400"
+				class="h-12 w-auto max-w-[190px] object-contain sm:h-14 sm:max-w-[230px]"
+			/>
 		</a>
 
 		<div class="desktop-nav hidden items-center gap-1 lg:flex">
 			{#each items as item (item.label)}
 				{#if item.children}
 					<details class="group relative">
-						<summary class="flex min-h-11 cursor-pointer list-none items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-sections-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta [&::-webkit-details-marker]:hidden">
-							{item.label}<ChevronDown class="size-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+						<summary
+							class="flex min-h-11 cursor-pointer list-none items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-sections-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta [&::-webkit-details-marker]:hidden"
+						>
+							{item.label}<ChevronDown
+								class="size-4 transition-transform group-open:rotate-180"
+								aria-hidden="true"
+							/>
 						</summary>
 						<div class="absolute right-0 top-full z-40 w-80 pt-2">
-							<ul class="max-h-[70vh] overflow-y-auto rounded-xl border border-light-grey/60 bg-white p-2 shadow-xl">
+							<ul
+								lang="fr"
+								dir="ltr"
+								class="max-h-[70vh] overflow-y-auto rounded-xl border border-light-grey/60 bg-white p-2 shadow-xl"
+							>
 								{#each item.children as child (child.href)}
-									<li><a href={child.href} class="block rounded-lg px-3 py-2 text-sm text-primary hover:bg-sections-background focus-visible:bg-sections-background">{child.label}</a></li>
+									<li>
+										<a
+											href={resolve(...([child.href] as Parameters<typeof resolve>))}
+											class="block rounded-lg px-3 py-2 text-sm text-primary hover:bg-sections-background focus-visible:bg-sections-background"
+											>{child.label}</a
+										>
+									</li>
 								{/each}
 							</ul>
 						</div>
 					</details>
 				{:else}
-					<a href={item.href} class="inline-flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-sections-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta">{item.label}</a>
+					<a
+						href={resolve(...([item.href ?? '/'] as Parameters<typeof resolve>))}
+						class="inline-flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-sections-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta"
+						>{item.label}</a
+					>
 				{/if}
 			{/each}
 		</div>
 
-		<button bind:this={menuButton} type="button" class="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-light-grey/70 text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta lg:hidden" aria-label="Ouvrir le menu" aria-controls={mobileOpen ? 'mobile-navigation' : undefined} aria-expanded={mobileOpen} onclick={openMobile}>
+		<button
+			bind:this={menuButton}
+			type="button"
+			class="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-light-grey/70 text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta lg:hidden"
+			aria-label={ar ? 'فتح القائمة' : 'Ouvrir le menu'}
+			aria-controls={mobileOpen ? 'mobile-navigation' : undefined}
+			aria-expanded={mobileOpen}
+			onclick={openMobile}
+		>
 			<Menu class="size-6" aria-hidden="true" />
 		</button>
 	</div>
@@ -114,26 +193,59 @@
 
 {#if mobileOpen}
 	<div class="fixed inset-0 z-40 bg-primary/45 lg:hidden" aria-hidden="true"></div>
-	<div bind:this={mobilePanel} id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Menu de navigation" class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col bg-primary-background shadow-2xl lg:hidden">
+	<div
+		bind:this={mobilePanel}
+		id="mobile-navigation"
+		role="dialog"
+		aria-modal="true"
+		aria-label={ar ? 'قائمة التنقل' : 'Menu de navigation'}
+		class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col bg-primary-background shadow-2xl lg:hidden"
+	>
 		<div class="flex items-center justify-between border-b border-light-grey/60 px-5 py-4">
-			<span class="font-semibold text-primary">Menu</span>
-			<button bind:this={mobileCloseButton} type="button" aria-label="Fermer le menu" class="inline-flex size-11 items-center justify-center rounded-lg border border-light-grey/70 text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta" onclick={() => closeMobile()}><X class="size-6" aria-hidden="true" /></button>
+			<span class="font-semibold text-primary">{ar ? 'القائمة' : 'Menu'}</span>
+			<button
+				bind:this={mobileCloseButton}
+				type="button"
+				aria-label={ar ? 'إغلاق القائمة' : 'Fermer le menu'}
+				class="inline-flex size-11 items-center justify-center rounded-lg border border-light-grey/70 text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta"
+				onclick={() => closeMobile()}><X class="size-6" aria-hidden="true" /></button
+			>
 		</div>
-		<nav aria-label="Navigation mobile" class="min-h-0 flex-1 overflow-y-auto px-5 py-5">
+		<nav
+			aria-label={ar ? 'التنقل على الهاتف' : 'Navigation mobile'}
+			class="min-h-0 flex-1 overflow-y-auto px-5 py-5"
+		>
 			<ul class="space-y-2">
 				{#each items as item (item.label)}
 					<li>
 						{#if item.children}
 							<details class="rounded-xl border border-light-grey/60 bg-white">
-								<summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 font-medium text-primary [&::-webkit-details-marker]:hidden">{item.label}<ChevronDown class="size-4" aria-hidden="true" /></summary>
-								<ul class="max-h-[48vh] space-y-1 overflow-y-auto border-t border-light-grey/60 p-2">
+								<summary
+									class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 font-medium text-primary [&::-webkit-details-marker]:hidden"
+									>{item.label}<ChevronDown class="size-4" aria-hidden="true" /></summary
+								>
+								<ul
+									lang="fr"
+									dir="ltr"
+									class="max-h-[48vh] space-y-1 overflow-y-auto border-t border-light-grey/60 p-2"
+								>
 									{#each item.children as child (child.href)}
-										<li><a href={child.href} class="block rounded-lg px-3 py-3 text-sm text-primary hover:bg-sections-background" onclick={() => closeMobile(false)}>{child.label}</a></li>
+										<li>
+											<a
+												href={resolve(...([child.href] as Parameters<typeof resolve>))}
+												class="block rounded-lg px-3 py-3 text-sm text-primary hover:bg-sections-background"
+												onclick={() => closeMobile(false)}>{child.label}</a
+											>
+										</li>
 									{/each}
 								</ul>
 							</details>
 						{:else}
-							<a href={item.href} class="flex min-h-12 items-center rounded-xl border border-light-grey/60 bg-white px-4 py-3 font-medium text-primary hover:bg-sections-background" onclick={() => closeMobile(false)}>{item.label}</a>
+							<a
+								href={resolve(...([item.href ?? '/'] as Parameters<typeof resolve>))}
+								class="flex min-h-12 items-center rounded-xl border border-light-grey/60 bg-white px-4 py-3 font-medium text-primary hover:bg-sections-background"
+								onclick={() => closeMobile(false)}>{item.label}</a
+							>
 						{/if}
 					</li>
 				{/each}

@@ -49,3 +49,20 @@ Recommended setup is Microsoft Power Automate:
    - Action: **Add a row into a table** (select the file + table)
    - Response: **Response** (HTTP 200) so the website can treat it as success.
 3. Put the Flow trigger URL in your environment: `EXCEL_WEBHOOK_URL=...` (see `.env.example`).
+
+## Bilingual Sanity articles
+
+See [the Studio setup and VISIA guide](docs/sanity/README.md) for the six new
+fields, draft examples, publication rules, and manual Studio steps.
+
+Small article checks (no browser or Playwright):
+
+```sh
+npm run check
+node scripts/check-seo-runtime.mjs
+npm run build:local
+```
+
+`npm run build` creates the Vercel package. On Windows, its final symlink step
+needs Windows Developer Mode or the right system permission. `build:local`
+checks the app build without creating a deployment package.
