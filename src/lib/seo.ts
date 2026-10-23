@@ -1,6 +1,8 @@
 import DefaultSocialImage from '$lib/assets/images/home-hero-male.webp';
 import { cabinet, cabinetMapUrl } from '$lib/cabinet';
 import type { BlogArticle } from '$lib/types/blog';
+import type { ArticleLanguage, ArticleTranslation } from '$lib/types/blog';
+import { articleImageUrl, articleIndexPath, articlePath, isArticleSlug } from '$lib/articles';
 
 export type SeoRoute = {
 	title?: string;
@@ -24,15 +26,25 @@ export type PageSeo = {
 	robots: string;
 	openGraphImageUrl: string;
 	openGraphType: 'website' | 'article';
+	language: ArticleLanguage;
+	locale: string;
+	alternates: { language: ArticleLanguage; url: string }[];
 	article?: {
 		headline: string;
 		imageUrl?: string;
 		datePublished?: string;
+		dateModified?: string;
 	};
 	breadcrumbs: BreadcrumbItem[];
 };
 
-export type SitemapArticle = { slug: string; updatedAt?: string };
+export type SitemapArticle = {
+	slug: string;
+	language: ArticleLanguage;
+	updatedAt?: string;
+	publishedAt?: string;
+	translation?: ArticleTranslation;
+};
 
 export const seoConfig = {
 	siteUrl: 'https://dramalophtalmo.ma',
@@ -72,10 +84,16 @@ export const routeSeoOverrides: Record<string, SeoRoute> = {
 		description:
 			'Découvrez le parcours du Dr Amal Alouan, ophtalmologue à Salé : formation, expérience hospitalière, compétences et informations du cabinet.'
 	},
-	'/actualites': {
-		title: "Actualités d'ophtalmologie",
+	'/articles': {
+		title: 'Articles et conseils pour la santé de vos yeux',
 		description:
 			"Retrouvez les articles publiés par le cabinet du Dr Amal Alouan sur la santé des yeux et l'ophtalmologie.",
+		changeFrequency: 'weekly'
+	},
+	'/ar/articles': {
+		title: 'مقالات ونصائح لصحة عينيك',
+		description:
+			'اكتشف نصائح ومعلومات عيادة الدكتورة أمل علوان لفهم الرؤية وأمراض العيون وعلاجاتها بشكل أفضل.',
 		changeFrequency: 'weekly'
 	},
 	'/adresser-patient': {
@@ -191,7 +209,7 @@ function routePathFromFile(filePath: string) {
 
 	// Dynamic Sanity article URLs need CMS-aware metadata and sitemap fetching, so they remain
 	// indexable through the layout but are intentionally deferred from the static sitemap.
-	if (routePath.includes('[')) return undefined;
+	if (routePath.includes('[') || routePath.startsWith('/actualites')) return undefined;
 
 	return normalizePath(routePath);
 }
@@ -220,6 +238,8 @@ export const getPageSeo = (path: string): PageSeo => {
 	const metaTitle = normalizedPath === '/' ? seoConfig.defaultTitle : formatMetaTitle(title);
 	const description = route.description ?? buildDefaultDescription(title);
 	const canonicalUrl = absoluteUrl(normalizedPath);
+	const language = normalizedPath.startsWith('/ar/') ? 'ar' : 'fr';
+	const isArticleIndex = normalizedPath === '/articles' || normalizedPath === '/ar/articles';
 
 	return {
 		path: normalizedPath,
@@ -230,6 +250,14 @@ export const getPageSeo = (path: string): PageSeo => {
 		robots: 'index, follow',
 		openGraphImageUrl: absoluteUrl(seoConfig.defaultSocialImagePath),
 		openGraphType: 'website',
+		language,
+		locale: language === 'ar' ? 'ar_MA' : seoConfig.locale,
+		alternates: isArticleIndex
+			? [
+					{ language: 'fr', url: absoluteUrl('/articles') },
+					{ language: 'ar', url: absoluteUrl('/ar/articles') }
+				]
+			: [],
 		breadcrumbs: buildBreadcrumbs(normalizedPath)
 	};
 };
@@ -237,25 +265,48 @@ export const getPageSeo = (path: string): PageSeo => {
 export const getArticleSeo = (path: string, article: BlogArticle): PageSeo => {
 	const metadata = getPageSeo(path);
 	const title = article.title?.trim() || metadata.title;
-	const summary = article.briefing?.trim() || article.subtitle?.trim();
+	const summary =
+		article.seoDescription?.trim() || article.briefing?.trim() || article.subtitle?.trim();
 	const description = summary ? plainTextSummary(summary) : buildDefaultDescription(title);
 	const datePublished = validDate(article.publishedAt);
+	const dateModified = validDate(article.updatedAt);
+	const language = article.language;
+	const indexPath = articleIndexPath(language);
+	const translation = article.translation;
+	const imageUrl = articleImageUrl(article.imageUrl, 1200, true);
 
 	return {
 		...metadata,
 		title,
-		metaTitle: formatMetaTitle(title),
+		metaTitle: article.seoTitle?.trim() || formatMetaTitle(title),
 		description,
-		openGraphImageUrl: article.imageUrl || metadata.openGraphImageUrl,
+		openGraphImageUrl: imageUrl || metadata.openGraphImageUrl,
 		openGraphType: 'article',
+		alternates:
+			translation && translation.language !== language && isArticleSlug(translation.slug)
+				? [
+						{ language, url: metadata.canonicalUrl },
+						{
+							language: translation.language,
+							url: absoluteUrl(articlePath(translation.slug, translation.language))
+						}
+					]
+				: [],
 		article: {
 			headline: title,
-			...(article.imageUrl && { imageUrl: article.imageUrl }),
-			...(datePublished && { datePublished })
+			...(imageUrl && { imageUrl }),
+			...(datePublished && { datePublished }),
+			...(dateModified && { dateModified })
 		},
-		breadcrumbs: metadata.breadcrumbs.map((crumb, index, crumbs) =>
-			index === crumbs.length - 1 ? { ...crumb, name: title } : crumb
-		)
+		breadcrumbs: [
+			{ name: language === 'ar' ? 'الرئيسية' : 'Accueil', path: '/', url: absoluteUrl('/') },
+			{
+				name: language === 'ar' ? 'المقالات' : 'Articles',
+				path: indexPath,
+				url: absoluteUrl(indexPath)
+			},
+			{ name: title, path: metadata.path, url: metadata.canonicalUrl }
+		]
 	};
 };
 
@@ -291,7 +342,7 @@ export const buildJsonLd = (metadata: PageSeo) => {
 			'@id': websiteId,
 			name: seoConfig.siteName,
 			url: absoluteUrl('/'),
-			inLanguage: seoConfig.language,
+			inLanguage: ['fr', 'ar'],
 			publisher: { '@id': organizationId }
 		},
 		{
@@ -302,7 +353,7 @@ export const buildJsonLd = (metadata: PageSeo) => {
 			description: metadata.description,
 			isPartOf: { '@id': websiteId },
 			about: { '@id': organizationId },
-			inLanguage: seoConfig.language,
+			inLanguage: metadata.language,
 			breadcrumb: { '@id': `${metadata.canonicalUrl}#breadcrumb` }
 		},
 		{
@@ -346,8 +397,12 @@ export const buildJsonLd = (metadata: PageSeo) => {
 			description: metadata.description,
 			...(metadata.article.imageUrl && { image: metadata.article.imageUrl }),
 			publisher: { '@id': organizationId },
-			inLanguage: seoConfig.language,
-			...(metadata.article.datePublished && { datePublished: metadata.article.datePublished })
+			// The cabinet is responsible for this section. Publication alone does not prove
+			// personal authorship or medical approval by the doctor.
+			author: { '@id': organizationId },
+			inLanguage: metadata.language,
+			...(metadata.article.datePublished && { datePublished: metadata.article.datePublished }),
+			...(metadata.article.dateModified && { dateModified: metadata.article.dateModified })
 		});
 	}
 
@@ -372,16 +427,33 @@ export const buildSitemapXml = (articles: SitemapArticle[] = []) => {
 	const seenPaths = new Set(staticSitemapRoutes);
 
 	for (const article of articles) {
-		if (!article.slug || article.slug.includes('/')) continue;
-		const path = normalizePath(`/actualites/${article.slug}`);
+		if (!isArticleSlug(article.slug) || !['fr', 'ar'].includes(article.language)) continue;
+		const path = normalizePath(articlePath(article.slug, article.language));
 		if (seenPaths.has(path)) continue;
 		seenPaths.add(path);
-		const lastModified = validDate(article.updatedAt);
+		const lastModified = validDate(article.updatedAt) || validDate(article.publishedAt);
+		const translation = article.translation;
+		const alternate =
+			translation &&
+			articles.some(
+				(candidate) =>
+					candidate.slug === translation.slug && candidate.language === translation.language
+			) &&
+			translation.language !== article.language &&
+			isArticleSlug(translation.slug)
+				? translation
+				: undefined;
 		urls.push(
 			[
 				'\t<url>',
 				`\t\t<loc>${escapeXml(absoluteUrl(path))}</loc>`,
 				...(lastModified ? [`\t\t<lastmod>${lastModified}</lastmod>`] : []),
+				...(alternate
+					? [
+							`\t\t<xhtml:link rel="alternate" hreflang="${article.language}" href="${escapeXml(absoluteUrl(path))}" />`,
+							`\t\t<xhtml:link rel="alternate" hreflang="${alternate.language}" href="${escapeXml(absoluteUrl(articlePath(alternate.slug, alternate.language)))}" />`
+						]
+					: []),
 				'\t</url>'
 			].join('\n')
 		);
@@ -389,7 +461,7 @@ export const buildSitemapXml = (articles: SitemapArticle[] = []) => {
 
 	return [
 		'<?xml version="1.0" encoding="UTF-8"?>',
-		'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+		'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
 		...urls,
 		'</urlset>'
 	].join('\n');
@@ -419,6 +491,11 @@ const validDate = (value?: string) => {
 };
 
 const buildBreadcrumbs = (path: string): BreadcrumbItem[] => {
+	if (path === '/ar/articles')
+		return [
+			{ name: 'الرئيسية', path: '/', url: absoluteUrl('/') },
+			{ name: 'المقالات', path, url: absoluteUrl(path) }
+		];
 	const segments = path.split('/').filter(Boolean);
 	const breadcrumbs: BreadcrumbItem[] = [{ name: 'Accueil', path: '/', url: absoluteUrl('/') }];
 
@@ -428,9 +505,11 @@ const buildBreadcrumbs = (path: string): BreadcrumbItem[] => {
 
 		breadcrumbs.push({
 			name:
-				crumbPath === '/a-propos'
-					? 'À propos'
-					: (route?.title ?? labelFromSegment(segments[index])),
+				crumbPath === '/articles'
+					? 'Articles'
+					: crumbPath === '/a-propos'
+						? 'À propos'
+						: (route?.title ?? labelFromSegment(segments[index])),
 			path: crumbPath,
 			url: absoluteUrl(crumbPath)
 		});

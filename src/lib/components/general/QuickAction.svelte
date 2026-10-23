@@ -1,6 +1,8 @@
-<script>
+<script lang="ts">
 	import { CalendarCheck } from '@lucide/svelte';
 	import { onMount } from 'svelte';
+	import type { ArticleLanguage } from '$lib/types/blog';
+	let { language = 'fr' }: { language?: ArticleLanguage } = $props();
 
 	let mobileVisible = $state(false);
 
@@ -22,7 +24,7 @@
 	class:flex={mobileVisible}
 	class:hidden={!mobileVisible}
 >
-	<span class="sm:hidden">Rendez-vous</span>
-	<span class="hidden sm:inline">Prendre rendez-vous</span>
+	<span class="sm:hidden">{language === 'ar' ? 'حجز موعد' : 'Rendez-vous'}</span>
+	<span class="hidden sm:inline">{language === 'ar' ? 'حجز موعد' : 'Prendre rendez-vous'}</span>
 	<CalendarCheck class="size-5 shrink-0" aria-hidden="true" />
 </a>

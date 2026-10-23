@@ -1,0 +1,73 @@
+[
+	{
+		"_id": "drafts.visia-example-fr",
+		"_type": "blogArticle",
+		"language": "fr",
+		"title": "Titre de l’article — exemple à relire",
+		"subtitle": "Sous-titre facultatif",
+		"slug": {
+			"_type": "slug",
+			"current": "exemple-article"
+		},
+		"briefing": "Remplacer ce texte par le résumé de l’article avant publication.",
+		"status": "active",
+		"article": [
+			{
+				"_type": "block",
+				"_key": "intro",
+				"style": "normal",
+				"markDefs": [],
+				"children": [
+					{
+						"_type": "span",
+						"_key": "text",
+						"marks": [],
+						"text": "Brouillon de démonstration. Remplacer et relire ce texte avant publication."
+					}
+				]
+			}
+		],
+		"seoTitle": "Titre SEO de l’article",
+		"seoDescription": "Description courte de l’article, à remplacer avant publication.",
+		"focusKeyword": "santé des yeux",
+		"secondaryKeywords": ["yeux", "vision"]
+	},
+	{
+		"_id": "drafts.visia-example-ar",
+		"_type": "blogArticle",
+		"language": "ar",
+		"title": "عنوان المقال — مثال يحتاج إلى المراجعة",
+		"subtitle": "عنوان فرعي اختياري",
+		"slug": {
+			"_type": "slug",
+			"current": "مثال-مقال"
+		},
+		"briefing": "يُستبدل هذا النص بملخص المقال قبل النشر.",
+		"status": "active",
+		"article": [
+			{
+				"_type": "block",
+				"_key": "intro",
+				"style": "normal",
+				"markDefs": [],
+				"children": [
+					{
+						"_type": "span",
+						"_key": "text",
+						"marks": [],
+						"text": "مسودة نموذجية. يجب استبدال هذا النص ومراجعته قبل النشر."
+					}
+				]
+			}
+		],
+		"seoTitle": "عنوان المقال",
+		"seoDescription": "وصف قصير للمقال، يُستبدل قبل النشر.",
+		"focusKeyword": "صحة العين",
+		"secondaryKeywords": ["العيون", "الرؤية"],
+		"translation": {
+			"_type": "reference",
+			"_ref": "visia-example-fr",
+			"_weak": true
+		}
+	}
+]

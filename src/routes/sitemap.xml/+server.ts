@@ -1,19 +1,13 @@
 import { buildSitemapXml, type SitemapArticle } from '$lib/seo';
 import { sanityClient } from '$lib/server/sanity';
-
-const articleQuery = `
-	*[_type == "blogArticle" && status == "active" && defined(slug.current) && (!defined(publishedAt) || publishedAt <= now())] {
-		'slug': slug.current,
-		'updatedAt': _updatedAt
-	}
-`;
+import { sitemapArticleQuery } from '$lib/server/article-queries';
 
 // Keep the known static routes available even if the CMS has a temporary error.
 export const GET = async () => {
 	let articles: SitemapArticle[] = [];
 	let cacheControl = 'public, max-age=3600';
 	try {
-		articles = await sanityClient.fetch<SitemapArticle[]>(articleQuery);
+		articles = await sanityClient.fetch<SitemapArticle[]>(sitemapArticleQuery);
 	} catch (err) {
 		console.error('Failed to load Sanity article URLs for the sitemap', err);
 		cacheControl = 'no-store';

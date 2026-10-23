@@ -16,6 +16,11 @@
 	const seoMetadata = $derived(
 		('seo' in page.data && page.data.seo ? page.data.seo : getPageSeo(page.url.pathname)) as PageSeo
 	);
+	// The server hook sets the initial HTML; keep it correct after client navigation too.
+	$effect(() => {
+		document.documentElement.lang = seoMetadata.language;
+		document.documentElement.dir = seoMetadata.language === 'ar' ? 'rtl' : 'ltr';
+	});
 </script>
 
 <Seo metadata={seoMetadata} />
@@ -27,13 +32,13 @@
 </svelte:head>
 
 <div class="flex min-h-screen flex-col bg-primary-background pb-20 text-primary sm:pb-0">
-	<Navbar />
+	<Navbar language={seoMetadata.language} />
 
 	<main class="w-full flex-1">
 		{@render children?.()}
 	</main>
 
-	<QuickAction />
+	<QuickAction language={seoMetadata.language} />
 
-	<Footer />
+	<Footer language={seoMetadata.language} />
 </div>
